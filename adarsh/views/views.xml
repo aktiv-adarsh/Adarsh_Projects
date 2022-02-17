@@ -1,0 +1,197 @@
+<odoo>
+  <data>
+<!--     explicit list view definition-->
+
+    <record model="ir.ui.view" id="adarsh.form">
+      <field name="name">adarsh form</field>
+      <field name="model">adarsh.adarsh</field>
+      <field name="arch" type="xml">
+        <form>
+<!--            <header>-->
+<!--                <field name="state" widget="statusbar"  />-->
+<!--            </header>-->
+          <group>
+          <field name="name"/>
+<!--          <field name="responsible_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/> &lt;!&ndash; Hide external link + both options  &ndash;&gt;-->
+<!--          <field name="responsible_id" options="{'no_quick_create':True}"/> &lt;!&ndash;Create and edit  - it doesn't display external link&ndash;&gt;-->
+<!--          <field name="responsible_id" options="{'no_create_edit':True}"/> &lt;!&ndash;Create and show external link&ndash;&gt;-->
+          <field name="responsible_id" options="{'no_open': True}"/> <!--Create, create and edit + doesn't show external link-->
+            <notebook>
+              <page string="Adarsh">
+                <field name="html_wid" widget="html"/>
+              </page>
+              <page string="Suvas">
+
+              </page>
+            </notebook>
+          </group>
+            <div class="oe_chatter">-->
+                <field name="message_follower_ids"/>
+                <field name="activity_ids"/>
+                <field name="message_ids"/>
+            </div>
+        </form>
+      </field>
+    </record>
+<!--    <record model="ir.ui.view" id="adarsh.kanban">-->
+<!--      <field name="name">adarsh list</field>-->
+<!--      <field name="model">adarsh.adarsh</field>-->
+<!--      <field name="arch" type="xml">-->
+<!--&lt;!&ndash;        <search>&ndash;&gt;-->
+<!--&lt;!&ndash;          <group string="SearchGruop_By">&ndash;&gt;-->
+<!--&lt;!&ndash;              <filter name="Search_view" string="Search here...!"/>&ndash;&gt;-->
+<!--&lt;!&ndash;          </group>&ndash;&gt;-->
+<!--&lt;!&ndash;        </search>&ndash;&gt;-->
+<!--        <kanban>-->
+<!--          <field name="name"/>-->
+<!--          <field name="email"/>-->
+<!--          <field name="contact_no"/>-->
+<!--          <field name="today"/>-->
+<!--          <field name="refer"/>-->
+<!--          <field name="address"/>-->
+<!--          <field name="dob"/>-->
+<!--          <templates>-->
+<!--              <t t-name="kanban-box">-->
+<!--                  <div t-attr-class="oe_kanban_global_click">-->
+<!--                      <div class="oe_kanban_details">-->
+<!--                          <ul>-->
+<!--                              <li>-->
+<!--                                  Name:<field name="name"/>-->
+<!--                              </li>-->
+<!--                              <li>-->
+<!--                                  Name:<field name="contact_no"/>-->
+<!--                              </li>-->
+<!--                          </ul>-->
+<!--                      </div>-->
+<!--                  </div>-->
+<!--                  <div class="oe_chatter">-->
+<!--                      <field name="message_follower_ids"/>-->
+<!--&lt;!&ndash;                      <field name="activity_ids"/>&ndash;&gt;-->
+<!--                      <field name="message_ids"/>-->
+<!--                  </div>-->
+<!--              </t>-->
+<!--          </templates>-->
+<!--        </kanban>-->
+<!--      </field>-->
+<!--    </record>-->
+<!--     <record model="ir.ui.view" id="adarsh.search">-->
+<!--      <field name="name">Search list</field>-->
+<!--      <field name="model">adarsh.adarsh</field>-->
+<!--      <field name="arch" type="xml">-->
+<!--          <search string="Adarsh">-->
+<!--              <field name="name"/>-->
+<!--            <separator/>-->
+<!--            <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>-->
+<!--&lt;!&ndash;            <filter string="name" name="name" domain="[('%s', '=', 'name')]"/>&ndash;&gt;-->
+<!--            <group expand="1" string="Group By">-->
+<!--              <filter string="contact no" name ="contact_no" context="{'group_by':'contact_no'}"/>-->
+<!--            </group>-->
+<!--          </search>-->
+<!--      </field>-->
+<!--     </record>-->
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="adarsh.action_window">
+      <field name="name">List window</field>
+      <field name="res_model">adarsh.adarsh</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="adarsh.action_window1">
+      <field name="name">Server to list window</field>
+      <field name="res_model">adarsh.adarsh</field>
+      <field name="view_mode">kanban,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="adarsh.action_window2">
+      <field name="name">Customer details window</field>
+      <field name="res_model">adarsh.adarsh</field>
+      <field name="view_mode">form</field>
+      <field name="target">current</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <record model="ir.actions.server" id="adarsh.action_server">
+      <field name="name">adarsh server</field>
+      <field name="model_id" ref="model_adarsh_adarsh"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="adarsh" id="adarsh.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Menu 1" id="adarsh.menu_1" parent="adarsh.menu_root"/>
+    <menuitem name="Menu 2" id="adarsh.menu_2" parent="adarsh.menu_root"/>
+    <menuitem name="Reports" id="adarsh.menu_customer_details_main_reports" parent="adarsh.menu_root" sequence="0"/>
+
+
+    <!-- actions -->
+    <menuitem name="List" id="adarsh.menu_1_list" parent="adarsh.menu_1"
+              action="adarsh.action_window"/>
+    <menuitem name="Server to list" id="adarsh.menu_2_list" parent="adarsh.menu_2"
+              action="adarsh.action_window1"/>
+    <menuitem name="Customer Details Report" id="adarsh.menu_customer_details_report" parent="adarsh.menu_customer_details_main_reports"
+              action="adarsh.action_window2" sequence="0"/>
+  </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    <record model="ir.ui.view" id="adarsh.form">-->
+<!--      <field name="name">adarsh form</field>-->
+<!--      <field name="model">adarsh.adarsh</field>-->
+<!--      <field name="arch" type="xml">-->
+<!--        <form>-->
+<!--          <group>-->
+<!--          <field name="name"/>-->
+<!--            <notebook>-->
+<!--              <page string="Adarsh">-->
+<!--                <field name="html_wid" widget="html"/>-->
+<!--              </page>-->
+<!--              <page string="Suvas">-->
+
+<!--              </page>-->
+<!--            </notebook>-->
+<!--          </group>-->
+<!--&lt;!&ndash;          <field name="contact_no"/>&ndash;&gt;-->
+<!--&lt;!&ndash;          <field name="today"/>&ndash;&gt;-->
+<!--&lt;!&ndash;          <field name="refer"/>&ndash;&gt;-->
+<!--&lt;!&ndash;          <field name="address"/>&ndash;&gt;-->
+<!--&lt;!&ndash;          <field name="dob"/>&ndash;&gt;-->
+<!--        </form>-->
+<!--      </field>-->
+<!--    </record>-->
+
+
+
+
+
+
+
+
+
+<!--        <calendar color="Student_id" date_start="date_examl" string="Marks">-->
+<!--          <field name="name"/>-->
+<!--          <field name="email"/>-->
+<!--        </calendar>-->

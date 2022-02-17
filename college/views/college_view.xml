@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+    <record model="ir.ui.view" id="college.form">
+      <field name="name">college_form</field>
+      <field name="model">college.college</field>
+      <field name="arch" type="xml">
+          <tree>
+            <field name="cname"/>
+            <field name="cid"/>
+            <field name="caddress"/>
+
+          </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="college.action_window">
+      <field name="name">List window</field>
+      <field name="res_model">college.college</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem name="College Network" id="college.menu_root" sequence="-1"/>
+
+
+    <menuitem name="Colleges" id="college.menu_dep" parent="college.menu_root"/>
+
+
+    <menuitem name="List of Colleges" id="college.menu_item_ce" parent="college.menu_dep"
+              action="college.action_window" sequence="0"/>
+    </data>
+</odoo>
