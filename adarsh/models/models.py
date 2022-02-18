@@ -11,6 +11,7 @@ class adarsh(models.Model):
     name = fields.Char(string="Name", required=True)
     email = fields.Char()
     contact_no = fields.Integer(size=20)
+    # responsible_ids = fields.Many2many('res.partner',string="M2M Responsible")  # string="Responsible", comodel_name='res.partener'
     address = fields.Char()
     today = fields.Selection(selection=[('draft', 'Draft'), ('to_approve', 'To approve'), ('posted', 'Posted'), ('cancel', 'Cancelled')], string='Select Options')
     refer = fields.Reference([('model.name', 'String_string')])
@@ -18,15 +19,22 @@ class adarsh(models.Model):
     # refer = fields.Reference(selection=[('model.name', 'String_string')])
     dob = fields.Date(string="DOB", help="Date of Birth")
     description = fields.Text()
-    responsible_id = fields.Many2one('res.partner', string="Responsible") # string="Responsible", comodel_name='res.partener'
+
+    # responsible_id = fields.Many2one('res.partner', string="Responsible") # string="Responsible", comodel_name='res.partener'
+        # here 'res.partner' will fetch all the data from the contact(on url show 'res.partner') and those all user data will display on our field.
+    prescription_ids = fields.One2many('relational.relational','userid_id',string="")
     # state = fields.Selection([('draft', 'Draft), ('confirm', 'Confirm'), ('done', 'Done'), ('cancel', 'Cancelled')], string='State')
     # @api.depends('email')
     # def _email_pc(self):
     #     for record in self:
     #         record.contact_no = float(record.email)
 
+class Relational(models.Model):
+    _name = 'relational.relational'
+    _description = 'relational.relational'
 
-
+    name = fields.Char(string="Many to one")
+    userid_id = fields.Many2one('adarsh.adarsh',string="User-ID")
 
 
 

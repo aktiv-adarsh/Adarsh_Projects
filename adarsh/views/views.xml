@@ -12,20 +12,24 @@
 <!--            </header>-->
           <group>
           <field name="name"/>
+<!--          <field name="responsible_ids" widget="Many2many_tags"/>-->
 <!--          <field name="responsible_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/> &lt;!&ndash; Hide external link + both options  &ndash;&gt;-->
-<!--          <field name="responsible_id" options="{'no_quick_create':True}"/> &lt;!&ndash;Create and edit  - it doesn't display external link&ndash;&gt;-->
+<!--          <field name="responsible_id" options="{'no_quick_create':True}"/> &lt;!&ndash;Create and edit  - it doesn't display external link&ndash;&gt; ** on declaration of name use _id so other can understand that it's relational field.-->
 <!--          <field name="responsible_id" options="{'no_create_edit':True}"/> &lt;!&ndash;Create and show external link&ndash;&gt;-->
-          <field name="responsible_id" options="{'no_open': True}"/> <!--Create, create and edit + doesn't show external link-->
+<!--          <field name="responsible_id" options="{'no_open': True}"/> &lt;!&ndash;Create, create and edit + doesn't show external link&ndash;&gt;-->
+          <field name="prescription_ids"/> <!--Create, create and edit + doesn't show external link-->
             <notebook>
               <page string="Adarsh">
-                <field name="html_wid" widget="html"/>
+                <tree> <!-- <tree editable="bottom"> will take data at next line of list as same "top" -->
+                    <field name="html_wid" widget="html"/>
+                </tree>
               </page>
               <page string="Suvas">
-
+                  <field name="html_wid" widget="html"/>
               </page>
             </notebook>
           </group>
-            <div class="oe_chatter">-->
+            <div class="oe_chatter"><!-- User can't use chatter class in kanban view-->
                 <field name="message_follower_ids"/>
                 <field name="activity_ids"/>
                 <field name="message_ids"/>
