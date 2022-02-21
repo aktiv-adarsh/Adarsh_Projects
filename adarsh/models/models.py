@@ -23,11 +23,26 @@ class adarsh(models.Model):
     # responsible_id = fields.Many2one('res.partner', string="Responsible") # string="Responsible", comodel_name='res.partener'
         # here 'res.partner' will fetch all the data from the contact(on url show 'res.partner') and those all user data will display on our field.
     prescription_ids = fields.One2many('relational.relational','userid_id',string="")
-    # state = fields.Selection([('draft', 'Draft), ('confirm', 'Confirm'), ('done', 'Done'), ('cancel', 'Cancelled')], string='State')
+    state = fields.Selection([('draft','Draft'),('confirm','Confirm'),('done','Done'),('cancel','Cancelled')],string="Statusbar", default="draft")
     # @api.depends('email')
     # def _email_pc(self):
     #     for record in self:
     #         record.contact_no = float(record.email)
+#
+
+
+    def action_draft(self):
+        self.state = 'draft'
+
+    def action_confirm(self):
+        self.write({'state': 'confirm'})
+
+    def action_done(self):
+        self.state = 'done'
+
+    def action_cancel(self):
+        self.state = 'cancel'
+
 
 class Relational(models.Model):
     _name = 'relational.relational'
@@ -35,7 +50,6 @@ class Relational(models.Model):
 
     name = fields.Char(string="Many to one")
     userid_id = fields.Many2one('adarsh.adarsh',string="User-ID")
-
 
 
 
