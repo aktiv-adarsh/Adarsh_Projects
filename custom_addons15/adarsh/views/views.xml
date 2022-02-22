@@ -8,7 +8,7 @@
       <field name="arch" type="xml">
         <form>
             <header>
-                <!--              <button id="button_confirm" name="action_confirm" string="Confirm" class="btn-primary" type="object"/>-->
+                <!--<button id="button_confirm" name="action_confirm" string="Confirm" class="btn-primary" type="object"/>-->
                     <button id="button_confirm" name="action_confirm" string="Confirm" states="draft" class="btn-primary" type="object"/>
                 <button id='button_draft' name="action_draft" string="draft" states="confirm,done,cancel" class="btn-primary" type="object"/>
                 <button id="button_done" name="action_done" string="Done" states="confirm" class="btn-primary" type="object"/>

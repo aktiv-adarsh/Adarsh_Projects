@@ -31,6 +31,7 @@ class adarsh(models.Model):
 #
 
 
+
     def action_draft(self):
         self.state = 'draft'
 
