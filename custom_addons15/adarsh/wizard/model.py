@@ -8,19 +8,11 @@ class adarsh(models.TransientModel):
     _description = 'adarsh.adarsh'
 
     name = fields.Char(string="Name", required=True)
-    email = fields.Char()
-    contact_no = fields.Integer(size=20)
-    address = fields.Char()
-    today = fields.Selection(selection=[('draft', 'Draft'), ('to_approve', 'To approve'), ('posted', 'Posted'), ('cancel', 'Cancelled')], string='Status')
-    refer = fields.Reference([('model.name', 'String_string')])
-    html_wid = fields.Html() # to used as HTML Widget like it give some feature of html ie. bold, italic, underline, color etc.
-    # refer = fields.Reference(selection=[('model.name', 'String_string')])
-    dob = fields.Date(string="DOB", required=True, help="Date of Birth")
+    html_wid = fields.Html()
     description = fields.Text()
-    Wizard = fields.Char()
-    cancel = fields.Integer()
+    # Wizard1 = fields.Char()
+    # cancel = fields.Char()
 
-    @api.depends('email')
-    def _email_pc(self):
-        for record in self:
-            record.contact_no = float(record.email)
+    def Wizard1(self):
+        print("dcndjsc")
+        # return {'name':'Wizard1'}
