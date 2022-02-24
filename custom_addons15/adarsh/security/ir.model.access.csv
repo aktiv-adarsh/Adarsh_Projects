@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_adarsh_adarsh,adarsh.adarsh,model_adarsh_adarsh,base.group_user,1,1,1,1
 access_relational_relational,relational.relational,model_relational_relational,base.group_user,1,1,1,1
+access_wizard_wizard,wizard.wizard,model_wizard_wizard,base.group_user,1,1,1,1

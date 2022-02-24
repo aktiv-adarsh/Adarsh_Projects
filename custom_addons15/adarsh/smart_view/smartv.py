@@ -19,7 +19,7 @@ class adarsh(models.Model):
     # refer = fields.Reference(selection=[('model.name', 'String_string')])
     dob = fields.Date(string="DOB", help="Date of Birth")
     description = fields.Text()
-    sequences = fields.Char(string='Sequence No:- ',readonly=True, required=True, copy=False, index=True, default=lambda self: _('New'))
+    sequences = fields.Char(string='Sequence',readonly=True, required=True, copy=False, index=True, default=lambda self: _('New'))
 
     # responsible_id = fields.Many2one('res.partner', string="Responsible") # string="Responsible", comodel_name='res.partener'
         # here 'res.partner' will fetch all the data from the contact(on url show 'res.partner') and those all user data will display on our field.
@@ -30,6 +30,13 @@ class adarsh(models.Model):
     #     for record in self:
     #         record.contact_no = float(record.email)
 #
+
+    @api.model
+    def create(self, values):
+        if values.get('sequences', ('New')) == ('New'):
+            values['sequences'] = self.env['ir.sequence'].next_by_code('adarsh.adarsh') or _('New')
+        res = super(adarsh, self).create(values)
+        return res
 
     def action_draft(self):
         self.state = 'draft'
@@ -43,13 +50,6 @@ class adarsh(models.Model):
     def action_cancel(self):
         self.state = 'cancel'
 
-
-    @api.model
-    def create(self, values):
-        if values.get('sequences', ('name')) == ('name'):
-            values['sequences'] = self.env['ir.sequence'].next_by_code('adarsh.adarsh') or _('name')
-        res = super(adarsh, self).create(values)
-        return res
 
 class Relational(models.Model):
     _name = 'relational.relational'

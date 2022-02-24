@@ -7,14 +7,13 @@
       <field name="arch" type="xml">
         <form>
             <field name="sequences" readonly="1"/> <!--ERROR-->
-          <header>
+            <header>
                 <!--              <button id="button_confirm" name="action_confirm" string="Confirm" class="btn-primary" type="object"/>-->                 <button id="button_confirm" name="action_confirm" string="Confirm" states="draft" class="btn-primary" type="object"/>
-            <button id='button_draft' name="action_draft" string="draft" states="confirm,done,cancel" class="btn-primary" type="object"/>
-            <button id="button_done" name="action_done" string="Done" states="confirm" class="btn-primary" type="object"/>
-            <button id="button_cancel" name="action_cancel" string="Cancelled" states="draft,confirm,done" type="object"/>
-            <field name="state" widget="statusbar" options="{'clickable':1}" statusbar_visible="draft,confirm,done"/>
-<button name="%(adarsh.wizard_action_wizard)d" class="btn-primary" type="action" string="Wizard Button"/>
-          </header>
+                <button id='button_draft' name="action_draft" string="draft" states="confirm,done,cancel" class="btn-primary" type="object"/>
+                <button id="button_done" name="action_done" string="Done" states="confirm" class="btn-primary" type="object"/>
+                <button id="button_cancel" name="action_cancel" string="Cancelled" states="draft,confirm,done" type="object"/>
+                <field name="state" widget="statusbar" options="{'clickable':1}" statusbar_visible="draft,confirm,done"/>
+            </header>
           <group>
           <field name="name"/>
 <!--          <field name="responsible_ids" widget="Many2many_tags"/>-->
@@ -26,13 +25,13 @@
             <notebook>
               <page string="Adarsh">
                 <tree> <!-- <tree editable="bottom"> will take data at next line of list as same "top" -->
-                  <field name="html_wid" widget="html"/>
+                    <field name="html_wid" widget="html"/>
                 </tree>
               </page>
               <page string="Suvas">
-                <tree>
-                  <field name="html_wid" widget="html"/>
-                </tree>
+                  <tree>
+                    <field name="html_wid" widget="html"/>
+                  </tree>
               </page>
             </notebook>
           </group>
@@ -62,7 +61,7 @@
       <field name="name">Customer details window</field>
       <field name="res_model">adarsh.adarsh</field>
       <field name="view_mode">form</field>
-<!--      <field name="target">current</field>-->
+      <field name="target">current</field>
     </record>
 
     <!-- server action to the one above -->

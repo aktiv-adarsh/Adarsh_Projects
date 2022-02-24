@@ -1,52 +1,62 @@
 <odoo>
   <data>
 <!--     explicit list view definition-->
-    <record model="ir.ui.view" id="adarsh.form">
-      <field name="name">adarsh form</field>
-      <field name="model">adarsh.adarsh</field>
+    <record model="ir.ui.view" id="wizard_form">
+      <field name="name">wizard form</field>
+      <field name="model">wizard.wizard</field>
       <field name="arch" type="xml">
         <form>
-          <group>
-          <field name="name"/>
-            <notebook>
-              <page string="Adarsh">
-                <field name="html_wid" widget="html"/>
-              </page>
-              <page string="Suvas">
-                <field name="html_wid" widget="html"/>
-              </page>
-            </notebook>
-          </group>
-          <footer>
-            <button name="Wizard1" class="btn-primary" type="object" string="Wizard Button"/>
-
-<!--              <button name="cancel" class="btn-primary" type="object" string="cancel" special="cancel"/>-->
-          </footer>
+<!--            <header>-->
+<!--                <button name="%(adarsh.wizard_action_wizard)d" class="btn-primary" type="action" string="Wizard Button"/>-->
+<!--            </header>-->
+            <sheet>
+                <group>
+                  <field name="name"/>
+                    <notebook>
+                      <page string="Adarsh">
+                        <field name="html_wid" widget="html"/>
+                      </page>
+                      <page string="Suvas">
+                        <field name="html_wid" widget="html"/>
+                      </page>
+                    </notebook>
+                </group>
+                <footer>
+                    <button name="Wizard1" class="btn-primary" type="object" string="Wizard Button"/>
+                    <button name="cancel" class="btn-primary" type="object" string="cancel" special="cancel"/>
+                </footer>
+            </sheet>
         </form>
       </field>
     </record>
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="adarsh.action_wizard">
+    <record model="ir.actions.act_window" id="wizard_action_wizard">
       <field name="name">Customer details window</field>
-      <field name="res_model">adarsh.adarsh</field>
+      <field name="res_model">wizard.wizard</field>
       <field name="view_mode">form</field>
+      <field name="view_id" ref="wizard_form"/>
       <field name="target">new</field>
     </record>
 
+<!--    <record model="ir.actions.act_window" id="wizard_action_wizard2">-->
+<!--      <field name="name">Wizard</field>-->
+<!--      <field name="res_model">wizard.wizard</field>-->
+<!--      <field name="view_mode">tree</field>-->
+<!--    </record>-->
+
     <!-- Top menu item -->
-    <menuitem name="adarsh" id="adarsh.menu_root"/>
+<!--    <menuitem name="wizard" id="wizard_menu_root"/>-->
 
-    <!-- menu categories -->
-    <menuitem name="Reports" id="adarsh.menu_customer_details_main_reports" parent="adarsh.menu_root" sequence="0"/>
+<!--    &lt;!&ndash; menu categories &ndash;&gt;-->
+<!--    <menuitem name="List View" id="wizard_menu1" parent="wizard_menu_root" sequence="10" action="wizard_action_wizard2"/>-->
+<!--    <menuitem name="Menu2" id="wizard_action" parent="wizard_menu_root" sequence="10"/>-->
 
 
-    <!-- actions -->
-    <menuitem name="Customer Details Report" id="adarsh.menu_customer_details_report" parent="adarsh.menu_customer_details_main_reports"
-              action="adarsh.action_wizard" sequence="0"/>
   </data>
 </odoo>
+
 
 
 

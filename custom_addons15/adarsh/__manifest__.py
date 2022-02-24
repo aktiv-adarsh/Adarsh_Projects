@@ -27,8 +27,9 @@
         'security/ir.model.access.csv',
         'data/sequence.xml',
         'views/views.xml',
-        'views/sale.xml',
-        'views/customer_dob.xml',
+        # 'views/sale.xml',
+        # 'views/customer_dob.xml'
         'wizard/view.xml'
     ],
 }
+# access_wizard_wizard,wizard.wizard,model_wizard_wizard,base.group_user,1,1,1,1
