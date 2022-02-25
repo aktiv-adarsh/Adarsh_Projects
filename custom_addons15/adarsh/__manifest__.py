@@ -25,11 +25,12 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'data/sequence.xml',
+        # 'data/sequence.xml',
         'views/views.xml',
         # 'views/sale.xml',
         # 'views/customer_dob.xml'
-        'wizard/view.xml'
+        'wizard/view.xml',
+        'smart_view/sview.xml'
     ],
 }
 # access_wizard_wizard,wizard.wizard,model_wizard_wizard,base.group_user,1,1,1,1

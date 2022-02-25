@@ -1,89 +1,33 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api, _
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
-
-class adarsh(models.Model):
-    _name = 'adarsh.adarsh'
-    _inherit = 'mail.thread','mail.activity.mixin'
-    _description = 'adarsh.adarsh'
+class Smart_View(models.Model):
+    _name = 'smartview.smartview'
+    _description = 'smartview'
 
     name = fields.Char(string="Name", required=True)
-    email = fields.Char()
-    contact_no = fields.Integer(size=20)
-    # responsible_ids = fields.Many2many('res.partner',string="M2M Responsible")  # string="Responsible", comodel_name='res.partener'
-    address = fields.Char()
-    today = fields.Selection(selection=[('draft', 'Draft'), ('to_approve', 'To approve'), ('posted', 'Posted'), ('cancel', 'Cancelled')], string='Select Options')
-    refer = fields.Reference([('model.name', 'String_string')])
-    html_wid = fields.Html() # to used as HTML Widget like it give some feature of html ie. bold, italic, underline, color etc.
-    # refer = fields.Reference(selection=[('model.name', 'String_string')])
-    dob = fields.Date(string="DOB", help="Date of Birth")
-    description = fields.Text()
-    sequences = fields.Char(string='Sequence',readonly=True, required=True, copy=False, index=True, default=lambda self: _('New'))
+    email = fields.Char(string="Email")
+    contactno = fields.Integer(string="Contact No", size=20)
+    rating = fields.Selection([('a','1'),('b','2'),('c','3'),('d','4'),('e','5'),('f','6')])
+    count = fields.Integer(string="record count", compute="")
 
-    # responsible_id = fields.Many2one('res.partner', string="Responsible") # string="Responsible", comodel_name='res.partener'
-        # here 'res.partner' will fetch all the data from the contact(on url show 'res.partner') and those all user data will display on our field.
-    prescription_ids = fields.One2many('relational.relational','userid_id',string="")
-    state = fields.Selection([('draft','Draft'),('confirm','Confirm'),('done','Done'),('cancel','Cancelled')],string="Statusbar", default="draft")
-    # @api.depends('email')
-    # def _email_pc(self):
-    #     for record in self:
-    #         record.contact_no = float(record.email)
-#
+#     _sql_constraints = [
+#         ('contactno_uniq', 'unique(contactno)', 'This user name already exist !')
+#     ]
+
+    @api.constrains('name')
+    def check_name(self):
+        for record in self:
+            if len(record.name) >= 7:
+                raise ValidationError(("Len of %s is greater than 7" % record.name))
+
+    def sbutton(self):
+        print("Button clicked")
 
     @api.model
-    def create(self, values):
-        if values.get('sequences', ('New')) == ('New'):
-            values['sequences'] = self.env['ir.sequence'].next_by_code('adarsh.adarsh') or _('New')
-        res = super(adarsh, self).create(values)
+    def create(self, vals):
+        vals = {'name': 'ABC', 'standard': 10}
+        res = super(smartview, self).create(vals)
         return res
-
-    def action_draft(self):
-        self.state = 'draft'
-
-    def action_confirm(self):
-        self.write({'state': 'confirm'})
-
-    def action_done(self):
-        self.state = 'done'
-
-    def action_cancel(self):
-        self.state = 'cancel'
-
-
-class Relational(models.Model):
-    _name = 'relational.relational'
-    _description = 'relational.relational'
-
-    name = fields.Char(string="Many to one")
-    userid_id = fields.Many2one('adarsh.adarsh',string="User-ID")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # today = fields.Char(string="Name", required=True, size=40) #Give input type Character for editing.
-    # today = fields.Date(string="DOB", required=True, help="Date of Birth") #provide date selection option.
-    # today = fields.Boolean(string="Active", default=True) # fields.Date()
-    # today = fields.Text(string='Text_Filed') #text use for long text
-    # today = fields.Integer(string='Integer') #use for gatting integer value only.
-    #DDD today = fields.Float(string='Float', digits=(6,3)) #to grt or display pointing val. here (6,3)
-    #ERROR today = fields.Date(timestamp=datetime.datetime.now())
-    #ERROR today = fields.Datetime.context_timestamp(self,timestamp=datetime.datetime.now())
-    # today = fields.Binary() # field stores the encoded file in base64 in column bytea.
-    # today = fields.Selection(selection=[('a', 'A')])    #Give option for selection. It has only onr "A".

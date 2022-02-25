@@ -5,7 +5,7 @@
             <field name="name">Sequence</field>
             <field name="code">adarsh.adarsh</field>
             <field name="active">True</field>
-            <field name="inherit_id"/><!-- ref="sale.view_order_form"/>-->
+            <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="prefix">S</field>
             <field name="padding">5</field>
             <field name="number_next">1</field>

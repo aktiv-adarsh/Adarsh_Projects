@@ -1,99 +1,56 @@
 <odoo>
   <data>
 <!--     explicit list view definition-->
-    <record model="ir.ui.view" id="adarsh.form">
-      <field name="name">adarsh form</field>
-      <field name="model">adarsh.adarsh</field>
+    <record model="ir.ui.view" id="smart_view_form">
+      <field name="name">smart_view form</field>
+      <field name="model">smartview.smartview</field>
       <field name="arch" type="xml">
         <form>
-            <field name="sequences" readonly="1"/> <!--ERROR-->
-            <header>
-                <!--              <button id="button_confirm" name="action_confirm" string="Confirm" class="btn-primary" type="object"/>-->                 <button id="button_confirm" name="action_confirm" string="Confirm" states="draft" class="btn-primary" type="object"/>
-                <button id='button_draft' name="action_draft" string="draft" states="confirm,done,cancel" class="btn-primary" type="object"/>
-                <button id="button_done" name="action_done" string="Done" states="confirm" class="btn-primary" type="object"/>
-                <button id="button_cancel" name="action_cancel" string="Cancelled" states="draft,confirm,done" type="object"/>
-                <field name="state" widget="statusbar" options="{'clickable':1}" statusbar_visible="draft,confirm,done"/>
-            </header>
-          <group>
-          <field name="name"/>
-<!--          <field name="responsible_ids" widget="Many2many_tags"/>-->
-<!--          <field name="responsible_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/> &lt;!&ndash; Hide external link + both options  &ndash;&gt;-->
-<!--          <field name="responsible_id" options="{'no_quick_create':True}"/> &lt;!&ndash;Create and edit  - it doesn't display external link&ndash;&gt; ** on declaration of name use _id so other can understand that it's relational field.-->
-<!--          <field name="responsible_id" options="{'no_create_edit':True}"/> &lt;!&ndash;Create and show external link&ndash;&gt;-->
-<!--          <field name="responsible_id" options="{'no_open': True}"/> &lt;!&ndash;Create, create and edit + doesn't show external link&ndash;&gt;-->
-          <field name="prescription_ids"/>
-            <notebook>
-              <page string="Adarsh">
-                <tree> <!-- <tree editable="bottom"> will take data at next line of list as same "top" -->
-                    <field name="html_wid" widget="html"/>
-                </tree>
-              </page>
-              <page string="Suvas">
-                  <tree>
-                    <field name="html_wid" widget="html"/>
-                  </tree>
-              </page>
-            </notebook>
-          </group>
-<!--            <div class="oe_chatter">&lt;!&ndash; User can't use chatter class in kanban view&ndash;&gt;-->
-<!--                <field name="message_follower_ids"/>-->
-<!--                <field name="activity_ids"/>-->
-<!--                <field name="message_ids"/>-->
-<!--            </div>-->
+            <sheet>
+                <div class="oe_button_box" name="button_box">
+                   <button name="sbutton" icon="fa-floppy-o" type="object"/>
+                   <button name="%(contacts.action_contacts)d" icon="fa-apple" type="action"/>
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            Adarsh
+                        </span>
+                    </div>
+                </div>
+                <group style="width:50%">
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="contactno"/>
+                    <field name="rating" widget="priority"/>
+                </group>
+            </sheet>
         </form>
       </field>
     </record>
 
+
     <!-- actions opening views on models -->
-    <record model="ir.actions.act_window" id="adarsh.action_window">
+    <record model="ir.actions.act_window" id="smart_view_action_window">
       <field name="name">List window</field>
-      <field name="res_model">adarsh.adarsh</field>
+      <field name="res_model">smartview.smartview</field>
       <field name="view_mode">tree,form</field>
     </record>
 
-    <record model="ir.actions.act_window" id="adarsh.action_window1">
-      <field name="name">Server to list window</field>
-      <field name="res_model">adarsh.adarsh</field>
-      <field name="view_mode">kanban,form</field>
-    </record>
-
-    <record model="ir.actions.act_window" id="adarsh.action_window2">
+    <record model="ir.actions.act_window" id="smart_view_action_window1">
       <field name="name">Customer details window</field>
-      <field name="res_model">adarsh.adarsh</field>
+      <field name="res_model">smartview.smartview</field>
       <field name="view_mode">form</field>
       <field name="target">current</field>
     </record>
 
-    <!-- server action to the one above -->
-    <record model="ir.actions.server" id="adarsh.action_server">
-      <field name="name">adarsh server</field>
-      <field name="model_id" ref="model_adarsh_adarsh"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
 
     <!-- Top menu item -->
-    <menuitem name="adarsh" id="adarsh.menu_root"/>
+    <menuitem name="smart_view" id="smart_view_menu_root"/>
 
     <!-- menu categories -->
-    <menuitem name="Menu 1" id="adarsh.menu_1" parent="adarsh.menu_root"/>
-    <menuitem name="Menu 2" id="adarsh.menu_2" parent="adarsh.menu_root"/>
-    <menuitem name="Reports" id="adarsh.menu_customer_details_main_reports" parent="adarsh.menu_root" sequence="0"/>
-
-
-    <!-- actions -->
-    <menuitem name="List" id="adarsh.menu_1_list" parent="adarsh.menu_1"
-              action="adarsh.action_window"/>
-    <menuitem name="Server to list" id="adarsh.menu_2_list" parent="adarsh.menu_2"
-              action="adarsh.action_window1"/>
-    <menuitem name="Customer Details Report" id="adarsh.menu_customer_details_report" parent="adarsh.menu_customer_details_main_reports"
-              action="adarsh.action_window2" sequence="0"/>
+    <menuitem name="Menu 1" id="smart_view_menu_1" parent="smart_view_menu_root"
+              action="smart_view_action_window"/>
+    <menuitem name="Menu 2" id="smart_view_menu_2" parent="smart_view_menu_root"
+              action="smart_view_action_window1"/>
   </data>
 </odoo>
 
