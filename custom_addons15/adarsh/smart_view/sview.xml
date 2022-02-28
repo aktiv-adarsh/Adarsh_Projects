@@ -23,6 +23,11 @@
                     <field name="rating" widget="priority"/>
                 </group>
             </sheet>
+            <div class="oe_chatter"><!--#User can't use chatter class in kanban view. And inherit the mail.thread model -->
+                <field name="message_follower_ids"/>  <!--#Dispaly doc icon, follow and follower list-->
+                <field name="activity_ids"/>  <!--#Display Schedule Activity with doc icon on right side.-->
+                <field name="message_ids"/>  <!--#Dispaly Send Message and Log note with doc icon on right side.-->
+            </div>
         </form>
       </field>
     </record>
