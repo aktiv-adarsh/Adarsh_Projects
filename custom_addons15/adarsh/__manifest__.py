@@ -27,8 +27,8 @@
         'security/ir.model.access.csv',
         # 'data/sequence.xml',
         'views/views.xml',
-        # 'views/sale.xml',
-        # 'views/customer_dob.xml'
+        'views/sale.xml',
+        'views/customer_dob.xml'
         'wizard/view.xml',
         'smart_view/sview.xml'
     ],

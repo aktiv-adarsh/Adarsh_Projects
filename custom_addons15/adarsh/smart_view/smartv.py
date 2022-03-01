@@ -2,6 +2,7 @@
 
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
+from datetime import datetime
 
 class Smart_View(models.Model):
     _name = 'smartview.smartview'
@@ -13,6 +14,8 @@ class Smart_View(models.Model):
     contactno = fields.Integer(string="Contact No", size=20, tracking=True)
     rating = fields.Selection([('a','1'),('b','2'),('c','3'),('d','4'),('e','5'),('f','6')], tracking=True)
     count = fields.Integer(string="record count", compute="", tracking=True)
+    # defaults=fields.Datetime(string="Date", default=datetime.now()) #date with time
+    defaults=fields.Datetime(string="Date", default=fields.Datetime.now)  # date with time sec
 
 #     _sql_constraints = [
 #         ('contactno_uniq', 'unique(contactno)', 'This user name already exist !')
@@ -30,6 +33,7 @@ class Smart_View(models.Model):
     @api.model
     def create(self, vals):
         # vals = {'name': 'dsrshD', 'contactno': 10}
+        vals['name']="Abgt1"
         vals['email']="Abc@gmail.com"
         vals['contactno']=1234567890
         res = super(Smart_View, self).create(vals)
@@ -50,6 +54,7 @@ class Smart_View(models.Model):
         print("After return:-- ", rten)
         return rten
 
-    @api.returns('mail.message', lambda value: value.id)
-    def message_post(self, **kwargs):
-        return super(Smart_View, self._post_author()).message_post(**kwargs)
+    # @api.returns('mail.message', lambda value: value.id)
+    def msg_post(self):
+        msg="Message Confirmed of,  "
+        self.message_post(body=msg + self.name + "  E-mail is:  "+self.email + "Contact No: " + str(self.contactno))

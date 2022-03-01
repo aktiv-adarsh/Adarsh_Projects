@@ -1,4 +1,4 @@
-<odoo>
+<odoo xmlns:default_email="http://www.w3.org/2001/XMLSchema">
   <data>
 <!--     explicit list view definition-->
     <record model="ir.ui.view" id="smart_view_form">
@@ -6,6 +6,10 @@
       <field name="model">smartview.smartview</field>
       <field name="arch" type="xml">
         <form>
+            <header>
+                <button name="msg_post" string="Confirm" type="object" class="btn btn-primary"/>
+                <button name="create" string="Confirm" type="object" class="btn btn-primary"/>
+            </header>
             <sheet>
                 <div class="oe_button_box" name="button_box">
                    <button name="sbutton" icon="fa-floppy-o" type="object"/>
@@ -16,18 +20,25 @@
                         </span>
                     </div>
                 </div>
+
                 <group style="width:50%">
+                    <field name="create_uid" string="Last Created By"/>     <!--#Last Created of user_name-->
+                    <field name="write_uid" string="Last Modified By"/>     <!--#Last modified of user_name-->
+                    <field name="__last_update" string="Last Update By"/>  <!--#Last update, date with time-->
                     <field name="name"/>
                     <field name="email"/>
                     <field name="contactno"/>
                     <field name="rating" widget="priority"/>
+                    <field name="defaults" />
                 </group>
             </sheet>
+
             <div class="oe_chatter"><!--#User can't use chatter class in kanban view. And inherit the mail.thread model -->
                 <field name="message_follower_ids"/>  <!--#Dispaly doc icon, follow and follower list-->
                 <field name="activity_ids"/>  <!--#Display Schedule Activity with doc icon on right side.-->
                 <field name="message_ids"/>  <!--#Dispaly Send Message and Log note with doc icon on right side.-->
             </div>
+
         </form>
       </field>
     </record>
@@ -44,7 +55,7 @@
       <field name="name">Customer details window</field>
       <field name="res_model">smartview.smartview</field>
       <field name="view_mode">form</field>
-      <field name="target">current</field>
+      <field name="target">new</field>
     </record>
 
 
