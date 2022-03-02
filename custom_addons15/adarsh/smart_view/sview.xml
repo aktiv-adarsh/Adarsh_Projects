@@ -7,8 +7,9 @@
       <field name="arch" type="xml">
         <form>
             <header>
-                <button name="msg_post" string="Confirm" type="object" class="btn btn-primary"/>
-                <button name="create" string="Confirm" type="object" class="btn btn-primary"/>
+                <button name="msg_post" string="Msg Post" type="object" class="btn btn-primary"/>
+                <button name="create" string="Create Record" type="object" class="btn btn-primary"/>
+<!--                <button name="write" string="Edit" type="object" class="btn btn-primary"/>-->
             </header>
             <sheet>
                 <div class="oe_button_box" name="button_box">
@@ -20,16 +21,21 @@
                         </span>
                     </div>
                 </div>
-
-                <group style="width:50%">
-                    <field name="create_uid" string="Last Created By"/>     <!--#Last Created of user_name-->
-                    <field name="write_uid" string="Last Modified By"/>     <!--#Last modified of user_name-->
-                    <field name="__last_update" string="Last Update By"/>  <!--#Last update, date with time-->
-                    <field name="name"/>
-                    <field name="email"/>
-                    <field name="contactno"/>
-                    <field name="rating" widget="priority"/>
-                    <field name="defaults" />
+                <group>
+                    <group style="width:50%">
+                        <field name="create_uid" string="Last Created By"/>     <!--#Last Created of user_name-->
+                        <field name="write_uid" string="Last Modified By"/>     <!--#Last modified of user_name-->
+                        <field name="__last_update" string="Last Update By"/>  <!--#Last update, date with time-->
+                        <field name="name"/>
+                        <field name="m2o_fields_id"/>
+                    </group>
+                    <group>
+                        <field name="email"/>
+                        <field name="contact_no"/>
+                        <field name="rating" widget="priority"/>
+                        <field name="defaults" />
+                        <field name="o2m_fields_ids"/>
+                    </group>
                 </group>
             </sheet>
 
@@ -40,6 +46,23 @@
             </div>
 
         </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="sview_search">
+      <field name="name">Search list</field>
+      <field name="model">smartview.smartview</field>
+      <field name="arch" type="xml">
+          <search string="Adarsh">
+              <field name="name"/>
+            <separator/>
+
+<!--            <filter string="name" name="name" domain="[('name', '=', 'name')]"/>-->
+            <group expand="1" string="Group By">
+              <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>
+              <filter string="contact no" name ="contact_no" context="{'group_by':'contact_no'}"/>
+            </group>
+          </search>
       </field>
     </record>
 

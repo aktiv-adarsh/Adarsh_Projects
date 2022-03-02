@@ -4,6 +4,8 @@ from odoo import models, fields, api, _
 
 
 class adarsh(models.Model):
+
+    """mail.thread """
     _name = 'adarsh.adarsh'
     _inherit = ['mail.thread','mail.activity.mixin']
     _description = 'adarsh.adarsh'

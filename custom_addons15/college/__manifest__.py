@@ -25,7 +25,8 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/college_view.xml'
+        'views/college_view.xml',
+	    'relational_fld/relational.xml'
         # 'views/department.xml'
     ],
 }
