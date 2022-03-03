@@ -23,7 +23,7 @@ class Smart_View(models.Model):
     defaults = fields.Datetime(string="Date", default=fields.Datetime.now)  # date with time sec
 
     m2o_fields_id = fields.Many2one('res.partner',string="Many2One")
-    o2m_field_ids = fields.One2many('adarsh.adarsh','m2o_fields1_id',string="One2Many")
+    # o2m_field_ids = fields.One2many('adarsh.adarsh','m2o_fields1_id',string="One2Many")
 
 
 

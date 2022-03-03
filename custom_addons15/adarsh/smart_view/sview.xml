@@ -34,7 +34,7 @@
                         <field name="contact_no"/>
                         <field name="rating" widget="priority"/>
                         <field name="defaults" />
-                        <field name="o2m_fields_ids"/>
+<!--                        <field name="o2m_fields_ids"/>-->
                     </group>
                 </group>
             </sheet>

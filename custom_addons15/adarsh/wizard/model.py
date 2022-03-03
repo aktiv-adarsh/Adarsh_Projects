@@ -11,7 +11,7 @@ class wizard(models.TransientModel):
     html_wid = fields.Html()
     description = fields.Text()
 
-    m2o_fields1_id = fields.Many2one('smartview.smartview', string="Many2One1")
+    # m2o_fields1_id = fields.Many2one('smartview.smartview', string="Many2One1")
 
     def Wizard1(self):
         print("Adarsh Donga")
