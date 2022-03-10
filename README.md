@@ -1,2 +1,2 @@
-# Adarsh_Projects
+# Git Projects
 Projects
