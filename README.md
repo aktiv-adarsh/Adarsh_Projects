@@ -1,2 +1,2 @@
-# Git Projects
+Projects
 Projects
