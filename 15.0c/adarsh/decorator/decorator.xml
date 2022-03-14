@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="deco_view_order_from_inherit" model="ir.ui.view">
+        <field name="name">Cus_dob</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='payment_term_id']" position = "after">
+                <field name="cnum"/>
+                <field name="cemail"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,18 @@
+<odoo xmlns:default_email="http://www.w3.org/2001/XMLSchema">
+  <data>
+<!--     explicit list view definition-->
+    <record model="ir.ui.view" id="diff_methods_view_form">
+      <field name="name">diff_methods_view_form</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <form>
+            <header>
+                <button name="read" string="Start Configuration" type="object" class="btn-primary"/>
+            </header>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>

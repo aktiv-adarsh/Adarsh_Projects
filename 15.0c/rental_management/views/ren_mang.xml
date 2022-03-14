@@ -1,0 +1,82 @@
+<odoo xmlns:default_email="http://www.w3.org/2001/XMLSchema">
+  <data>
+<!--     explicit list view definition-->
+<!--    Form view  -->
+    <record model="ir.ui.view" id="rental_management_form">
+      <field name="name">rental.management</field>
+      <field name="model">rental.management</field>
+      <field name="arch" type="xml">
+        <form>
+            <header>
+                <button id='button_draft' name="action_draft" string="draft" states="waiting,approve,cancel" class="btn-primary" type="object"/>
+                <button id="button_waiting" name="action_waiting" string="waiting" states="approve,cancel" class="btn-primary" type="object"/>
+                <button id="button_approve" name="action_approve" string="approved" states="draft,cancelled" class="btn-primary" type="object"/>
+                <button id="button_cancel" name="action_cancel" string="Cancelled" states="draft,waiting,approve" type="object"/>
+            </header>
+            <group style="width:50%">
+                <field name="name"/>
+                <field name="customer"/>
+                <field name="rental_type"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="rental_prod"/>
+                <field name="price"/>
+                <field name="state"/>
+            </group>
+            <div class="oe_chatter"><!-- User can't use chatter class in Tree and kanban view-->
+                <field name="message_follower_ids"/>
+                <field name="activity_ids"/>
+                <field name="message_ids"/>
+            </div>
+
+        </form>
+      </field>
+    </record>
+
+<!--    Tree view-->
+    <record model="ir.ui.view" id="rental_management_tree">
+      <field name="name">rental.management</field>
+      <field name="model">rental.management</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="customer"/>
+            <field name="rental_type"/>
+            <field name="start_date"/>
+            <field name="end_date"/>
+            <field name="rental_prod"/>
+            <field name="price"/>
+            <field name="state"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="rental_management_action_window">
+      <field name="name">List window</field>
+      <field name="res_model">rental.management</field>
+      <field name="view_mode">form</field>
+    </record>
+    <record model="ir.actions.act_window" id="rental_management_action_window1">
+      <field name="name">List window</field>
+      <field name="res_model">rental.management</field>
+      <field name="view_mode">tree</field>
+    </record>
+
+
+    <!-- Top menu item -->
+    <menuitem name="Rental Management" id="rental_management_menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Rental Management" id="rental_management_menu_1" parent="rental_management_menu_root"/>
+
+    <menuitem name="Rental" id="rental_management_submenu_1" parent="rental_management_menu_1"
+              action="rental_management_action_window"/>
+
+    <menuitem name="Tree" id="rental_management_submenu_2" parent="rental_management_menu_1"
+              action="rental_management_action_window1"/>
+
+    <menuitem name="RMang 2 RType" id="rental_management_submenu_3" parent="rental_management_menu_1"
+              action="rental_type_action_window"/>
+  </data>
+</odoo>

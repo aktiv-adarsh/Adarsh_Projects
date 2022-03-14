@@ -1,0 +1,225 @@
+<odoo xmlns:default_email="http://www.w3.org/2001/XMLSchema">
+  <data>
+<!--     explicit list view definition-->
+    <record model="ir.ui.view" id="smart_view_form">
+      <field name="name">smart_view_form</field>
+      <field name="model">smartview.smartview</field>
+      <field name="arch" type="xml">
+        <form>
+            <header>
+                <button name="msg_post" string="Msg Post" type="object" class="btn btn-primary"/>
+                <button name="create" string="Create Record" type="object" class="btn btn-primary"/>
+<!--                <button name="write" string="Edit" type="object" class="btn btn-primary"/>-->
+            </header>
+            <sheet>
+                <div class="oe_button_box" name="button_box">
+                   <button name="sbutton" icon="fa-floppy-o" type="object"/>
+                   <button name="%(contacts.action_contacts)d" icon="fa-apple" type="action"/>
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            Adarsh
+                        </span>
+                    </div>
+                </div>
+                <group>
+                    <group style="width:50%">
+                        <field name="create_uid" string="Last Created By"/>     <!--#Last Created of user_name-->
+                        <field name="write_uid" string="Last Modified By"/>     <!--#Last modified of user_name-->
+                        <field name="__last_update" string="Last Update By"/>  <!--#Last update, date with time-->
+                        <field name="name"/>
+                        <field name="m2o_fields_id"/>
+                    </group>
+                    <group>
+                        <field name="email"/>
+                        <field name="contact_no"/>
+                        <field name="rating" widget="priority"/>
+                        <field name="defaults" />
+<!--                        <field name="o2m_fields_ids"/>-->
+                    </group>
+                </group>
+            </sheet>
+
+            <div class="oe_chatter"><!--#User can't use chatter class in kanban view. And inherit the mail.thread model -->
+                <field name="message_follower_ids"/>  <!--#Dispaly doc icon, follow and follower list-->
+                <field name="activity_ids"/>  <!--#Display Schedule Activity with doc icon on right side.-->
+                <field name="message_ids"/>  <!--#Dispaly Send Message and Log note with doc icon on right side.-->
+            </div>
+
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="sview_search">
+      <field name="name">Search list</field>
+      <field name="model">smartview.smartview</field>
+      <field name="arch" type="xml">
+          <search string="Adarsh">
+              <field name="name"/>
+            <separator/>
+
+<!--            <filter string="name" name="name" domain="[('name', '=', 'name')]"/>-->
+            <group expand="1" string="Group By">
+              <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>
+              <filter string="contact no" name ="contact_no" context="{'group_by':'contact_no'}"/>
+            </group>
+          </search>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="smart_view_action_window">
+      <field name="name">List window</field>
+      <field name="res_model">smartview.smartview</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="smart_view_action_window1">
+      <field name="name">Customer details window</field>
+      <field name="res_model">smartview.smartview</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+    </record>
+
+
+    <!-- Top menu item -->
+    <menuitem name="smart_view" id="smart_view_menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Menu 1" id="smart_view_menu_1" parent="smart_view_menu_root"
+              action="smart_view_action_window"/>
+    <menuitem name="Menu 2" id="smart_view_menu_2" parent="smart_view_menu_root"
+              action="smart_view_action_window1"/>
+  </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    <record model="ir.ui.view" id="adarsh.kanban">-->
+<!--      <field name="name">adarsh list</field>-->
+<!--      <field name="model">adarsh.adarsh</field>-->
+<!--      <field name="arch" type="xml">-->
+<!--&lt;!&ndash;        <search>&ndash;&gt;-->
+<!--&lt;!&ndash;          <group string="SearchGruop_By">&ndash;&gt;-->
+<!--&lt;!&ndash;              <filter name="Search_view" string="Search here...!"/>&ndash;&gt;-->
+<!--&lt;!&ndash;          </group>&ndash;&gt;-->
+<!--&lt;!&ndash;        </search>&ndash;&gt;-->
+<!--        <kanban>-->
+<!--          <field name="name"/>-->
+<!--          <field name="email"/>-->
+<!--          <field name="contact_no"/>-->
+<!--          <field name="today"/>-->
+<!--          <field name="refer"/>-->
+<!--          <field name="address"/>-->
+<!--          <field name="dob"/>-->
+<!--          <templates>-->
+<!--              <t t-name="kanban-box">-->
+<!--                  <div t-attr-class="oe_kanban_global_click">-->
+<!--                      <div class="oe_kanban_details">-->
+<!--                          <ul>-->
+<!--                              <li>-->
+<!--                                  Name:<field name="name"/>-->
+<!--                              </li>-->
+<!--                              <li>-->
+<!--                                  Name:<field name="contact_no"/>-->
+<!--                              </li>-->
+<!--                          </ul>-->
+<!--                      </div>-->
+<!--                  </div>-->
+<!--                  <div class="oe_chatter">-->
+<!--                      <field name="message_follower_ids"/>-->
+<!--&lt;!&ndash;                      <field name="activity_ids"/>&ndash;&gt;-->
+<!--                      <field name="message_ids"/>-->
+<!--                  </div>-->
+<!--              </t>-->
+<!--          </templates>-->
+<!--        </kanban>-->
+<!--      </field>-->
+<!--    </record>-->
+<!--     <record model="ir.ui.view" id="adarsh.search">-->
+<!--      <field name="name">Search list</field>-->
+<!--      <field name="model">adarsh.adarsh</field>-->
+<!--      <field name="arch" type="xml">-->
+<!--          <search string="Adarsh">-->
+<!--              <field name="name"/>-->
+<!--            <separator/>-->
+<!--            <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>-->
+<!--&lt;!&ndash;            <filter string="name" name="name" domain="[('%s', '=', 'name')]"/>&ndash;&gt;-->
+<!--            <group expand="1" string="Group By">-->
+<!--              <filter string="contact no" name ="contact_no" context="{'group_by':'contact_no'}"/>-->
+<!--            </group>-->
+<!--          </search>-->
+<!--      </field>-->
+<!--     </record>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    <record model="ir.ui.view" id="adarsh.form">-->
+<!--      <field name="name">adarsh form</field>-->
+<!--      <field name="model">adarsh.adarsh</field>-->
+<!--      <field name="arch" type="xml">-->
+<!--        <form>-->
+<!--          <group>-->
+<!--          <field name="name"/>-->
+<!--            <notebook>-->
+<!--              <page string="Adarsh">-->
+<!--                <field name="html_wid" widget="html"/>-->
+<!--              </page>-->
+<!--              <page string="Suvas">-->
+
+<!--              </page>-->
+<!--            </notebook>-->
+<!--          </group>-->
+<!--&lt;!&ndash;          <field name="contact_no"/>&ndash;&gt;-->
+<!--&lt;!&ndash;          <field name="today"/>&ndash;&gt;-->
+<!--&lt;!&ndash;          <field name="refer"/>&ndash;&gt;-->
+<!--&lt;!&ndash;          <field name="address"/>&ndash;&gt;-->
+<!--&lt;!&ndash;          <field name="dob"/>&ndash;&gt;-->
+<!--        </form>-->
+<!--      </field>-->
+<!--    </record>-->
+
+
+
+
+
+
+
+
+
+<!--        <calendar color="Student_id" date_start="date_examl" string="Marks">-->
+<!--          <field name="name"/>-->
+<!--          <field name="email"/>-->
+<!--        </calendar>-->
