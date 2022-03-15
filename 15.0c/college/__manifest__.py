@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 {
     'name': "college",
 
@@ -19,18 +18,20 @@
     # for the full list
     'category': 'Uncategorized',
     'version': '0.1',
+    'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','sale'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'wizards/sale_data.xml',
         'views/college_view.xml',
 	    # 'relational_fld/relational.xml',
-	    # 'methods/methods.xml'
         # 'views/department.xml'
     ],
 }
+
 
 

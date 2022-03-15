@@ -20,8 +20,10 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button type="object" name="search_record" string="CHECk"/>
-                        <button type="object" name="search_true_record" string="True rec"/>
+                        <!--These three buttons are of read, search and browse orm method-->
+                        <button type="object" name="search_record" string="Search Record"/>
+                        <button type="object" name="search_true_record" string="True Record"/>
+                        <button type="object" name="browse_record" string="Browse Record"/>
                     </header>
                     <group>
                         <field name="cname"/>

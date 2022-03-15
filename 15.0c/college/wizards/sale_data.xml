@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="college_wizard_form">
+          <field name="name">wizard_Cfrom</field>
+          <field name="model">wizard.sales</field>
+          <field name="arch" type="xml">
+              <header>
+                    <button name="func" string="Test" type="object" class="btn-primary"/>
+              </header>
+          </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="college_wizard_action_window">
+          <field name="name">List window</field>
+          <field name="res_model">wizard.sales</field>
+          <field name="view_mode">form</field>
+          <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

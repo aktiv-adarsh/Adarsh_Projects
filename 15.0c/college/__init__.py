@@ -2,4 +2,4 @@
 
 from . import models
 from . import relational_fld
-# from . import methods
+from . import wizards

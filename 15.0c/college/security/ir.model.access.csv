@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_college_college,college.college,model_college_college,base.group_user,1,1,1,1
 access_rel_fld,rel.fld,model_rel_fld,base.group_user,1,1,1,1
 access_m2o_fld,m2o.fld,model_m2o_fld,base.group_user,1,1,1,1
+access_wizard_sales,wizard.sales,model_wizard_sales,base.group_user,1,1,1,1
