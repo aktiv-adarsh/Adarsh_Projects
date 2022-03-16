@@ -45,3 +45,6 @@ class M2oField(models.Model):
 
     m2o_field_id = fields.Many2one('rel.fld', string="Many2One")
     # user_id = fields.Many2one('User', related='resource_id.user_id', store=True, readonly=False)
+
+    # access_rel_fld,rel.fld,model_rel_fld,base.group_user,1,1,1,1
+    # access_m2o_fld,m2o.fld,model_m2o_fld,base.group_user,1,1,1,1

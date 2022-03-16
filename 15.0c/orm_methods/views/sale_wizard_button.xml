@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sale_order_button_form">
+            <field name="name">sale_order_button</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_cancel']" position="after">
+                    <button name="%(sale_wizard_action_window)d" string="Test" type="action" class="btn-primary"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

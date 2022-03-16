@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "college",
+    'name': "orm_methods",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -26,7 +26,9 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/college_view.xml',
+        'views/wizards_sale.xml',
+        'views/sale_wizard_button.xml',
+        'views/customer_name_get.xml',
 	    # 'relational_fld/relational.xml',
         # 'views/department.xml'
     ],

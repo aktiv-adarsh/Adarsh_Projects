@@ -32,9 +32,9 @@ class college(models.Model):
         # rcd = self.env['sale.order'].browse([3, 15])
         for rec in self.env['sale.order'].browse([3, 15]):
             if rec.exists():
-                print(rec.id)
-                print(rec.name)
-                print(rec.date_order)
-                print(rec.partner_id.name)
+                print("ID: ",rec.id)
+                print("ID: ",rec.name)
+                print("Quotation Date: ",rec.date_order)
+                print("User name: ",rec.partner_id.name)
             else:
                 print(rec.name,"Is not present")

@@ -10,8 +10,8 @@
                 <xpath expr="//page[@name='general_information']" position="after">
                     <page string="Rental">
                         <group>
-                            <field name="is_rental" attrs="{'invisible':[('is_rental', '=', True)]}"/>
-                            <field name="m2o_id"/>
+                            <field name="is_rental"/>
+                            <field name="m2o_id" attrs="{'invisible':[('is_rental', '!=', True)]}"/>
                         </group>
                     </page>
                 </xpath>

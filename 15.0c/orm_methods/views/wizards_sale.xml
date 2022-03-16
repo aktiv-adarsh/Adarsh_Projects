@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sale_wizard_form">
+            <field name="name">wizard_Cfroms</field>
+            <field name="model">wizard.sales</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group style="width:60%">
+                        <field name="customer"/>
+                        <field name="customer_email"/>
+                        <field name="sales_person"/>
+                        <field name="sales_person_contact"/>
+                        <field name="payment_terms"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="sale_wizard_action_window">
+            <field name="name">List window</field>
+            <field name="res_model">wizard.sales</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

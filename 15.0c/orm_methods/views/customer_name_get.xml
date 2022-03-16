@@ -1,39 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <record id="view_partner_from_inherit" model="ir.ui.view">
-        <field name="name">Cus_dob</field>
+    <record id="customer_data_from_inherit" model="ir.ui.view">
+        <field name="name">customer_data</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
 
             <xpath expr="//field[@name='vat']" position="after">
-<!--                <field name="Customer_dob" optional="hide"/>-->
-<!--                <field name="Customer_dob"/>-->
-                <field name="customer_reference_dob"/>
+                <field name="customer_reference"/>
             </xpath>
 
-<!--            <field name="customer_reference_dob" position="replace"/>-->
-
-            <xpath expr="//div[hasclass('o_address_format')]/field[@name='street2']" position="after">
-                <field name="customer_street3" placeholder="Street 3..."/>
-            </xpath>
-
-            <notebook position="inside">
-                <page string="DOB">
-                    <field name="Customer_dob" colspan="4" nolabel="1"/>
-                </page>
-            </notebook>
-
-        </field>
-    </record>
-    <record id="view_partner_tree_inherit" model="ir.ui.view">
-        <field name="name">Cus_dob</field>
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_tree"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='display_name']" position="before">
-                <field name="Customer_dob"/>
-            </xpath>
         </field>
     </record>
 </odoo>

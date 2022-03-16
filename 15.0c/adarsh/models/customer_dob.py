@@ -3,6 +3,7 @@
 from odoo import models, fields, api
 
 class CustomerDob(models.Model):
+
     _inherit = "res.partner"
 
     Customer_dob = fields.Date(string="DOB", required=True)
