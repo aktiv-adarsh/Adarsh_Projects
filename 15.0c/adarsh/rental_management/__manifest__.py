@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "adarsh",
+    'name': "rental_management",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -21,20 +21,13 @@
     'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','sale','mail'],
+    'depends': ['base','sale_management','mail'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        # 'data/sequence.xml',
-        'views/views.xml',
-        # 'views/sale.xml',
-        # 'views/customer_dob.xml',
-        'wizard/view.xml',
-        'smart_view/sview.xml',
-        'decorator/decorator.xml',
-        'method_overriding/sale_btn_line.xml',
-        'method_overriding/customer_age_dob.xml',
+	    'views/prod_template.xml',
+	    'views/ren_mang.xml',
+	    'views/rental_type.xml',
     ],
 }
-# access_wizard_wizard,wizard.wizard,model_wizard_wizard,base.group_user,1,1,1,1

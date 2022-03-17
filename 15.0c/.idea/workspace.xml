@@ -3,19 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5e3b8396-44bd-42e7-9037-50a327e96803" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/models/customer_dob.py" beforeDir="false" afterPath="$PROJECT_DIR$/adarsh/models/customer_dob.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/views/customer_dob.xml" beforeDir="false" afterPath="$PROJECT_DIR$/adarsh/views/customer_dob.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/college/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/college/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/models/college.py" beforeDir="false" afterPath="$PROJECT_DIR$/college/models/college.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/relational_fld/relational.py" beforeDir="false" afterPath="$PROJECT_DIR$/college/relational_fld/relational.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/college/security/ir.model.access.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/wizards/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/wizards/sale_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/wizards/sale_data.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/models/ren_mang.py" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/models/ren_mang.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/views/prod_template.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/views/prod_template.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/views/ren_mang.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/views/ren_mang.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adarsh/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/adarsh/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adarsh/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/adarsh/__manifest__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

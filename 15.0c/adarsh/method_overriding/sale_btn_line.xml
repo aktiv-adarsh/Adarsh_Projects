@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+<!--     explicit list view definition-->
+    <record model="ir.ui.view" id="SaleBtnLine_form">
+      <field name="name">Sale_Btn_Line</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+
+          <xpath expr="//button[@name='action_confirm']" position="after">
+            <button name="confirm_sale" string="Sale Confirm" type="object" class="btn-primary"/>
+          </xpath>
+
+      </field>
+    </record>
+
+  </data>
+</odoo>

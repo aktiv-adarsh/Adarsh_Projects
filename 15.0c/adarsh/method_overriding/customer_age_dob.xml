@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="age_dob_view_partner_from">
+        <field name="name">cus_age_dob</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="custome_dob"/>
+                <field name="customer_age"/>
+            </xpath>
+
+        </field>
+
+    </record>
+</odoo>
