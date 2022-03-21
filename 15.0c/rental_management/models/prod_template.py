@@ -7,4 +7,6 @@ class ProductTemplate(models.Model):
     _inherit = "product.template"
 
     is_rental = fields.Boolean(string="IsRental")
-    m2o_id = fields.Many2one('rental.type',string="M2O")
+    rental_type_id = fields.Many2one('rental.type', string="M2O")
+
+

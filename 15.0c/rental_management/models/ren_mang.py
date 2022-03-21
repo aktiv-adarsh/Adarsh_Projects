@@ -9,13 +9,14 @@ class RentalManagement(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string="Name", tracking=True, required=True)
-    customer = fields.Many2one('res.partner',string="Customer", tracking=True)
-    rental_type = fields.Many2one('rental.type',string="Rental Type", tracking=True)
+    customer_id = fields.Many2one('res.partner',string="Customer", tracking=True)
+    rental_man_type_id = fields.Many2one('rental.type',string="Rental Type", tracking=True)
     start_date = fields.Datetime(string="Start Date", tracking=True)
     end_date = fields.Datetime(string="End Date", tracking=True)
-    rental_prod = fields.Many2one('product.product',string="Description", tracking=True)
-    price = fields.Float(string="Description", tracking=True)
-    state = fields.Selection(selection=[('draft', 'Draft'), ('waiting', 'Waiting'), ('approve', 'approve'), ('cancel', 'Cancelled')], string='State')
+    rental_prod_id = fields.Many2one('product.product', tracking=True, domain=[('is_rental', '=', True)])
+    price = fields.Float(string="Price", tracking=True, related='rental_prod_id.list_price')
+    state = fields.Selection([('draft', 'Draft'), ('waiting', 'Waiting'),
+                             ('approve', 'Approve'), ('cancel', 'Cancelled')], string='State', default="draft", tracking=True)
 
     """Those functions are called accordingly selection done by user"""
     def action_draft(self):
@@ -29,19 +30,3 @@ class RentalManagement(models.Model):
 
     def action_cancel(self):
         self.state = 'cancel'
-
-    def rental_type(self):
-        domain = [
-            ('res_model', '=', records.name),
-            ('res_field', '=', self.name),
-            ('res_id', 'in', records.ids),
-        ]
-
-
-
-    # def rental_type(self):
-    #     for rec in self:
-    #         if rec in rental_type:
-    #             return rec
-
-    # access_rental_management,rental.management,model_rental_management,base.group_user,1,1,1,1

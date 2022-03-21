@@ -29,6 +29,7 @@
         'views/wizards_sale.xml',
         'views/sale_wizard_button.xml',
         'views/customer_name_get.xml',
+        'views/get_val_setting.xml',
 	    # 'relational_fld/relational.xml',
         # 'views/department.xml'
     ],

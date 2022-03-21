@@ -3,7 +3,7 @@
 <!--     explicit list view definition-->
 <!--    Form view  -->
     <record model="ir.ui.view" id="rental_type_form">
-      <field name="name">rental.type</field>
+      <field name="name">form_rental_type</field>
       <field name="model">rental.type</field>
       <field name="arch" type="xml">
         <form>
@@ -27,7 +27,7 @@
 
 <!--    Tree view-->
     <record model="ir.ui.view" id="rental_type_tree">
-      <field name="name">rental.type</field>
+      <field name="name">tree_rental_type</field>
       <field name="model">rental.type</field>
       <field name="arch" type="xml">
         <tree>
@@ -41,7 +41,7 @@
 
 <!--      Search view-->
       <record model="ir.ui.view" id="rental_type_search">
-      <field name="name">rental.type</field>
+      <field name="name">search_rental_type</field>
       <field name="model">rental.type</field>
       <field name="arch" type="xml">
         <search string="name">
@@ -57,31 +57,29 @@
 
 
     <!-- actions opening views on models -->
-    <record model="ir.actions.act_window" id="rental_type_action_window">
-      <field name="name">List window</field>
+    <record model="ir.actions.act_window" id="rental_type_form_window">
+      <field name="name">Form window</field>
       <field name="res_model">rental.type</field>
       <field name="view_mode">form</field>
+      <field name="view_id" ref="rental_type_form"/>
     </record>
-    <record model="ir.actions.act_window" id="rental_type_action_window1">
+    <record model="ir.actions.act_window" id="rental_type_tree_window">
       <field name="name">List window</field>
       <field name="res_model">rental.type</field>
-      <field name="view_mode">tree</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="rental_type_tree"/>
     </record>
 
 
-    <!-- Top menu item -->
-    <menuitem name="Rental type" id="rental_type_menu_root"/>
 
     <!-- menu categories -->
-    <menuitem name="Rental Type" id="rental_type_menu_1" parent="rental_type_menu_root"/>
+    <menuitem name="Rental Type" id="rental_type_menu_1" parent="rental_management_menu_root"/>
 
     <menuitem name="Rental" id="rental_type_submenu_1" parent="rental_type_menu_1"
-              action="rental_type_action_window"/>
+              action="rental_type_form_window"/>
 
     <menuitem name="Tree" id="rental_type_submenu_2" parent="rental_type_menu_1"
-              action="rental_type_action_window1"/>
+              action="rental_type_tree_window"/>
 
-    <menuitem name="RType 2 RMang" id="rental_type_submenu_2" parent="rental_type_menu_1"
-              action="rental_management_action_window"/>
   </data>
 </odoo>

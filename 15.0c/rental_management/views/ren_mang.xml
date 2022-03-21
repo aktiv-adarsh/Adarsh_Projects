@@ -3,25 +3,23 @@
 <!--     explicit list view definition-->
 <!--    Form view  -->
     <record model="ir.ui.view" id="rental_management_form">
-      <field name="name">rental.management</field>
+      <field name="name">form_rental_management</field>
       <field name="model">rental.management</field>
       <field name="arch" type="xml">
         <form>
             <header>
-                <button id='button_draft' name="action_draft" string="draft" states="waiting,approve,cancel" class="btn-primary" type="object"/>
-                <button id="button_waiting" name="action_waiting" string="waiting" states="approve,cancel" class="btn-primary" type="object"/>
-                <button id="button_approve" name="action_approve" string="approved" states="draft,cancelled" class="btn-primary" type="object"/>
-                <button id="button_cancel" name="action_cancel" string="Cancelled" states="draft,waiting,approve" type="object"/>
+                <field name="state" widget="statusbar" options="{'clickable':1}"/>
             </header>
             <group style="width:50%">
                 <field name="name"/>
-                <field name="customer"/>
-                <field name="rental_type"/>
+                <field name="customer_id"/>
+                <field name="rental_man_type_id"/>
                 <field name="start_date"/>
+            </group>
+            <group style="width:50%">
                 <field name="end_date"/>
-                <field name="rental_prod"/>
+                <field name="rental_prod_id"/>
                 <field name="price"/>
-                <field name="state"/>
             </group>
             <div class="oe_chatter"><!-- User can't use chatter class in Tree and kanban view-->
                 <field name="message_follower_ids"/>
@@ -33,34 +31,61 @@
       </field>
     </record>
 
-<!--    Tree view-->
+    <!--    Tree view-->
     <record model="ir.ui.view" id="rental_management_tree">
-      <field name="name">rental.management</field>
+      <field name="name">tree_rental_management</field>
       <field name="model">rental.management</field>
       <field name="arch" type="xml">
         <tree>
             <field name="name"/>
-            <field name="customer"/>
-            <field name="rental_type"/>
+            <field name="customer_id"/>
+            <field name="rental_man_type_id"/>
             <field name="start_date"/>
             <field name="end_date"/>
-            <field name="rental_prod"/>
+            <field name="rental_prod_id"/>
             <field name="price"/>
-            <field name="state"/>
         </tree>
       </field>
     </record>
 
-    <!-- actions opening views on models -->
-    <record model="ir.actions.act_window" id="rental_management_action_window">
-      <field name="name">List window</field>
-      <field name="res_model">rental.management</field>
-      <field name="view_mode">form</field>
+    <!--    Search view-->
+    <record model="ir.ui.view" id="rental_management_search">
+        <field name="name">search_rental_management</field>
+        <field name="model">rental.management</field>
+        <field name="arch" type="xml">
+            <search string="Search">
+                <field name="state"/>
+                <separator/>
+                    <filter name="button_draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                    <filter name="button_waiting" string="Waiting" domain="[('state', '=', 'waiting')]"/>
+                    <filter name="button_approve" string="Approve" domain="[('state', '=', 'approve')]"/>
+                    <filter name="button_cancel" string="Cancel" domain="[('state', '=', 'cancel')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Name " name="name" context="{'group_by':'name'}"/>
+                    <filter string="Customer" name="customer_id" context="{'group_by':'customer_id'}"/>
+                    <filter string="Rental Type" name="rental_man_type_id" context="{'group_by':'rental_man_type_id'}"/>
+                    <filter string="Rental Product" name="rental_prod_id" context="{'group_by':'rental_prod_id'}"/>
+                    <filter string="Price" name="price" context="{'group_by':'price'}"/>
+
+                </group>
+            </search>
+        </field>
     </record>
-    <record model="ir.actions.act_window" id="rental_management_action_window1">
+
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="rental_management_form_window">
+      <field name="name">Form window</field>
+      <field name="res_model">rental.management</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="rental_management_form"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="rental_management_tree_window">
       <field name="name">List window</field>
       <field name="res_model">rental.management</field>
       <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="rental_management_tree"/>
     </record>
 
 
@@ -68,15 +93,13 @@
     <menuitem name="Rental Management" id="rental_management_menu_root"/>
 
     <!-- menu categories -->
+
     <menuitem name="Rental Management" id="rental_management_menu_1" parent="rental_management_menu_root"/>
 
     <menuitem name="Rental" id="rental_management_submenu_1" parent="rental_management_menu_1"
-              action="rental_management_action_window"/>
-
+              action="rental_management_form_window"/>
     <menuitem name="Tree" id="rental_management_submenu_2" parent="rental_management_menu_1"
-              action="rental_management_action_window1"/>
+              action="rental_management_tree_window"/>
 
-    <menuitem name="RMang 2 RType" id="rental_management_submenu_3" parent="rental_management_menu_1"
-              action="rental_type_action_window"/>
   </data>
 </odoo>
