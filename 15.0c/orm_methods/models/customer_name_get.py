@@ -8,14 +8,14 @@ class CustomerData(models.Model):
 
     customer_reference = fields.Char(string="Customer Reference")
 
-    """name_get() will display given fields records on other single field"""
+    """name_get() will display multiple given fields records on other field"""
     def name_get(self):
         res = []
-        for fields in self:
-            res.append((fields.id, '%s -%s' % (fields.customer_reference, fields.name)))
-            print("Cus ref------------------",fields.customer_reference)
-            print("Name ------------------",fields.name)
-            print("Field ------------------",fields)
+        for field in self:
+            res.append((fields.id, '%s -%s' % (fields.customer_reference, field.name)))
+            print("Cus ref------------------",field.customer_reference)
+            print("Name ------------------",field.name)
+            print("Field ------------------",field)
         return res
 
     """name_search is use to customize search (to search inside multiple fields) on relational fields.

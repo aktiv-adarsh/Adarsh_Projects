@@ -1,66 +1,32 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<!--<?xml version="1.0" encoding="utf-8" ?>-->
 <odoo>
     <record model="ir.ui.view" id="get_val_res_config_settings_view_form">
-        <field name="name">Get_val_setting</field>
+        <field name="name">get_val_setting</field>
         <field name="model">res.config.settings</field>
         <field name="inherit_id" ref="base.res_config_settings_view_form"/>
         <field name="arch" type="xml">
 
             <xpath expr="//div[@id='invite_users']" position="after">
                 <h2> Custom Get</h2>
-                <field name="check_setting"/>
-                <field name="html_setting"/>
+                <div class="row mt16 o_settings_container" name="catalog_setting_container">
+
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="check_setting"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="check_setting" string="Is check"/>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box" attrs="{'invisible':[('check_setting', '!=', True)]}">
+                            <label for="html_setting"/>
+                            <field name="html_setting" type="html" style="width:50%"/>
+
+                        </div>
+                    </div>
+
             </xpath>
-<!--            <form>-->
-<!--                <group>-->
-<!--                    <fields name="check_setting"/>-->
-<!--                    <fields name="html_setting"/>-->
-<!--                </group>-->
-<!--            </form>-->
         </field>
+
     </record>
 </odoo>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!--
-        <xpath expr="//field[@name='website']" position="before">
-                        <field name="Customer_dob"/>
-                    </xpath>-->
-
-        <!--            <xpath expr="//div[hasclass('o_address_format')]/field[@name='street2']" position="after">-->
-        <!--                <field name="customer_street3" placeholder="Street 3..."/>-->
-        <!--            </xpath>-->
-
-        <!--            <field name="phone" position="attributes">-->
-        <!--                <attribute name="invisible">1</attribute>-->
-        <!--                <attribute name="readonly">0</attribute>-->
-        <!--                <field name="customer_reference_dob" attrs="{'invisible': [('company_type','!=','company')]}"/>-->
-        <!--            </field>-->
-
-        <!--            <field name="website" position="before">-->
-        <!--                <field name="Customer_dob"/>-->
-        <!--            </field>-->

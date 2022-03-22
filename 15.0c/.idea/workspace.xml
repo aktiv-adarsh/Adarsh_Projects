@@ -3,27 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5e3b8396-44bd-42e7-9037-50a327e96803" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/Adarsh_Task(method_overriding).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/Adarsh_task(decorator).zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/adarsh/method_overriding/customer_age_dob.py" beforeDir="false" afterPath="$PROJECT_DIR$/adarsh/method_overriding/customer_age_dob.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/rental_management/15.0c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/rental_management/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/rental_management/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/rental_management/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/rental_management/models/prod_template.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/rental_management/models/ren_mang.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/rental_management/models/rental_type.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/rental_management/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/rental_management/views/prod_template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/rental_management/views/ren_mang.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/rental_management/views/rental_type.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/orm_methods/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/models/prod_template.py" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/models/prod_template.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/models/ren_mang.py" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/models/ren_mang.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/views/prod_template.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/views/prod_template.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/views/ren_mang.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/views/ren_mang.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/views/rental_type.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/views/rental_type.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adarsh/smart_view/smartv.py" beforeDir="false" afterPath="$PROJECT_DIR$/adarsh/smart_view/smartv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orm_methods/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/orm_methods/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orm_methods/models/customer_name_get.py" beforeDir="false" afterPath="$PROJECT_DIR$/orm_methods/models/customer_name_get.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orm_methods/models/get_val_setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/orm_methods/models/get_val_setting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orm_methods/views/customer_name_get.xml" beforeDir="false" afterPath="$PROJECT_DIR$/orm_methods/views/customer_name_get.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orm_methods/views/get_val_setting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/orm_methods/views/get_val_setting.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
