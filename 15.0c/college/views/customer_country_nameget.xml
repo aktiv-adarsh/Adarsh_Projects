@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="cus_cont_get">
+        <field name="name">college_tree</field>
+        <field name="model">college.college</field>
+        <field name="arch" type="xml">
+
+            <!--            <xpath expr="//group[@name='caddress']" position="after">-->
+            <!--                <field name="customer_country"/>-->
+            <!--            </xpath>-->
+
+        </field>
+    </record>
+</odoo>

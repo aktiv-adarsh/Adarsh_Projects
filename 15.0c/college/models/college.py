@@ -9,6 +9,8 @@ class college(models.Model):
     cname = fields.Char(string="College")
     cid = fields.Integer(string="College Id")
     caddress = fields.Text(string="College Address")
+    customer_country_id = fields.Many2one('res.partner', string="Customer country")
+
 
     """It will search record which is given on parameter"""
     def search_record(self):

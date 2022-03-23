@@ -18,11 +18,17 @@
                                 <label for="check_setting" string="Is check"/>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-6 o_setting_box" attrs="{'invisible':[('check_setting', '!=', True)]}">
-                            <label for="html_setting"/>
-                            <field name="html_setting" type="html" style="width:50%"/>
 
+                        <div class="col-12 col-lg-6 o_setting_box" attrs="{'invisible':[('check_setting', '!=', True)]}">
+                            <div class="o_setting_right_pane">
+                                <label for="html_setting"/>
+                                <field name="html_setting" type="html" style="width:50%"/>
+                                <div class="text-muted">
+                                    Above field provide HTML functionality.
+                                </div>
+                            </div>
                         </div>
+
                     </div>
 
             </xpath>

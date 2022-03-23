@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5e3b8396-44bd-42e7-9037-50a327e96803" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/method_overriding/customer_age_dob.py" beforeDir="false" afterPath="$PROJECT_DIR$/adarsh/method_overriding/customer_age_dob.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/smart_view/smartv.py" beforeDir="false" afterPath="$PROJECT_DIR$/adarsh/smart_view/smartv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/orm_methods/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/college/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/college/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/college/models/college.py" beforeDir="false" afterPath="$PROJECT_DIR$/college/models/college.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/college/views/college_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/college/views/college_view.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orm_methods/models/customer_name_get.py" beforeDir="false" afterPath="$PROJECT_DIR$/orm_methods/models/customer_name_get.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/models/get_val_setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/orm_methods/models/get_val_setting.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orm_methods/views/customer_name_get.xml" beforeDir="false" afterPath="$PROJECT_DIR$/orm_methods/views/customer_name_get.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orm_methods/views/get_val_setting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/orm_methods/views/get_val_setting.xml" afterDir="false" />
     </list>
@@ -31,10 +30,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/orm_methods/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/college/views" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/college/views" />
+      <recent name="$PROJECT_DIR$/college/models" />
       <recent name="$PROJECT_DIR$/orm_methods/views" />
       <recent name="$PROJECT_DIR$/orm_methods/models" />
       <recent name="$PROJECT_DIR$/college/wizards" />

@@ -29,6 +29,7 @@
                         <field name="cname"/>
                         <field name="cid"/>
                         <field name="caddress"/>
+                        <field name="customer_country_id" context="{'cus_country':'country'}"/>
                     </group>
                 </form>
             </field>
