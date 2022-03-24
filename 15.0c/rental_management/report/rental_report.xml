@@ -1,0 +1,14 @@
+
+<odoo>
+    <record id="rental_management_print_report" model="ir.actions.report">
+        <field name="name">Rental Report</field>
+        <field name="model">rental.management</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">rental_management.report_invoice</field>
+        <field name="report_file">rental_management.report_invoice</field>
+<!--        <field name="print_report_name">(object._get_report_base_filename())</field>-->
+        <field name="binding_model_id" ref="model_rental_management"/>
+        <field name="binding_type">report</field>   `
+
+    </record>
+</odoo>

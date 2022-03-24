@@ -21,13 +21,15 @@
     'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','sale_management','mail'],
+    'depends': ['base', 'sale_management', 'mail'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-	    'views/prod_template.xml',
-	    'views/ren_mang.xml',
-	    'views/rental_type.xml',
-    ],
+        'views/prod_template.xml',
+        'views/ren_mang.xml',
+        'views/rental_type.xml',
+        'report/rental_template.xml',
+        'report/rental_report.xml',
+    ]
 }

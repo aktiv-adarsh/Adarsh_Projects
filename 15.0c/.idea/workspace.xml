@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5e3b8396-44bd-42e7-9037-50a327e96803" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/college/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/models/college.py" beforeDir="false" afterPath="$PROJECT_DIR$/college/models/college.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/views/college_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/college/views/college_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/models/customer_name_get.py" beforeDir="false" afterPath="$PROJECT_DIR$/orm_methods/models/customer_name_get.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/views/customer_name_get.xml" beforeDir="false" afterPath="$PROJECT_DIR$/orm_methods/views/customer_name_get.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/views/get_val_setting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/orm_methods/views/get_val_setting.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental_management/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental_management/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/__manifest__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
