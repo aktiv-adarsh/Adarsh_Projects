@@ -11,8 +11,8 @@ class RentalManagement(models.Model):
     name = fields.Char(string="Name", tracking=True, required=True)
     customer_id = fields.Many2one('res.partner',string="Customer", tracking=True)
     rental_man_type_id = fields.Many2one('rental.type',string="Rental Type", tracking=True)
-    start_date = fields.Datetime(string="Start Date", tracking=True)
-    end_date = fields.Datetime(string="End Date", tracking=True)
+    start_date = fields.Date(string="Start Date", tracking=True)
+    end_date = fields.Date(string="End Date", tracking=True)
     rental_prod_id = fields.Many2one('product.product', tracking=True, domain=[('is_rental', '=', True)])
     price = fields.Float(string="Price", tracking=True, related='rental_prod_id.list_price')
     state = fields.Selection([('draft', 'Draft'), ('waiting', 'Waiting'),

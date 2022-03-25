@@ -1,16 +1,46 @@
 <odoo>
-    <template id="report_invoice">
-        <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="o">
+    <template id="from_rental_report2_template">
+        <div class="page">
+
+            <center>
+                <h3>Rental Management Report</h3>
+            </center>
+            <br></br>
+
+            <table class="table table-sm">
+                <tr>
+                    <th>User Name</th>
+                    <th>Customer Name</th>
+                    <th>Rental Type</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Rental Product</th>
+                    <th>Product Price</th>
+                </tr>
+                <tr>
+                    <td> <span t-field="rec.name"/> </td>
+                    <td> <span t-field="rec.customer_id"/> </td>
+                    <td> <span t-field="rec.rental_man_type_id"/> </td>
+                    <td> <span t-field="rec.start_date"/> </td>
+                    <td> <span t-field="rec.end_date"/> </td>
+                    <td> <span t-field="rec.rental_prod_id"/> </td>
+                    <td> <span t-field="rec.price"/> </td>
+                </tr>
+            </table>
+        </div>
+    </template>
+
+
+    <template id="rental_report2_template">
+        <t t-foreach="docs" t-as="rec">
+            <t t-call="web.html_container">
                 <t t-call="web.external_layout">
-                    <div class="page">
-                        <h2>Report title</h2>
-                        <p>This object's name is
-<!--                            <span t-field="o.name"/>-->
-                        </p>
-                    </div>
+
+                    <t t-call="rental_management.from_rental_report2_template"/>
+
                 </t>
             </t>
         </t>
     </template>
+
 </odoo>

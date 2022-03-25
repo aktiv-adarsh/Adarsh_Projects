@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5e3b8396-44bd-42e7-9037-50a327e96803" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rental_management/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental_management/models/ren_mang.py" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/models/ren_mang.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental_management/report/rental_paper_format.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/report/rental_paper_format.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental_management/report/rental_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/report/rental_report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental_management/report/rental_template.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/report/rental_template.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,15 +29,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/college/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/student_management/models" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/student_management/models" />
       <recent name="$PROJECT_DIR$/college/views" />
       <recent name="$PROJECT_DIR$/college/models" />
       <recent name="$PROJECT_DIR$/orm_methods/views" />
       <recent name="$PROJECT_DIR$/orm_methods/models" />
-      <recent name="$PROJECT_DIR$/college/wizards" />
     </key>
   </component>
   <component name="RunManager">

@@ -1,0 +1,110 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="student_form">
+            <field name="name">Student Management</field>
+            <field name="model">student.management</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group style="width:50%">
+                        <field name="sid"/>
+                        <field name="admission_year"/>
+                    </group>
+                    <notebook>
+                        <page string="Personal Details" name="spersonal_details">
+                            <group style="width:50%">
+                                <field name="sfirst_name" placeholder="Student First Name"/>
+                                <field name="smiddle_name" placeholder="Student Middle Name"/>
+                                <field name="slast_name" placeholder="Student Last Name"/>
+                            </group>
+                        </page>
+
+                        <page string="General Details" name="sgeneral_details">
+                            <group style="width:50%">
+                                <field name="student_address" placeholder="Student HomeTown Address"/>
+                                <field name="student_dob"/>
+                            </group>
+
+                            <group style="width:50%">
+                                <field name="student_age"/>
+                                <field name="mother_tung_lang"/>
+                            </group>
+                        </page>
+
+                        <page string="Contact Details" name="scontact_details">
+                            <group style="width:50%">
+                                <field name="student_contact_name"/>
+                                <field name="student_contact_no"/>
+                                <field name="student_email"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="student_kanban">
+            <field name="name">Student Management</field>
+            <field name="model">student.management</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="sid"/>
+                    <field name="admission_year"/>
+                    <field name="sfirst_name"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div>
+                                    <field name="sid"/>
+                                </div>
+                                <div>
+                                    <field name="admission_year"/>
+                                </div>
+                                <field name="sfirst_name"/>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="student_tree">
+            <field name="name">Student Management</field>
+            <field name="model">student.management</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sid"/>
+                    <field name="admission_year"/>
+                    <field name="sfirst_name"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="student_management_kanban_window">
+            <field name="name">Kanban window</field>
+            <field name="res_model">student.management</field>
+            <field name="view_mode">kanban,form</field>
+            <!--            <field name="view_id" ref="rental_management_tree"/>-->
+        </record>
+        <record model="ir.actions.act_window" id="student_management_tree_window">
+            <field name="name">List window</field>
+            <field name="res_model">student.management</field>
+            <field name="view_mode">tree,form</field>
+            <!--            <field name="view_id" ref="rental_management_tree"/>-->
+        </record>
+
+
+        <!-- Top menu item -->
+        <menuitem name="Student Management" id="student_management_menu_root"/>
+
+        <!-- menu categories -->
+
+        <menuitem name="Student Management" id="student_management_menu_1" parent="student_management_menu_root"/>
+
+        <menuitem name="kanban" id="student_management_submenu_2" parent="student_management_menu_1"
+                  action="student_management_kanban_window"/>
+        <menuitem name="Tree" id="student_management_submenu_3" parent="student_management_menu_1"
+                  action="student_management_tree_window"/>
+
+    </data>
+</odoo>
