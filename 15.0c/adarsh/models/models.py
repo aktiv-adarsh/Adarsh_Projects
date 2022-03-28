@@ -12,7 +12,7 @@ class adarsh(models.Model):
 
     name = fields.Char(string="Name", required=True)
     email = fields.Char()
-    contact_no = fields.Integer(size=20)
+    contact_no = fields.Integer(string="Contact no")    # size=20
     # responsible_ids = fields.Many2many('res.partner',string="M2M Responsible")  # string="Responsible", comodel_name='res.partener'
     address = fields.Char()
     today = fields.Selection(selection=[('draft', 'Draft'), ('to_approve', 'To approve'), ('posted', 'Posted'), ('cancel', 'Cancelled')], string='Select Options')

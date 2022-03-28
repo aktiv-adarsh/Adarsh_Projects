@@ -16,7 +16,7 @@ class Smart_View(models.Model):
 
     name = fields.Char(string="Name", tracking=True)
     email = fields.Char(string="Email", tracking=True)
-    contact_no = fields.Integer(string="Contact No", size=20, tracking=True)
+    contact_no = fields.Integer(string="Contact No", tracking=True)     # size=20,
     rating = fields.Selection([('a', '1'), ('b', '2'), ('c', '3'), ('d', '4'), ('e', '5'), ('f', '6')], tracking=True)
     count = fields.Integer(string="record count", compute="", tracking=True)
     # defaults=fields.Datetime(string="Date", default=datetime.now()) #date with time

@@ -22,6 +22,7 @@
                             <group style="width:50%">
                                 <field name="student_address" placeholder="Student HomeTown Address"/>
                                 <field name="student_dob"/>
+                                <field name="student_gender" widget="radio"/>
                             </group>
 
                             <group style="width:50%">
@@ -38,6 +39,11 @@
                             </group>
                         </page>
                     </notebook>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
                 </form>
             </field>
         </record>

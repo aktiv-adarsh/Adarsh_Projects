@@ -21,7 +21,7 @@
     'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale_management', 'mail','project'],
+    'depends': ['base', 'mail', 'project'],
 
     # always loaded
     'data': [
