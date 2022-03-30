@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "students_management",
+    'name': "advance_actions",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -21,15 +21,15 @@
     'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'contacts', 'sale', 'mail', 'project'],
+    'depends': ['base', 'sale'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'wizards/sale_ids_soperator.xml',
-        # 'wizards/wizard_2sale.xml',
-        'views/student_management.xml',
-        'views/contacts_soperator_script.xml',
-        'views/sale_soperator_script.xml',
-    ]
+        'data/ir_cron.xml',
+        'views/contact_actions.xml',
+    ],
 }
+
+
+

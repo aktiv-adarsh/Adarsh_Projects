@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e3b8396-44bd-42e7-9037-50a327e96803" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/student_management/wizards/sale_ids_soperator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/adarsh/models/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/smart_view/smartv.py" beforeDir="false" afterPath="$PROJECT_DIR$/adarsh/smart_view/smartv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/models/office2_student.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/models/office2_student.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/models/student_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/models/student_management.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/views/student_management.xml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/views/student_management.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/models/special_operator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/security/ir.model.access.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,15 +30,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/student_management/models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/advance_actions/data" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/student_management/models" />
-      <recent name="$PROJECT_DIR$/college/views" />
-      <recent name="$PROJECT_DIR$/college/models" />
-      <recent name="$PROJECT_DIR$/orm_methods/views" />
-      <recent name="$PROJECT_DIR$/orm_methods/models" />
+      <recent name="$PROJECT_DIR$/advance_actions/data" />
+      <recent name="$PROJECT_DIR$/advance_actions/views" />
+      <recent name="$PROJECT_DIR$/advance_actions/models" />
+      <recent name="$PROJECT_DIR$/student_management/wizards" />
+      <recent name="$PROJECT_DIR$/student_management/views" />
     </key>
   </component>
   <component name="RunManager">

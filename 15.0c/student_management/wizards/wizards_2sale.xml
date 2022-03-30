@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="save_wizards_2sale_order_line">
+            <field name="name">wizard sale</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="save_on_wizard"/>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="wizards_2sale_action_window">
+            <field name="name">List window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">form</field>
+        </record>
+
+    </data>
+</odoo>

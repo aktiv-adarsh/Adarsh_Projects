@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+<!--        Server action to update existing data on contacts-->
+        <record id="demo_server_action" model="ir.actions.server">
+            <field name="name">Demo Server Action</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="binding_model_id" ref="model_res_partner"/>
+            <field name="binding_view_types">tree,form</field>
+            <field name="state">code</field>
+            <field name="code">records.action_update()</field>
+        </record>
+
+        <!--Server action for creating new record in contacts-->
+        <record id="demo_server_action1" model="ir.actions.server">
+            <field name="name">Demo Server Action1</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="binding_model_id" ref="model_res_partner"/>
+            <field name="binding_view_types">tree,form</field>
+            <field name="state">code</field>
+            <field name="code">records.action_create_data()</field>
+        </record>
+
+<!--        To change state from Draft (Quotation) to Sent (Quotation sent)-->
+        <record id="demo_schedule_actions" model="ir.actions.server">
+            <field name="name">Demo Schedule Action</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_sale_order"/>
+            <field name="binding_model_id" ref="model_sale_order"/>
+            <field name="binding_view_types">tree,form</field>
+            <field name="state">code</field>
+            <field name="code">records.action_schedule_quotation()</field>
+        </record>
+
+    </data>
+</odoo>
