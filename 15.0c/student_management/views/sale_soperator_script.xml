@@ -1,7 +1,7 @@
 <odoo>
     <data>
-        <record id="special_operator_sale_script_form" model="ir.ui.view">
-            <field name="name">Sale Order</field>
+        <record id="special1_operator_sale_script_form" model="ir.ui.view">
+            <field name="name">Sale_Order</field>
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
@@ -10,7 +10,7 @@
                     <field name="sale_customer_rank"/>
                 </xpath>
 
-                <xpath expr="//button[@name='action_quotation_send']" position="after">
+                <xpath expr="//button[@name='action_confirm']" position="after">
                     <button name="%(student_management.wizard_pids_action)d" string="Select Products" type="action" class="btn-primary"/>
                 </xpath>
             </field>

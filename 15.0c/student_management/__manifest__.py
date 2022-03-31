@@ -26,10 +26,11 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'wizards/sale_ids_soperator.xml',
-        # 'wizards/wizard_2sale.xml',
+        'wizards/sale_2wizards_order.xml',
+        # 'wizards/wizards_2sale.xml',
         'views/student_management.xml',
         'views/contacts_soperator_script.xml',
         'views/sale_soperator_script.xml',
+        'data/tag_data_file.xml',
     ]
 }

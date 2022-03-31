@@ -1,25 +1,35 @@
-
 from odoo import models, fields, api
+
 
 class Wizard2Sale(models.Model):
 
     _inherit = "sale.order"
 
-    save_on_wizard = fields.Many2many('student.wizard')
+    save_on_wizard = fields.Many2many('product.product')
 
-    def default_get(self):
-        # get_env = self.env['product.product']
-        res = super(Wizard2Sale, self).default_get(fields)
-        print(".......................", res)
-        print("---------------Default get------------")
-        # rec = self.env['product.product'].browse(self.env.context.get('active_id'))
-        for rec in self:
-            rec.update({
-                'order_line': [0, 0, (rec, 'product_id.id')]
-            })
-            print("--------------------", rec)
-        return res
 
+
+
+
+
+
+
+
+    # def default_get(self):
+    #     # get_env = self.env['product.product']
+    #     res = super(Wizard2Sale, self).default_get()
+    #     print(".......................", res)
+    #     print("---------------Default get------------")
+    #     # rec = self.env['product.product'].browse(self.env.context.get('active_id'))
+    #     # for rec in self:
+    #     #     rec.write({
+    #     #         'order_line': [0, 0, (rec, 'product_id.id')]
+    #     #     })
+    #     #     print("--------------------", rec)
+    #     sale_dict = {
+    #         # 'partner_id': 11,
+    #         'order_line': [(0, 0, 'sale_2product')]}
+    #     return sale_dict
 
     """The default_get() will return the customize give data"""
     #
