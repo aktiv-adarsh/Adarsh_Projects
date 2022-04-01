@@ -3,15 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="5e3b8396-44bd-42e7-9037-50a327e96803" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/models/contacts_soperator_script.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/models/contacts_soperator_script.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/models/sale_soperator_script.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/models/sale_soperator_script.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/views/sale_soperator_script.xml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/views/sale_soperator_script.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/wizards/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/wizards/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/wizards/sale_ids_soperator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/wizards/sale_ids_soperator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/wizards/wizard_2sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/wizards/wizards_2sale.xml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/wizards/wizards_2sale.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/data/tag_data_file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/models/contacts_soperator_script.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/models/office2_student.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/models/sale_soperator_script.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/security/ir.model.access.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/views/contacts_soperator_script.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/views/sale_soperator_script.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/wizards/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/wizards/sale_2wizards_order.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/wizards/sale_2wizards_order.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/wizards/wizards_2sale.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/wizards/wizards_2sale.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

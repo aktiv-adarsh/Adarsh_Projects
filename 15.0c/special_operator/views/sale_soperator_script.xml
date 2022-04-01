@@ -5,13 +5,14 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <!-- dummy, will be modified by groups -->
+
                 <xpath expr="//field[@name='partner_id']" position="after">
                     <field name="sale_customer_rank"/>
                 </xpath>
 
+                <!--Action perform on wizard-->
                 <xpath expr="//button[@name='action_confirm']" position="after">
-                    <button name="%(student_management.wizard_pids_action)d" string="Select Products" type="action" class="btn-primary"/>
+                    <button name="%(special_operator.wizard_pids_action)d" string="Select Products" type="action" class="btn-primary"/>
                 </xpath>
             </field>
         </record>

@@ -2,9 +2,8 @@
     <data>
         <record id="special_operator_sale_script_wizard" model="ir.ui.view">
             <field name="name">Wizards Sale</field>
-            <field name="model">student.wizard</field>
+            <field name="model">special.operator</field>
             <field name="arch" type="xml">
-
                 <form>
                     <field name="sale_2product"/>
 
@@ -18,7 +17,7 @@
 
         <record id="wizard_pids_action" model="ir.actions.act_window">
             <field name="name">Wizard</field>
-            <field name="res_model">student.wizard</field>
+            <field name="res_model">special.operator</field>
             <field name="view_mode">form</field>
             <field name="target">new</field>
         </record>

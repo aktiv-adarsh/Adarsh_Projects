@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "students_management",
+    'name': "special_operator",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -21,11 +21,14 @@
     'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'contacts', 'sale', 'mail', 'project'],
+    'depends': ['base', 'contacts', 'sale'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/student_management.xml',
+        'wizards/sale_2wizards_order.xml',
+        'views/contacts_soperator_script.xml',
+        'views/sale_soperator_script.xml',
+        'data/tag_data_file.xml',
     ]
 }
