@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="controller_file_data" name="Contacts Records">
+            <t t-call="website.layout">
+                <p>Hello Odoo</p>
+            </t>
+        </template>
+    </data>
+</odoo>
