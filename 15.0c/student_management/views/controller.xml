@@ -2,7 +2,51 @@
     <data>
         <template id="controller_file_data" name="Contacts Records">
             <t t-call="website.layout">
-                <p>Hello Odoo</p>
+                <div class="oe_structure">
+                    <div class="container">
+                        <!--                        <p>Before Page</p>-->
+                        <!--                        <div class="page">-->
+                        <!--                            <p>In Page</p>-->
+                        <center>
+                            <h3>Contacts Details</h3>
+                        </center>
+                        <br></br>
+
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Customer Name</th>
+                                    <th>Customer Contact</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Link</th>
+                                </tr>
+                            </thead>
+                            <body>
+                                <t t-foreach="contact" t-as="rec">
+                                    <tr>
+                                        <td>
+                                            <a t-attf-href="/contact_controller/{{ slug(rec)}}">
+                                                <span t-field="rec.name"/>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <span t-field="rec.type"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="rec.phone"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="rec.email"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </body>
+                        </table>
+                        <!--                        </div>-->
+                    </div>
+                </div>
+
             </t>
         </template>
     </data>

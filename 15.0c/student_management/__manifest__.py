@@ -28,5 +28,6 @@
         'security/ir.model.access.csv',
         'views/student_management.xml',
         'views/controller.xml',
+        'views/controller_2link.xml',
     ]
 }

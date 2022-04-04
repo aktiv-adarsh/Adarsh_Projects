@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+        <template id="controller_file_data_link" name="Contacts Records Link">
+            <t t-call="website.layout">
+                <div class="oe_structure">
+                <div class="container">
+                    <center>
+                        <h3>Contacts Details</h3>
+                    </center>
+                    <br></br>
+
+                    <table class="table table-sm">
+                        <body>
+                            <tr>
+                                <td>
+                                    <span t-field="link_record.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span t-field="link_record.type"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span t-field="link_record.phone"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span t-field="link_record.email"/>
+                                </td>
+                            </tr>
+                        </body>
+                    </table>
+                </div>
+                </div>
+
+            </t>
+        </template>
+    </data>
+</odoo>
