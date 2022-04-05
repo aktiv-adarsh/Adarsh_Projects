@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="exam_calc_customer_age_from">
+        <field name="name">Calc Age</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <!--This two fileds are displayed after Text-Id (vat) field-->
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="customer_dob"/>
+                <field name="customer_age"/>
+            </xpath>
+
+        </field>
+
+    </record>
+</odoo>

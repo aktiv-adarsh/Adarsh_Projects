@@ -4,6 +4,7 @@
             <t t-call="website.layout">
                 <div class="oe_structure">
                 <div class="container">
+
                     <center>
                         <h3>Contacts Details</h3>
                     </center>
