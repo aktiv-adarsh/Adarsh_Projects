@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5e3b8396-44bd-42e7-9037-50a327e96803" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/views/controller.xml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/views/controller.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/views/controller_2link.xml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/views/controller_2link.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/models/config_install.py" beforeDir="false" afterPath="$PROJECT_DIR$/exam/models/config_install.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/wizards/wizard_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/exam/wizards/wizard_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/wizards/wizard_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/exam/wizards/wizard_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -7,8 +7,12 @@
             <field name="arch" type="xml">
                 <form>
                     <field name="m2o_product_id"/>
+                    <group style="width:50%">
+                        <field name="product_qnty"/>
+                        <field name="product_price"/>
+                    </group>
                     <footer>
-                        <button name="Wizard1" class="btn-primary" type="object" string="SO create"/>
+                        <button name="so_button_action" class="btn-primary" type="object" string="SO create"/>
                         <button name="cancel" class="btn-primary" type="object" string="cancel" special="cancel"/>
                     </footer>
                 </form>
