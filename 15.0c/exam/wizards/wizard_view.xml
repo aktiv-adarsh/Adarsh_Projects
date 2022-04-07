@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <form>
                     <field name="m2o_product_id"/>
-                    <group style="width:50%">
+                    <group>
                         <field name="product_qnty"/>
                         <field name="product_price"/>
                     </group>
@@ -42,6 +42,7 @@
         <record id="exam_res_partner_action" model="ir.actions.server">
             <field name="name">SO Creation</field>
             <field name="model_id" ref="base.model_res_partner"/>
+<!--            <field name="context">{'order_line_id': env.context.get('order_line_id')}</field>-->
             <field name="binding_model_id" ref="model_res_partner"/>
             <field name="state">code</field>
             <field name="code">
@@ -50,6 +51,7 @@
                 "type":"ir.actions.act_window",
                 "view_mode":"form",
                 "res_model":"exam.wizard",
+                "context":{'context_records':records.ids},
                 "target":"new"
                 }
             </field>
