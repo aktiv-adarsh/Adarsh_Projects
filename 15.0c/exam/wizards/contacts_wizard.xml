@@ -6,11 +6,13 @@
             <field name="model">exam.wizard</field>
             <field name="arch" type="xml">
                 <form>
-                    <field name="m2o_product_id"/>
-                    <group>
-                        <field name="product_qnty"/>
-                        <field name="product_price"/>
-                    </group>
+                    <field name="o2m_product_id">
+                        <tree editable="bottom">
+                            <field name="m2o_product_id1"/>
+                            <field name="product_qnty"/>
+                            <field name="product_price"/>
+                        </tree>
+                    </field>
                     <footer>
                         <button name="so_button_action" class="btn-primary" type="object" string="SO create"/>
                         <button name="cancel" class="btn-primary" type="object" string="cancel" special="cancel"/>
@@ -42,7 +44,7 @@
         <record id="exam_res_partner_action" model="ir.actions.server">
             <field name="name">SO Creation</field>
             <field name="model_id" ref="base.model_res_partner"/>
-<!--            <field name="context">{'order_line_id': env.context.get('order_line_id')}</field>-->
+            <!--            <field name="context">{'order_line_id': env.context.get('order_line_id')}</field>-->
             <field name="binding_model_id" ref="model_res_partner"/>
             <field name="state">code</field>
             <field name="code">

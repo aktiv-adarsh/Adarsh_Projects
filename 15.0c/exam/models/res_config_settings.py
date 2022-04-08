@@ -9,6 +9,8 @@ class ConfigInstall(models.TransientModel):
     _inherit = 'res.config.settings'
 
     # today_date = fields.Date.today()
+    # Exam = fields.Binary(string="Image")
+
     today_date = date.today()
     module_hr = fields.Boolean(string="Employees")
     print("\n------------Month-[", today_date.month, "]---------\n")

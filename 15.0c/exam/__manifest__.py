@@ -26,8 +26,8 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/config_install.xml',
+        'views/res_config_settings.xml',
         'views/calc_customer_age.xml',
-        'wizards/wizard_view.xml',
+        'wizards/contacts_wizard.xml',
     ]
 }
