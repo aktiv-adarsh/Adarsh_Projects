@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="hr_employee_report_menu_form">
+            <field name="name">hr_employee</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="name"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+<!--        <record model="ir.actions.act_window" id="hr_time_sheet_action_window">-->
+<!--            <field name="name">List window</field>-->
+<!--            <field name="res_model">hr.employee</field>-->
+<!--            <field name="view_mode">tree,form</field>-->
+<!--            <field name="view_id" ref="hr_employee_report_menu_form"/>-->
+<!--        </record>-->
+
+        <menuitem name="Employee Timesheet Report" id="hr_time_sheet_report" parent="hr.hr_menu_hr_reports"
+                  action="hr_excel_report.hr_wizards_action_window"/>
+    </data>
+</odoo>

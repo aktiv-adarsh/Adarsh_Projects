@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="hr_wizards_excel_report_form">
+            <field name="name">excel_wizards</field>
+            <field name="model">excel.wizards</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="hr_excel_report_ids"/>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+
+                        <footer>
+                            <button name="print_excel_data" string="Print" type="object" class="btn-primary"/>
+                            <button name="cancel" class="btn-primary" type="object" string="cancel" special="cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="hr_wizards_action_window">
+            <field name="name">Excel Report</field>
+            <field name="res_model">excel.wizards</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hr_wizards_excel_report_form"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>
