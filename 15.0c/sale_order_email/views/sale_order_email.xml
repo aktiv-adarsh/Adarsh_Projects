@@ -1,0 +1,73 @@
+<odoo>
+    <data>
+        <record id="sale_order_email" model="mail.template">
+            <field name="name">Sale Order Email</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <!--  <field name="email_from">{{ (object.user_id.email_formatted)}}</field>
+                <field name="email_to">{{ object.partner_id.email}}</field>  -->
+            <field name="email_from">adarsh.d@icreativetechnolabs.com</field>
+            <field name="email_to">adarsh.d@icreativetechnolabs.com</field>
+            <field name="subject">Order Confirmation</field>
+            <field name="body_html" type="html">
+
+                <div style="margin: 10px;">
+
+                    <p style="margin: 5px; font-size: 13px;">
+                        Dear,
+                        <t t-if="object.partner_id.name">
+                            <t t-esc="object.partner_id.name"/>
+                        </t>
+                        <br/>
+                        <br/>
+                        Your Order is Confirm as per bellow details..
+                        <br/>
+                        <br/>
+                        Order table
+                        <table class="table table-sm o_main_table">
+                            <tr>
+                                <!--  field details  -->
+                                <th name="th_product" class="text-left">Product</th>
+                                <th name="th_description" class="text-left">Description</th>
+                                <th name="th_unit" class="text-left">Unit</th>
+                                <th name="th_price" class="text-left">Price</th>
+                            </tr>
+                            <t t-foreach="object.order_line" t-as="order_id">
+                                <tr>
+                                    <td>
+                                        <span t-field="order_id.product_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="order_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="order_id.product_uom_qty"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="order_id.price_subtotal"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </table>
+                        <br/>
+                        <br/>
+                        Total(Before Tax):
+                        <span t-field="object.amount_untaxed"/>
+                        <br/>
+                        Tax:
+                        <span t-field="object.amount_tax"/>
+                        <br/>
+                        Total Amount to pay:
+                        <span t-field="object.amount_total"/>
+                        <br/>
+                        <br/>
+                        <p style="margin: 5px; font-size: 13px; text-align: left;">Thank you for the purchase.</p>
+                    </p>
+                </div>
+
+            </field>
+            <!--  <field name="report_template" ref="base.action_confirm"/>  -->
+            <field name="report_name">order_confirm</field>
+
+        </record>
+    </data>
+</odoo>

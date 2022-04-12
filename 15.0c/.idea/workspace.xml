@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5e3b8396-44bd-42e7-9037-50a327e96803" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam2.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Task(pdf_report).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_orm_methods_task.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/advance_actions/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/advance_actions/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/advance_actions/views/contact_actions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/advance_actions/views/contact_actions.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hr_excel_report/models/hr_menu_wizard.py" beforeDir="false" afterPath="$PROJECT_DIR$/hr_excel_report/models/hr_menu_wizard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hr_excel_report/wizards/wizards_hr_excel_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/hr_excel_report/wizards/wizards_hr_excel_report.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +80,11 @@
           <url>file://$PROJECT_DIR$/main.py</url>
           <line>8</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hr_excel_report/wizards/wizards_hr_excel_report.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

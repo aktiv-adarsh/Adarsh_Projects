@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "advance_actions",
+    'name': "sale_order_email",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -21,13 +21,13 @@
     'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale', 'mail'],
+    'depends': ['base', 'sale'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'data/ir_cron.xml',
-        'views/contact_actions.xml',
+        'views/sale_order_button.xml',
+        'views/sale_order_email.xml',
     ],
 }
 
