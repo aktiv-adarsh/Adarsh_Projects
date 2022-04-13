@@ -8,7 +8,6 @@ class CustomerData(models.Model):
 
     customer_reference = fields.Char(string="Customer Reference")
 
-
     """name_get() will display multiple given fields records on other field"""
     def name_get(self):
         res = []

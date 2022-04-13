@@ -20,25 +20,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <!--
         <xpath expr="//field[@name='website']" position="before">
                         <field name="Customer_dob"/>
