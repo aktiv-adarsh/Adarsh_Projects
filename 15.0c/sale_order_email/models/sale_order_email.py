@@ -6,7 +6,8 @@ from odoo import models, fields, api, _
 class SaleOrderEmail(models.Model):
     _inherit = 'sale.order'
 
-    # @api.onchange('state')
+    """Send E-mail to the current customer when it has confirm state"""
+    # @api.depends('state')
     def sale_email_send_action(self):
         if self.state == 'sale':
             print("\n------ Func In----------")

@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="5e3b8396-44bd-42e7-9037-50a327e96803" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/models/customer_name_get.py" beforeDir="false" afterPath="$PROJECT_DIR$/orm_methods/models/customer_name_get.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/views/customer_name_get.xml" beforeDir="false" afterPath="$PROJECT_DIR$/orm_methods/views/customer_name_get.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pioneer_subscription/models/account_move_line_add_field.py" beforeDir="false" afterPath="$PROJECT_DIR$/pioneer_subscription/models/account_move_line_add_field.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sale_order_email/models/sale_order_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/sale_order_email/models/sale_order_email.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/models/student_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/models/student_management.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/views/student_management.xml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/views/student_management.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

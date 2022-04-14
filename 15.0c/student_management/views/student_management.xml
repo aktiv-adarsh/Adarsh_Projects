@@ -8,42 +8,46 @@
                     <group style="width:50%">
                         <field name="sid"/>
                         <field name="admission_year"/>
+                        <field name="student_std"/>
+                        <field name="student_fee"/>
                     </group>
-                    <notebook>
-                        <page string="Personal Details" name="spersonal_details">
-                            <group style="width:50%">
-                                <field name="sfirst_name" placeholder="Student First Name"/>
-                                <field name="smiddle_name" placeholder="Student Middle Name"/>
-                                <field name="slast_name" placeholder="Student Last Name"/>
-                            </group>
-                        </page>
+                    <sheet>
+                        <notebook>
+                            <page string="Personal Details" name="spersonal_details">
+                                <group style="width:50%">
+                                    <field name="sfirst_name" placeholder="Student First Name"/>
+                                    <field name="smiddle_name" placeholder="Student Middle Name"/>
+                                    <field name="slast_name" placeholder="Student Last Name"/>
+                                </group>
+                            </page>
 
-                        <page string="General Details" name="sgeneral_details">
-                            <group style="width:50%">
-                                <field name="student_address" placeholder="Student HomeTown Address"/>
-                                <field name="student_dob"/>
-                                <field name="student_gender" widget="radio"/>
-                            </group>
+                            <page string="General Details" name="sgeneral_details">
+                                <group style="width:50%">
+                                    <field name="student_address" placeholder="Student HomeTown Address"/>
+                                    <field name="student_dob"/>
+                                    <field name="student_gender" widget="radio"/>
+                                </group>
 
-                            <group style="width:50%">
-                                <field name="student_age"/>
-                                <field name="mother_tung_lang"/>
-                            </group>
-                        </page>
+                                <group style="width:50%">
+                                    <field name="student_age"/>
+                                    <field name="mother_tung_lang"/>
+                                </group>
+                            </page>
 
-                        <page string="Contact Details" name="scontact_details">
-                            <group style="width:50%">
-                                <field name="student_contact_name"/>
-                                <field name="student_contact_no"/>
-                                <field name="student_email"/>
-                            </group>
-                        </page>
-                    </notebook>
-                    <div class="oe_chatter">
-                        <field name="message_follower_ids"/>
-                        <field name="activity_ids"/>
-                        <field name="message_ids"/>
-                    </div>
+                            <page string="Contact Details" name="scontact_details">
+                                <group style="width:50%">
+                                    <field name="student_contact_name"/>
+                                    <field name="student_contact_no"/>
+                                    <field name="student_email"/>
+                                </group>
+                            </page>
+                        </notebook>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids"/>
+                            <field name="activity_ids"/>
+                            <field name="message_ids"/>
+                        </div>
+                    </sheet>
                 </form>
             </field>
         </record>

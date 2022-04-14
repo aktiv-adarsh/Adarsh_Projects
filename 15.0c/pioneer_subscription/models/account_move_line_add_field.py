@@ -14,7 +14,8 @@ class PioneerAccountMove(models.Model):
 
     @api.onchange('vendor_price')
     def calc_planned_gp(self):
-        self.planned_gp = ((self.price_unit - self.vendor_price) / self.price_unit) * 100
+        if self.vendor_price and self.price_unit:
+            self.planned_gp = ((self.price_unit - self.vendor_price) / self.price_unit) * 100
 
     def _concat_address_label(self):
         for rec in self:
