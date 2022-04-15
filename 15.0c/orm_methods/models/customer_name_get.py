@@ -8,7 +8,7 @@ class CustomerData(models.Model):
 
     customer_reference = fields.Char(string="Customer Reference")
 
-    """name_get() will display multiple given fields records on other field"""
+    """name_get() will display multiple given fields records on one field"""
     def name_get(self):
         res = []
         if self._context.get('cus_country'):

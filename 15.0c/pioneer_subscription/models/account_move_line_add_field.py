@@ -6,7 +6,8 @@ from odoo import models, fields, api
 class PioneerAccountMove(models.Model):
     _inherit = 'account.move.line'
 
-    delivery_address_id = fields.Many2one('res.partner', string="Delivery Address", domain=[('type', '=', 'delivery')])
+    delivery_address_id = fields.Many2one('res.partner', string="Delivery Address",
+                                          domain=[('parent_id', '=', 'vendor_id'), ('type', '=', 'delivery')])
     vendor_id = fields.Many2one('res.partner', string="vendor", domain=[('supplier_rank', '>', 0)])
     vendor_price = fields.Float(string="vendor Price")
     planned_gp = fields.Float(string="Planned GP%")
@@ -29,4 +30,27 @@ class PioneerServerActions(models.Model):
     _inherit = 'account.move'
 
     def action_update(self):
-        print("\n ----------- \n")
+        print("\n -----In Func------ \n")
+        res = []
+        for rec in self.invoice_line_ids:
+            print("\n\n\n",rec,"\n\n\n")
+            # if rec not in res:
+            #     res.append(rec)
+            #     self.create({'move_type': 'in_invoice', 'partner_id': self.vendor_id,
+            #                                        'invoice_line_ids': (
+            #                                            {
+            #                                                'product_id': self.product_id,
+            #                                                'name': self.product_id.name,
+            #                                                'quantity': 1.00,
+            #                                                'price_unit': self.vendor_price})
+            #                  })
+        # env_rec = self.env('account.move').create({'move_type': 'out_invoice', 'partner_id': self.vendor_id,
+        #                                            'invoice_line_ids': (
+        #                                                {
+        #                                                    'product_id': self.product_id,
+        #                                                    'name': self.product_id.name,
+        #                                                    'quantity': 1.00,
+        #                                                    'price_unit': self.vendor_price})
+        #                                            })
+        # print("\n\n --------- ", env_rec, "---------")
+        # return res
