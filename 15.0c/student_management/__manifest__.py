@@ -27,6 +27,10 @@
     'data': [
         'security/ir.model.access.csv',
         'views/student_management.xml',
+        'views/student_fees.xml',
+        'report/student_paper_format.xml',
+        'report/student_template.xml',
+        'report/student_report.xml',
         # 'views/controller.xml',
         # 'views/controller_2link.xml',
     ]

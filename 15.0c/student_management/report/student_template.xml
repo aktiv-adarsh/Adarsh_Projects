@@ -1,0 +1,71 @@
+<odoo>
+    <template id="from_student_report2_template">
+        <div class="page">
+
+            <center>
+                <h3>Student Report</h3>
+            </center>
+            <br></br>
+
+            <table class="table table-sm">
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Admission Year</th>
+                    <th>Fees</th>
+                    <th>Paid Fees</th>
+                    <th>Pending Fees</th>
+                    <th>Address</th>
+                    <th>Date Of Birth</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Mother Tung Language</th>
+                    <th>Contact Person</th>
+                    <th>Contact Number</th>
+                    <th>E-mail</th>
+                </tr>
+                <tr>
+                    <td> <span t-field="rec.sid"/> </td>
+                    <td> <span t-field="rec.sfirst_name"/> </td>
+                    <td> <span t-field="rec.admission_year"/> </td>
+                    <td> <span t-field="rec.student_fee"/> </td>
+                    <td> <span t-field="rec.student_paid_fees"/> </td>
+                    <td> <span t-field="rec.student_pending_fees"/> </td>
+                    <td> <span t-field="rec.student_address"/> </td>
+                    <td> <span t-field="rec.student_dob"/> </td>
+                    <td> <span t-field="rec.student_age"/> </td>
+                    <td> <span t-field="rec.mother_tung_lang"/> </td>
+                    <td> <span t-field="rec.student_contact_name"/> </td>
+                    <td> <span t-field="rec.student_contact_no"/> </td>
+                    <td> <span t-field="rec.student_email"/> </td>
+                </tr>
+            </table>
+        </div>
+    </template>
+
+
+    <template id="student_report2_template">
+        <t t-foreach="docs" t-as="rec">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+
+                    <t t-call="student_management.from_student_report2_template"/>
+
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="employee_report2_template">
+        <t t-foreach="docs" t-as="rec">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+
+                    <t t-call="student_management.from_student_report2_template"/>
+
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

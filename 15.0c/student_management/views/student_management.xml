@@ -5,11 +5,20 @@
             <field name="model">student.management</field>
             <field name="arch" type="xml">
                 <form>
+                    <!--                    <group>-->
+                    <!--                        <field name="student_image" invisible="1"/>-->
+                    <!--                    </group>-->
                     <group style="width:50%">
                         <field name="sid"/>
                         <field name="admission_year"/>
-                        <field name="student_std"/>
+                        <field name="student_class" placeholder="Student class from 1 to 10 "/>
                         <field name="student_fee"/>
+                    </group>
+                    <group style="width:50%">
+                        <field name="student_medium"/>
+                        <field name="student_division"/>
+                        <field name="student_paid_fees"/>
+                        <field name="student_pending_fees"/>
                     </group>
                     <sheet>
                         <notebook>
@@ -42,12 +51,12 @@
                                 </group>
                             </page>
                         </notebook>
-                        <div class="oe_chatter">
-                            <field name="message_follower_ids"/>
-                            <field name="activity_ids"/>
-                            <field name="message_ids"/>
-                        </div>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
                 </form>
             </field>
         </record>
@@ -57,6 +66,9 @@
             <field name="model">student.management</field>
             <field name="arch" type="xml">
                 <kanban>
+<!--                    <img t-att-src="kanban_image('res.partner', 'avatar_128', record.partner_id.raw_value)"-->
+<!--                         t-att-title="record.partner_id.value" t-att-alt="record.partner_id.value"-->
+<!--                         class="oe_kanban_avatar o_image_24_cover"/>-->
                     <field name="sid"/>
                     <field name="admission_year"/>
                     <field name="sfirst_name"/>
@@ -87,6 +99,33 @@
                     <field name="sfirst_name"/>
 
                 </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="student_management_search">
+            <field name="name">search_student_management</field>
+            <field name="model">student.management</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="sid"/>
+                    <separator/>
+                    <filter name="student_class" string="Class"/>
+                    <filter name="student_medium" string="Medium"/>
+                    <filter name="student_division" string="Division"/>
+                    <filter name="student_gender" string="Gender"/>
+                    <filter name="mother_tung_lang" string="Mother tung lang"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Class " name="student_class" context="{'group_by':'student_class'}"/>
+                        <filter string="Medium" name="student_medium" context="{'group_by':'student_medium'}"/>
+                        <filter string="Division" name="student_division"
+                                context="{'group_by':'student_division'}"/>
+                        <filter string="Gender" name="student_gender" context="{'group_by':'student_gender'}"/>
+                        <filter string="Mother tung lang" name="mother_tung_lang"
+                                context="{'group_by':'mother_tung_lang'}"/>
+
+                    </group>
+                </search>
             </field>
         </record>
 

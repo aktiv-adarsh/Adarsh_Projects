@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="student_fees_form">
+            <field name="name">Student Fees</field>
+            <field name="model">student.fees</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group style="width:50%">
+                        <field name="fees_sid"/>
+                        <field name="fees_student_name"/>
+                        <field name="fees_student_class"/>
+                        <field name="fees_student_medium"/>
+                        <field name="fees_student_dob"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="student_list_form">
+            <field name="name">Student Fees</field>
+            <field name="model">student.fees</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="fees_sid"/>
+                    <field name="fees_student_name"/>
+                    <field name="fees_student_class"/>
+                    <field name="fees_student_medium"/>
+                    <field name="fees_student_dob"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="student_fees_form_window">
+            <field name="name">Form window</field>
+            <field name="res_model">student.fees</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="student_fees_form"/>
+        </record>
+        <record model="ir.actions.act_window" id="student_fees_tree_window">
+            <field name="name">List window</field>
+            <field name="res_model">student.fees</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="student_list_form"/>
+        </record>
+
+
+        <menuitem name="Student Fees" id="student_fees_menu_1"
+                  parent="student_management.student_management_menu_root"/>
+
+        <menuitem name="Form" id="student_fees_submenu_2" parent="student_fees_menu_1"
+                  action="student_fees_form_window"/>
+        <menuitem name="Tree" id="student_fees_submenu_3" parent="student_fees_menu_1"
+                  action="student_fees_tree_window"/>
+
+    </data>
+</odoo>

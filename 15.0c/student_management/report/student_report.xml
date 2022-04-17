@@ -1,0 +1,35 @@
+<odoo>
+    <record id="student_management_print_report" model="ir.actions.report">
+        <field name="name">Student Report</field>
+        <field name="model">student.management</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">student_management.student_report2_template</field>
+        <field name="report_file">student_management.student_report2_template</field>
+        <field name="binding_model_id" ref="model_student_management"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="call_student_paper_format"/>
+
+    </record>
+
+    <record id="student_fees_print_report" model="ir.actions.report">
+        <field name="name">Student Fees</field>
+        <field name="model">student.fees</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">student_management.student_report2_template</field>
+        <field name="report_file">student_management.student_report2_template</field>
+        <field name="binding_model_id" ref="model_student_fees"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="call_student_paper_format"/>
+    </record>
+
+<!--    <record id="hr_employee_excel_print_report" model="ir.actions.report">-->
+<!--        <field name="name">Employees Report</field>-->
+<!--        <field name="model">hr.wizard</field>-->
+<!--        <field name="report_type">qweb-pdf</field>-->
+<!--        <field name="report_name">hr_wizard.employee_report2_template</field>-->
+<!--        <field name="report_file">hr_wizard.employee_report2_template</field>-->
+<!--&lt;!&ndash;        <field name="binding_model_id" ref="model_hr_wizard"/>&ndash;&gt;-->
+<!--        <field name="binding_type">report</field>-->
+<!--    </record>-->
+
+</odoo>
