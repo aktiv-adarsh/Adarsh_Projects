@@ -5,58 +5,64 @@
             <field name="model">student.management</field>
             <field name="arch" type="xml">
                 <form>
-                    <!--                    <group>-->
-                    <!--                        <field name="student_image" invisible="1"/>-->
-                    <!--                    </group>-->
-                    <group style="width:50%">
-                        <field name="sid"/>
-                        <field name="admission_year"/>
-                        <field name="student_class" placeholder="Student class from 1 to 10 "/>
-                        <field name="student_fee"/>
-                    </group>
-                    <group style="width:50%">
-                        <field name="student_medium"/>
-                        <field name="student_division"/>
-                        <field name="student_paid_fees"/>
-                        <field name="student_pending_fees"/>
-                    </group>
                     <sheet>
+                        <!--                    <group>-->
+                        <!--                        <field name="student_image" invisible="1"/>-->
+                        <!--                    </group>-->
+                        <group style="width:50%">
+                            <field name="sid"/>
+                            <field name="admission_year"/>
+                            <field name="student_class" placeholder="Student class from 1 to 10 "/>
+                            <field name="student_fee"/>
+                        </group>
+                        <group style="width:50%">
+                            <field name="student_medium"/>
+                            <field name="student_division"/>
+                            <field name="student_paid_fees"/>
+                            <field name="student_pending_fees"/>
+                        </group>
                         <notebook>
                             <page string="Personal Details" name="spersonal_details">
-                                <group style="width:50%">
-                                    <field name="sfirst_name" placeholder="Student First Name"/>
-                                    <field name="smiddle_name" placeholder="Student Middle Name"/>
-                                    <field name="slast_name" placeholder="Student Last Name"/>
+                                <group>
+                                    <group style="width:50%">
+                                        <field name="sfirst_name" placeholder="Student First Name"/>
+                                        <field name="smiddle_name" placeholder="Student Middle Name"/>
+                                        <field name="slast_name" placeholder="Student Last Name"/>
+                                    </group>
                                 </group>
                             </page>
 
                             <page string="General Details" name="sgeneral_details">
-                                <group style="width:50%">
-                                    <field name="student_address" placeholder="Student HomeTown Address"/>
-                                    <field name="student_dob"/>
-                                    <field name="student_gender" widget="radio"/>
-                                </group>
+                                <group>
+                                    <group style="width:50%">
+                                        <field name="student_address" placeholder="Student HomeTown Address"/>
+                                        <field name="student_dob"/>
+                                        <field name="student_gender" widget="radio"/>
+                                    </group>
 
-                                <group style="width:50%">
-                                    <field name="student_age"/>
-                                    <field name="mother_tung_lang"/>
+                                    <group style="width:50%">
+                                        <field name="student_age"/>
+                                        <field name="mother_tung_lang"/>
+                                    </group>
                                 </group>
                             </page>
 
                             <page string="Contact Details" name="scontact_details">
-                                <group style="width:50%">
-                                    <field name="student_contact_name"/>
-                                    <field name="student_contact_no"/>
-                                    <field name="student_email"/>
+                                <group>
+                                    <group style="width:50%">
+                                        <field name="student_contact_name"/>
+                                        <field name="student_contact_no"/>
+                                        <field name="student_email"/>
+                                    </group>
                                 </group>
                             </page>
                         </notebook>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids"/>
+                            <field name="activity_ids"/>
+                            <field name="message_ids"/>
+                        </div>
                     </sheet>
-                    <div class="oe_chatter">
-                        <field name="message_follower_ids"/>
-                        <field name="activity_ids"/>
-                        <field name="message_ids"/>
-                    </div>
                 </form>
             </field>
         </record>
@@ -66,9 +72,9 @@
             <field name="model">student.management</field>
             <field name="arch" type="xml">
                 <kanban>
-<!--                    <img t-att-src="kanban_image('res.partner', 'avatar_128', record.partner_id.raw_value)"-->
-<!--                         t-att-title="record.partner_id.value" t-att-alt="record.partner_id.value"-->
-<!--                         class="oe_kanban_avatar o_image_24_cover"/>-->
+                    <!--                    <img t-att-src="kanban_image('res.partner', 'avatar_128', record.partner_id.raw_value)"-->
+                    <!--                         t-att-title="record.partner_id.value" t-att-alt="record.partner_id.value"-->
+                    <!--                         class="oe_kanban_avatar o_image_24_cover"/>-->
                     <field name="sid"/>
                     <field name="admission_year"/>
                     <field name="sfirst_name"/>

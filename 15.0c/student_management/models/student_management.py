@@ -1,8 +1,6 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
-
-
-# from datetime import date
+from datetime import date, datetime
 
 class StudentManagement(models.Model):
     _name = 'student.management'
@@ -10,7 +8,7 @@ class StudentManagement(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     # count = 1
-    sid = fields.Integer(string="Student ID", tracking=True, required=True)#, compute="_student_id_generate")
+    sid = fields.Integer(string="Student ID", tracking=True)#, compute="_student_id_generate")
     admission_year = fields.Date(string="Admission Year", tracking=True)
 
     student_class = fields.Integer(string="Student Class", tracking=True)
@@ -61,6 +59,17 @@ class StudentManagement(models.Model):
     def student_class_check(self):
         if int(self.student_class) > 13:
             raise UserError("Please enter class between 1 to 12")
+    #
+    # @api.model_create_multi
+    # # @api.model
+    # def create(self, vals):
+    #     super(StudentManagement, self).create(vals)
+    #     count = 1
+    #     self.sid = "{0:0^5}".format("2022" + str(count))
+    #     # "{0:0^5}".format("2022" + str(count))
+    #     # print("{0:0^2}".format("", 2022))
+    #     # print("{0:*^20} was founded in {1:<15}!".format("GeeksforGeeks", 2009))
+    #     count += 1
 
     # def _student_id_generate(self):
     #     student_id = "2022"
@@ -78,4 +87,5 @@ class StudentManagement(models.Model):
             today_date1 = fields.Date.today()
             self.student_age = (today_date1 - self.student_dob).days / 365
         else:
+            print("\n\n\n ------Student DOB Else------\n\n\n\n")
             self.student_age = 0

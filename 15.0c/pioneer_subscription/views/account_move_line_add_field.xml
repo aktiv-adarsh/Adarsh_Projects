@@ -25,6 +25,20 @@
         </field>
     </record>
 
+    <record id="account_move_line_hide_fields" model="ir.ui.view">
+        <field name="name">account_move_line</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='invoice_line_ids'] / tree" position="inside">
+                <field name="delivery_address_id" optional="hide" attrs = "{'column_invisible':[('parent.move_type','in',('in_invoice'))]}"/>
+                <field name="vendor_id" optional="hide" attrs = "{'column_invisible':[('parent.move_type','in',('in_invoice'))]}"/>
+                <field name="vendor_price" optional="hide" attrs = "{'column_invisible':[('parent.move_type','in',('in_invoice'))]}"/>
+            </xpath>
+
+        </field>
+    </record>
 
     <record id="pioneer_bill_generate_server_action" model="ir.actions.server">
         <field name="name">Generate Subscription Bills</field>
@@ -33,7 +47,7 @@
         <field name="binding_model_id" ref="model_account_move"/>
         <field name="binding_view_types">tree,form</field>
         <field name="state">code</field>
-        <field name="code">records.action_update()</field>
+        <field name="code">records.server_action_generate_in_invoice_bill()</field>
     </record>
 
 </odoo>
