@@ -38,28 +38,54 @@ class PioneerServerActions(models.Model):
     partner_id = vendor_id, price_unit = vendor_price and generate bill according to vendor."""
 
     def server_action_generate_in_invoice_bill(self):
-        print("\n -----In Func------ \n")
         res = []
         for rec in self.invoice_line_ids:
-            print("\n ----- For rec -- ", rec, "\n")
 
             if rec.vendor_id not in res:
-                print("\n --------------- IF - Vendor id -- ", rec.vendor_id, "\n")
 
                 res.append(rec.vendor_id)
-                print("\n ----------------- IF res[] -- ", res, "\n")
-
                 record = self.create({'move_type': 'in_invoice', 'partner_id': rec.vendor_id})
-                print("\n -----------------Create Record ------", record)
 
-                line_ids = self.invoice_line_ids.search([('vendor_id', '=', rec.vendor_id.id),
-                                                         ('id', 'in', [line.id for line in self.invoice_line_ids])])
-                print("\n ----------------- Line Ids ------", line_ids)
-
+                print("\n------------------- rec.vendor_id", rec.vendor_id, "-------")
+                print("\n--------------------rec.vendor_id.id", rec.vendor_id.id, "-------\n\n")
+                # line_ids = self.invoice_line_ids.search([rec.vendor_id.id])
+                line_ids = self.invoice_line_ids.search([('vendor_id', '=', rec.vendor_id.id)])
+                #                                          ('id', 'in', [line.id for line in self.invoice_line_ids])])
                 for line_id in line_ids:
                     record.write({'invoice_line_ids': [(0, 0, {'product_id': line_id.product_id,
                                                                'price_unit': line_id.vendor_price,
                                                                'quantity': line_id.quantity,
                                                                'delivery_address_id': line_id.delivery_address_id,
                                                                'planned_gp': line_id.planned_gp})]})
-                    print("\n ----------------For - Line Id ------", line_id)
+
+
+
+
+
+
+    # def server_action_generate_in_invoice_bill(self):
+    #     print("\n -----In Func------ \n")
+    #     res = []
+    #     for rec in self.invoice_line_ids:
+    #         print("\n ----- For rec -- ", rec, "\n")
+    #
+    #         if rec.vendor_id not in res:
+    #             print("\n --------------- IF - Vendor id -- ", rec.vendor_id, "\n")
+    #
+    #             res.append(rec.vendor_id)
+    #             print("\n ----------------- IF res[] -- ", res, "\n")
+    #
+    #             record = self.create({'move_type': 'in_invoice', 'partner_id': rec.vendor_id})
+    #             print("\n -----------------Create Record ------", record)
+    #
+    #             line_ids = self.invoice_line_ids.search([('vendor_id', '=', rec.vendor_id.id),
+    #                                                      ('id', 'in', [line.id for line in self.invoice_line_ids])])
+    #             print("\n ----------------- Line Ids ------", line_ids)
+    #
+    #             for line_id in line_ids:
+    #                 record.write({'invoice_line_ids': [(0, 0, {'product_id': line_id.product_id,
+    #                                                            'price_unit': line_id.vendor_price,
+    #                                                            'quantity': line_id.quantity,
+    #                                                            'delivery_address_id': line_id.delivery_address_id,
+    #                                                            'planned_gp': line_id.planned_gp})]})
+    #                 print("\n ----------------For - Line Id ------", line_id)

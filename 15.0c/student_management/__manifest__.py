@@ -26,8 +26,10 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'wizards/student_man_smart_btn.xml',
         'views/student_management.xml',
         'views/student_fees.xml',
+        'views/student_courses.xml',
         'report/student_paper_format.xml',
         'report/student_template.xml',
         'report/student_report.xml',

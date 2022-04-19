@@ -12,14 +12,14 @@
     </record>
 
     <record id="student_fees_print_report" model="ir.actions.report">
-        <field name="name">Student Fees</field>
+        <field name="name">Student Fee Receipt</field>
         <field name="model">student.fees</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">student_management.student_report2_template</field>
-        <field name="report_file">student_management.student_report2_template</field>
+        <field name="report_name">student_management.student_fees2_template</field>
+        <field name="report_file">student_management.student_fees2_template</field>
         <field name="binding_model_id" ref="model_student_fees"/>
         <field name="binding_type">report</field>
-        <field name="paperformat_id" ref="call_student_paper_format"/>
+        <field name="paperformat_id" ref="call_student_fee_paper_format"/>
     </record>
 
 <!--    <record id="hr_employee_excel_print_report" model="ir.actions.report">-->

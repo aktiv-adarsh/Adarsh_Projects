@@ -151,7 +151,6 @@
       <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pioneer_subscription/models/account_move_line_add_field.py" beforeDir="false" afterPath="$PROJECT_DIR$/pioneer_subscription/models/account_move_line_add_field.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/views/account_move_line_add_field.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pioneer_subscription/views/account_move_line_add_field.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
@@ -236,7 +235,15 @@
       <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/models/student_fees.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/models/student_fees.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/models/student_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/models/student_management.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/report/student_paper_format.xml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/report/student_paper_format.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/report/student_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/report/student_report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/report/student_template.xml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/report/student_template.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/security/ir.model.access.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/views/student_fees.xml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/views/student_fees.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/views/student_management.xml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/views/student_management.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

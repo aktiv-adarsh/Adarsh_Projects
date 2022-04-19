@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="wizards_smart_button_form">
+            <field name="name">wizard form</field>
+            <field name="model">wizard.feebtn</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="wizards_student_fee"/>
+                            <field name="wizards_student_paid_fees"/>
+                            <field name="student_pending_fees"/>
+
+                        </group>
+                        <footer>
+                            <button name="Wizard1" class="btn-primary" type="object" string="Wizard Button"/>
+                            <button name="cancel" class="btn-primary" type="object" string="cancel" special="cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="wizard_smart_btn_action_wizard">
+            <field name="name">Student Fee Payment</field>
+            <field name="res_model">wizard.feebtn</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizards_smart_button_form"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

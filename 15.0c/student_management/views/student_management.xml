@@ -1,16 +1,26 @@
 <odoo>
     <data>
-        <record model="ir.ui.view" id="student_form">
+        <record model="ir.ui.view" id="student_form_view">
             <field name="name">Student Management</field>
             <field name="model">student.management</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <!--                    <group>-->
-                        <!--                        <field name="student_image" invisible="1"/>-->
-                        <!--                    </group>-->
+                        <div class="oe_button_box" name="button_box">
+                            <button name="%(student_management.wizard_smart_btn_action_wizard)d" icon="fa-inr"
+                                    type="action"/>
+                        </div>
+                        <div>
+                            <field name="sfirst_name" placeholder="e.g. Adarsh Donga"
+                                   style="font-size:15pt; width:120mm; height: 12mm"/>
+                        </div>
+                        <div>
+                            <field name="student_img" widget="image" class="oe_avatar"
+                                   style="width:30mm; height: 15mm; margin-top: -50px;margin-right: 40px;"/>
+                        </div>
+                        <br></br>
                         <group style="width:50%">
-                            <field name="sid"/>
+                            <field name="student_id" placeholder="Student Name"/>
                             <field name="admission_year"/>
                             <field name="student_class" placeholder="Student class from 1 to 10 "/>
                             <field name="student_fee"/>
@@ -56,6 +66,18 @@
                                     </group>
                                 </group>
                             </page>
+
+                            <page string="Courses Details" name="scourses_details">
+
+                                <field name="student_course_id">
+                                    <tree editable="bottom">
+                                        <field name="name" style="width:40%"/>
+                                        <field name="subject_code"/>
+                                        <field name="subject_code"/>
+                                    </tree>
+                                </field>
+
+                            </page>
                         </notebook>
                         <div class="oe_chatter">
                             <field name="message_follower_ids"/>
@@ -67,27 +89,36 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="student_kanban">
+        <record model="ir.ui.view" id="student_kanban_view">
             <field name="name">Student Management</field>
             <field name="model">student.management</field>
             <field name="arch" type="xml">
                 <kanban>
-                    <!--                    <img t-att-src="kanban_image('res.partner', 'avatar_128', record.partner_id.raw_value)"-->
-                    <!--                         t-att-title="record.partner_id.value" t-att-alt="record.partner_id.value"-->
-                    <!--                         class="oe_kanban_avatar o_image_24_cover"/>-->
-                    <field name="sid"/>
+                    <field name="id"/>
+                    <field name="student_id"/>
                     <field name="admission_year"/>
                     <field name="sfirst_name"/>
+                    <field name="student_img"/>
                     <templates>
                         <t t-name="kanban-box">
-                            <div class="oe_kanban_global_click">
-                                <div>
-                                    <field name="sid"/>
+                            <div class="oe_kanban_global_click" style="width: 50mm;">
+                                <div class="o_kanban_image_fill_left d-none d-md-block"
+                                     style="width: 48mm; height: 50mm;">
+                                    <field name="student_img" widget="image"/>
+                                    <!--                                    <img class="o_kanban_image_inner_pic"-->
+                                    <!--                                         t-if="record.id.raw_value"-->
+                                    <!--                                         t-att-alt="record.id.value"-->
+                                    <!--                                         t-att-src="kanban_image('student_management', 'student_img', record.id.raw_value)"/>-->
                                 </div>
-                                <div>
-                                    <field name="admission_year"/>
+                                <div class="oe_kanban_details">
+                                    <div>
+                                        <field name="student_id"/>
+                                    </div>
+                                    <div>
+                                        <field name="admission_year"/>
+                                    </div>
+                                    <field name="sfirst_name"/>
                                 </div>
-                                <field name="sfirst_name"/>
                             </div>
                         </t>
                     </templates>
@@ -100,9 +131,14 @@
             <field name="model">student.management</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="sid"/>
+                    <field name="student_id"/>
                     <field name="admission_year"/>
-                    <field name="sfirst_name"/>
+                    <field name="student_class"/>
+                    <field name="student_fee"/>
+                    <field name="student_medium" optional="hide"/>
+                    <field name="student_division" optional="hide"/>
+                    <field name="student_paid_fees" optional="hide"/>
+                    <field name="student_pending_fees"/>
 
                 </tree>
             </field>
@@ -114,7 +150,7 @@
             <field name="model">student.management</field>
             <field name="arch" type="xml">
                 <search string="Search">
-                    <field name="sid"/>
+                    <field name="student_id"/>
                     <separator/>
                     <filter name="student_class" string="Class"/>
                     <filter name="student_medium" string="Medium"/>
