@@ -16,7 +16,8 @@ class WizardsStudentFee(models.TransientModel):
     print("----------- student_pending_fees = ", student_pending_fees, "---\n\n")
 
     """On save btn update data on main sheet"""
-    def Wizard1(self):
+    @api.onchange('wizards_student_fee')
+    def Wizards_submit_btn(self):
         print("\n\n ----------- Wizard1------  \n\n")
         #
         record = self.env['student.management'].browse(self.env.context.get('active_id'))

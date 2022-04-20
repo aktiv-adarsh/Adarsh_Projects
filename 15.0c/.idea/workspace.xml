@@ -234,14 +234,12 @@
       <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/models/student_fees.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/models/student_fees.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/models/student_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/models/student_management.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/views/student_fees.xml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/views/student_fees.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/views/student_management.xml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/views/student_management.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/wizards/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/wizards/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/wizards/student_man_smart_btn.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/wizards/student_man_smart_btn.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/wizards/Wizards_stu_man_smart_btn.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/wizards/Wizards_stu_man_smart_btn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_management/wizards/Wizards_stu_man_smart_btn.xml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/wizards/Wizards_stu_man_smart_btn.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

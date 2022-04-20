@@ -33,6 +33,7 @@
         'report/student_paper_format.xml',
         'report/student_template.xml',
         'report/student_report.xml',
+        # 'xml_report/student_server_action.xml',
         # 'views/controller.xml',
         # 'views/controller_2link.xml',
     ]

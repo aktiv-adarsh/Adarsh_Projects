@@ -13,7 +13,7 @@
 
                         </group>
                         <footer>
-                            <button name="Wizard1" class="btn-primary" type="object" string="Submit"/>
+                            <button name="Wizards_submit_btn" class="btn-primary" type="object" string="Submit"/>
                             <button name="cancel" class="btn-primary" type="object" string="cancel" special="cancel"/>
                         </footer>
                     </sheet>

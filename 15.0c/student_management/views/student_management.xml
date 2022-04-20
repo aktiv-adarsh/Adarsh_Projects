@@ -6,9 +6,9 @@
             <field name="arch" type="xml">
                 <form>
                     <sheet>
+                        <button name="%(student_management.server_action_generate_excel_report)d" icon="fa-inr"
+                                                                type="action"> Download</button>
                         <div class="oe_button_box" name="button_box">
-                            <!--                            <button name="%(student_management.wizard_smart_btn_action_wizard)d" icon="fa-inr"-->
-                            <!--                                    type="action"> Pay Fees Here</button>-->
                             <button name="%(student_management.wizard_smart_btn_action_wizard)d" type="action"
                                     icon="fa-inr"
                                     class="oe_highlight">
@@ -202,6 +202,16 @@
             <field name="res_model">student.management</field>
             <field name="view_mode">tree,form</field>
             <!--            <field name="view_id" ref="rental_management_tree"/>-->
+        </record>
+
+        <record id="student_management_server_action" model="ir.actions.server">
+            <field name="name">Student Excel Report</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_student_management"/>
+            <field name="binding_model_id" ref="model_student_management"/>
+            <field name="binding_view_types">tree,form</field>
+            <field name="state">code</field>
+            <field name="code">records.server_action_generate_excel_report()</field>
         </record>
 
 
