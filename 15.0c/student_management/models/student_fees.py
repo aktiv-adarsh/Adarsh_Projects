@@ -19,6 +19,7 @@ class StudentFees(models.Model):
 
     fees_student_fee = fields.Integer(related='fees_student_id.student_fee', string="Standard Fees")
     fees_student_paid_fees = fields.Integer(related='fees_student_id.student_paid_fees', string="Paid Fees")
+
     #
     # fees_student_contact_name = fields.Char(related='fees_student_id.student_contact_name', string="Parent Name")
     # fees_student_contact_no = fields.Char(related='fees_student_id.student_contact_no', string="Contact No.")

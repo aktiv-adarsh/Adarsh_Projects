@@ -13,7 +13,7 @@
 
                         </group>
                         <footer>
-                            <button name="Wizard1" class="btn-primary" type="object" string="Wizard Button"/>
+                            <button name="Wizard1" class="btn-primary" type="object" string="Submit"/>
                             <button name="cancel" class="btn-primary" type="object" string="cancel" special="cancel"/>
                         </footer>
                     </sheet>
@@ -24,7 +24,7 @@
         <!-- actions opening views on models -->
 
         <record model="ir.actions.act_window" id="wizard_smart_btn_action_wizard">
-            <field name="name">Student Fee Payment</field>
+            <field name="name">Student Fee Payment Windows</field>
             <field name="res_model">wizard.feebtn</field>
             <field name="view_mode">form</field>
             <field name="view_id" ref="wizards_smart_button_form"/>

@@ -7,7 +7,7 @@
                 <form>
                     <center>
                         <b>
-                            <h2>Student Fee Recipe</h2>
+                            <h2>Student Fee Receipt</h2>
                         </b>
                     </center>
                     <sheet>
@@ -51,12 +51,6 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="student_fees_form_window">
-            <field name="name">Form window</field>
-            <field name="res_model">student.fees</field>
-            <field name="view_mode">form</field>
-            <field name="view_id" ref="student_fees_form"/>
-        </record>
         <record model="ir.actions.act_window" id="student_fees_tree_window">
             <field name="name">List window</field>
             <field name="res_model">student.fees</field>
@@ -68,8 +62,6 @@
         <menuitem name="Student Fees" id="student_fees_menu_1"
                   parent="student_management.student_management_menu_root"/>
 
-        <menuitem name="Form" id="student_fees_submenu_2" parent="student_fees_menu_1"
-                  action="student_fees_form_window"/>
         <menuitem name="Tree" id="student_fees_submenu_3" parent="student_fees_menu_1"
                   action="student_fees_tree_window"/>
 

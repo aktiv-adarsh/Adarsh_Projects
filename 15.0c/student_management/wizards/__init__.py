@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import student_man_smart_btn
+from . import Wizards_stu_man_smart_btn

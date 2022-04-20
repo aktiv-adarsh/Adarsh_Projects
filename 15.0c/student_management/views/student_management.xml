@@ -7,29 +7,39 @@
                 <form>
                     <sheet>
                         <div class="oe_button_box" name="button_box">
-                            <button name="%(student_management.wizard_smart_btn_action_wizard)d" icon="fa-inr"
-                                    type="action"/>
+                            <!--                            <button name="%(student_management.wizard_smart_btn_action_wizard)d" icon="fa-inr"-->
+                            <!--                                    type="action"> Pay Fees Here</button>-->
+                            <button name="%(student_management.wizard_smart_btn_action_wizard)d" type="action"
+                                    icon="fa-inr"
+                                    class="oe_highlight">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_text">Pay Fees Here</span>
+                                </div>
+                            </button>
+
                         </div>
                         <div>
                             <field name="sfirst_name" placeholder="e.g. Adarsh Donga"
                                    style="font-size:15pt; width:120mm; height: 12mm"/>
+                            <field name="student_img" widget="image" class="oe_avatar"/>
                         </div>
-                        <div>
-                            <field name="student_img" widget="image" class="oe_avatar"
-                                   style="width:30mm; height: 15mm; margin-top: -50px;margin-right: 40px;"/>
-                        </div>
-                        <br></br>
-                        <group style="width:50%">
-                            <field name="student_id" placeholder="Student Name"/>
-                            <field name="admission_year"/>
-                            <field name="student_class" placeholder="Student class from 1 to 10 "/>
-                            <field name="student_fee"/>
-                        </group>
-                        <group style="width:50%">
-                            <field name="student_medium"/>
-                            <field name="student_division"/>
-                            <field name="student_paid_fees"/>
-                            <field name="student_pending_fees"/>
+                        <br/>
+                        <br/>
+
+                        <group col="4">
+                            <group style="width:50%" colspan="2">
+                                <field name="student_id" placeholder="Student Name"/>
+                                <field name="admission_year"/>
+                                <field name="student_class" placeholder="Student class from 1 to 10 "/>
+                                <field name="student_fee"/>
+                            </group>
+
+                            <group style="width:50%" colspan="2">
+                                <field name="student_medium"/>
+                                <field name="student_division"/>
+                                <field name="student_paid_fees" readonly="1"/>
+                                <field name="student_pending_fees"/>
+                            </group>
                         </group>
                         <notebook>
                             <page string="Personal Details" name="spersonal_details">
@@ -38,6 +48,12 @@
                                         <field name="sfirst_name" placeholder="Student First Name"/>
                                         <field name="smiddle_name" placeholder="Student Middle Name"/>
                                         <field name="slast_name" placeholder="Student Last Name"/>
+                                    </group>
+                                    <group>
+                                        <field name="student_email" placeholder="Student E-mail Id" widget="email"/>
+                                        <field name="student_phone" placeholder="Student Phone No." widget="phone"
+                                               options="{'enable_sms': false}"/>
+                                        <field name="student_mobile" placeholder="Student Mobile No." widget="phone"/>
                                     </group>
                                 </group>
                             </page>
@@ -61,8 +77,9 @@
                                 <group>
                                     <group style="width:50%">
                                         <field name="student_contact_name"/>
-                                        <field name="student_contact_no"/>
-                                        <field name="student_email"/>
+                                        <field name="student_contact_no" widget="phone"
+                                               options="{'enable_sms': false}"/>
+                                        <field name="student_contact_email" widget="email"/>
                                     </group>
                                 </group>
                             </page>
@@ -105,19 +122,20 @@
                                 <div class="o_kanban_image_fill_left d-none d-md-block"
                                      style="width: 48mm; height: 50mm;">
                                     <field name="student_img" widget="image"/>
-                                    <!--                                    <img class="o_kanban_image_inner_pic"-->
-                                    <!--                                         t-if="record.id.raw_value"-->
-                                    <!--                                         t-att-alt="record.id.value"-->
-                                    <!--                                         t-att-src="kanban_image('student_management', 'student_img', record.id.raw_value)"/>-->
                                 </div>
                                 <div class="oe_kanban_details">
-                                    <div>
+                                    <div>ID:
                                         <field name="student_id"/>
                                     </div>
-                                    <div>
+                                    <div>Name:
+                                        <field name="sfirst_name"/>
+                                    </div>
+                                    <div>Class:
+                                        <field name="student_class"/>
+                                    </div>
+                                    <div>Admission Year
                                         <field name="admission_year"/>
                                     </div>
-                                    <field name="sfirst_name"/>
                                 </div>
                             </div>
                         </t>
@@ -126,7 +144,7 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="student_tree">
+        <record model="ir.ui.view" id="student_tree_views">
             <field name="name">Student Management</field>
             <field name="model">student.management</field>
             <field name="arch" type="xml">
@@ -134,9 +152,9 @@
                     <field name="student_id"/>
                     <field name="admission_year"/>
                     <field name="student_class"/>
-                    <field name="student_fee"/>
                     <field name="student_medium" optional="hide"/>
                     <field name="student_division" optional="hide"/>
+                    <field name="student_fee"/>
                     <field name="student_paid_fees" optional="hide"/>
                     <field name="student_pending_fees"/>
 
@@ -151,6 +169,8 @@
             <field name="arch" type="xml">
                 <search string="Search">
                     <field name="student_id"/>
+                    <field name="student_medium"/>
+                    <filter name="student_class"/>
                     <separator/>
                     <filter name="student_class" string="Class"/>
                     <filter name="student_medium" string="Medium"/>
@@ -172,7 +192,7 @@
         </record>
 
         <record model="ir.actions.act_window" id="student_management_kanban_window">
-            <field name="name">Kanban window</field>
+            <field name="name">Student window</field>
             <field name="res_model">student.management</field>
             <field name="view_mode">kanban,form</field>
             <!--            <field name="view_id" ref="rental_management_tree"/>-->

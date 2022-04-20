@@ -21,11 +21,15 @@ class StudentManagement(models.Model):
     student_division = fields.Selection([('a', 'A'), ('b', 'B'), ('c', 'C')], string="Division",
                                         help='Select student Division', tracking=True)
     student_paid_fees = fields.Integer(string="Paid Fees")  # , compute="_student_fees_calc")
-    student_pending_fees = fields.Integer(string="Pending Fees", compute="_student_fees_calc", readonly=True)
+    student_pending_fees = fields.Integer(string="Pending Fees", compute="_calculate_panding_fees")
 
     sfirst_name = fields.Char(string="First Name", tracking=True)
     smiddle_name = fields.Char(string="Middle Name", tracking=True)
     slast_name = fields.Char(string="Last Name", tracking=True)
+
+    student_email = fields.Char(string="E-mail", tracking=True)
+    student_phone = fields.Char(string="Phone", tracking=True)
+    student_mobile = fields.Char(string="Mobile", tracking=True)
 
     student_address = fields.Char(string="Student Address", tracking=True)
     student_dob = fields.Date(string="Date Of Birth", tracking=True)
@@ -37,18 +41,19 @@ class StudentManagement(models.Model):
                                                    ('english', 'English')],
                                         help='Select student mother tung language', tracking=True)
 
-    student_contact_name = fields.Char(string="Person Name", tracking=True)
-    student_contact_no = fields.Integer(string="Contact Number", tracking=True)
-    student_email = fields.Char(string="Contact E-mail", tracking=True)
+    student_contact_name = fields.Char(string="Parent Name", tracking=True)
+    student_contact_no = fields.Integer(string="Contact No.", tracking=True)
+    student_contact_email = fields.Char(string="E-mail", tracking=True)
 
     # course_ids = fields.One2many('student.courses', 'student_course_id', string="Student_Courses")
     student_course_id = fields.Many2many('student.courses', string="Student Course")
 
-
-    print("-----------------Reach at func---------------")
+    @api.onchange('student_fee', 'student_paid_fees')
+    def _calculate_panding_fees(self):
+        for rec in self:
+            rec.student_pending_fees = rec.student_fee - rec.student_paid_fees
 
     """Set and calculate(paid and pending fee)"""
-
     @api.onchange('student_class')
     def _student_fees_calc(self):
         student_std_fees = {'1': 1000, '2': 2000, '3': 3500, '4': 4500,
@@ -56,9 +61,9 @@ class StudentManagement(models.Model):
                             '12': 12999}
         for std, fee in student_std_fees.items():
             std = int(std)
-            if self.student_class == std:
-                self.student_fee = fee
-                self.student_pending_fees = self.student_fee - self.student_paid_fees
+            for rec in self:
+                if rec.student_class == std:
+                    rec.student_fee = fee
 
     """Though exceptions when standard > 12"""
 
