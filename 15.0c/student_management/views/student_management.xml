@@ -5,9 +5,13 @@
             <field name="model">student.management</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+<!--                        <button name="server_action_generate_excel_report" class="oe_highlight"-->
+<!--                                string="Excel" type="object"/>-->
+<!--                        <button name="student_email_send_action" class="oe_highlight"-->
+<!--                                string="E-mail" type="object"/>-->
+                    </header>
                     <sheet>
-                        <button name="%(student_management.server_action_generate_excel_report)d" icon="fa-inr"
-                                                                type="action"> Download</button>
                         <div class="oe_button_box" name="button_box">
                             <button name="%(student_management.wizard_smart_btn_action_wizard)d" type="action"
                                     icon="fa-inr"
@@ -149,6 +153,8 @@
             <field name="model">student.management</field>
             <field name="arch" type="xml">
                 <tree>
+                    <header><button name="server_action_generate_excel_report" class="oe_highlight" string="Get Excel Report" type="object"/></header>
+
                     <field name="student_id"/>
                     <field name="admission_year"/>
                     <field name="student_class"/>
@@ -194,13 +200,7 @@
         <record model="ir.actions.act_window" id="student_management_kanban_window">
             <field name="name">Student window</field>
             <field name="res_model">student.management</field>
-            <field name="view_mode">kanban,form</field>
-            <!--            <field name="view_id" ref="rental_management_tree"/>-->
-        </record>
-        <record model="ir.actions.act_window" id="student_management_tree_window">
-            <field name="name">List window</field>
-            <field name="res_model">student.management</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">kanban,tree,form</field>
             <!--            <field name="view_id" ref="rental_management_tree"/>-->
         </record>
 
@@ -222,10 +222,8 @@
 
         <menuitem name="Student Management" id="student_management_menu_1" parent="student_management_menu_root"/>
 
-        <menuitem name="kanban" id="student_management_submenu_2" parent="student_management_menu_1"
+        <menuitem name="Students Profile" id="student_management_submenu_2" parent="student_management_menu_1"
                   action="student_management_kanban_window"/>
-        <menuitem name="Tree" id="student_management_submenu_3" parent="student_management_menu_1"
-                  action="student_management_tree_window"/>
 
     </data>
 </odoo>

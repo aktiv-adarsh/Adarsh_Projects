@@ -1,0 +1,73 @@
+<odoo>
+    <data>
+        <record id="student_details_email" model="mail.template">
+            <field name="name">Student Email</field>
+            <field name="model_id" ref="student_management.student_form_view"/>
+            <!--  <field name="email_from">{{ (object.user_id.email_formatted)}}</field>
+                <field name="email_to">{{ object.partner_id.email}}</field>  -->
+            <field name="email_from">adarsh.d@icreativetechnolabs.com</field>
+            <field name="email_to">adarsh.d@icreativetechnolabs.com</field>
+            <field name="subject">Student Details</field>
+            <field name="body_html" type="html">
+
+                <div style="margin: 10px;">
+
+                    <p style="margin: 5px; font-size: 13px;">
+                        Dear,
+<!--                        <t t-if="object.sfirst_name">-->
+<!--                            <t t-esc="object.sfirst_name"/>-->
+<!--                        </t>-->
+                        <br/>
+                        <br/>
+                        Your details are given bellow..
+                        <br/>
+                        <br/>
+                        Student
+<!--                        <table class="table table-sm o_main_table">-->
+<!--                            <tr>-->
+<!--                                &lt;!&ndash;  field details  &ndash;&gt;-->
+<!--                                <th name="th_product" class="text-left">Product</th>-->
+<!--                                <th name="th_description" class="text-left">Description</th>-->
+<!--                                <th name="th_unit" class="text-left">Unit</th>-->
+<!--                                <th name="th_price" class="text-left">Price</th>-->
+<!--                            </tr>-->
+<!--                            <t t-foreach="object.order_line" t-as="order_id">-->
+<!--                                <tr>-->
+<!--                                    <td>-->
+<!--                                        <span t-field="order_id.product_id.name"/>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-field="order_id.name"/>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-field="order_id.product_uom_qty"/>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-field="order_id.price_subtotal"/>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                            </t>-->
+<!--                        </table>-->
+<!--                        <br/>-->
+<!--                        <br/>-->
+<!--                        Total(Before Tax):-->
+<!--                        <span t-field="object.amount_untaxed"/>-->
+<!--                        <br/>-->
+<!--                        Tax:-->
+<!--                        <span t-field="object.amount_tax"/>-->
+<!--                        <br/>-->
+<!--                        Total Amount to pay:-->
+<!--                        <span t-field="object.amount_total"/>-->
+<!--                        <br/>-->
+<!--                        <br/>-->
+<!--                        <p style="margin: 5px; font-size: 13px; text-align: left;">Thank you for the purchase.</p>-->
+                    </p>
+                </div>
+
+            </field>
+            <!--  <field name="report_template" ref="base.action_confirm"/>  -->
+            <field name="report_name">student_details</field>
+
+        </record>
+    </data>
+</odoo>
