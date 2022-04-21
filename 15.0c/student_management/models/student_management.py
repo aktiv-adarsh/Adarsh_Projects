@@ -48,12 +48,15 @@ class StudentManagement(models.Model):
     student_course_id = fields.Many2many('student.courses', string="Student Course")
 
 
+    def email_action_smart_btn(self):
+        print("\n\nemail_action_smart_btn\n")
+
     @api.depends('student_fee', 'student_paid_fees')
     def _compute_panding_fees(self):
         """Calculate pending fees only"""
 
         for rec in self:
-            if rec.student_fee and rec.student_paid_fees:
+            if rec.student_fee:
                 rec.student_pending_fees = rec.student_fee - rec.student_paid_fees
             else:
                 rec.student_pending_fees = False
@@ -202,21 +205,21 @@ class StudentManagement(models.Model):
                     'target': 'new'
                     }
 
-
-class StudentCourses(models.Model):
-    """Created New model 'student.course' to use relations on student.man"""
-
-    _name = 'student.courses'
-    _description = 'student_courses'
-
-    # student_course_id = fields.Many2one('student.management', string="Student Course")
-
-    # course_ids = fields.Many2one('student.management', 'student_course_id', string="Student_Courses")
-    name = fields.Char(string="Course Name")
-    # subject = fields.Selection([('maths', 'Maths'), ('sci', 'Science')])
-    subject_code = fields.Integer(string="Subject Code")
-
-    """sql_cons.. will generate unique course id"""
-    _sql_constraints = [
-        ('subject_code_unique', 'unique (subject_code)', "Subject code Must Be Unique !")
-    ]
+#
+# class StudentCourses(models.Model):
+#     """Created New model 'student.course' to use relations on student.man"""
+#
+#     _name = 'student.courses'
+#     _description = 'student_courses'
+#
+#     # student_course_id = fields.Many2one('student.management', string="Student Course")
+#
+#     # course_ids = fields.Many2one('student.management', 'student_course_id', string="Student_Courses")
+#     name = fields.Char(string="Course Name", required=True)
+#     # subject = fields.Selection([('maths', 'Maths'), ('sci', 'Science')])
+#     subject_code = fields.Integer(string="Subject Code", required=True)
+#
+#     """sql_cons.. will generate unique course id"""
+#     _sql_constraints = [
+#         ('subject_code_unique', 'unique (subject_code)', "Subject code Must Be Unique !")
+#     ]

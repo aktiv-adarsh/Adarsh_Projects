@@ -51,6 +51,26 @@
             </field>
         </record>
 
+
+        <record model="ir.ui.view" id="student_fees_search">
+            <field name="name">Student Fees</field>
+            <field name="model">student.fees</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="Student ID " name="fees_student_id" context="{'group_by':'fees_student_id'}"/>
+                        <filter string="Name" name="fees_student_name" context="{'group_by':'fees_student_name'}"/>
+                        <filter string="Gender" name="fees_student_gender" context="{'group_by':'fees_student_gender'}"/>
+                        <filter string="Class" name="fees_student_class" context="{'group_by':'fees_student_class'}"/>
+                        <filter string="Division" name="fees_student_division" context="{'group_by':'fees_student_division'}"/>
+                        <filter string="Medium" name="fees_student_medium" context="{'group_by':'fees_student_medium'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
         <record model="ir.actions.act_window" id="student_fees_tree_window">
             <field name="name">Fees Receipt</field>
             <field name="res_model">student.fees</field>

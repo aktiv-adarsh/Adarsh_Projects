@@ -5,12 +5,10 @@
             <field name="model">student.management</field>
             <field name="arch" type="xml">
                 <form>
-                    <header>
-<!--                        <button name="server_action_generate_excel_report" class="oe_highlight"-->
-<!--                                string="Excel" type="object"/>-->
+<!--                    <header>-->
 <!--                        <button name="student_email_send_action" class="oe_highlight"-->
 <!--                                string="E-mail" type="object"/>-->
-                    </header>
+<!--                    </header>-->
                     <sheet>
                         <div class="oe_button_box" name="button_box">
                             <button name="%(student_management.wizard_smart_btn_action_wizard)d" type="action"
@@ -20,6 +18,8 @@
                                     <span class="o_stat_text">Pay Fees Here</span>
                                 </div>
                             </button>
+                            <button name="email_action_smart_btn" class="oe_highlight" icon="fa-envelope-o"
+                                string="E-mail" type="object"/>
 
                         </div>
                         <div>
