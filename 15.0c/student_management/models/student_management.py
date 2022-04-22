@@ -19,12 +19,15 @@ class StudentManagement(models.Model):
     student_id = fields.Integer(string="Student ID", tracking=True, required=True)  # , compute="_student_id_generate")
     admission_year = fields.Date(string="Admission Year", tracking=True)
     student_class = fields.Integer(string="Student Class", tracking=True)
-    student_fee = fields.Integer(string="Fees", compute="_compute_fees_calc")
+    student_fee = fields.Integer(string="Fees", compute="_compute_fees_calc", tracking=True)
 
-    student_medium = fields.Selection(string="Medium", selection=[('gujarati1', 'Gujarati'), ('hindi1', 'Hindi'), ('english1', 'English')], help='Select standard medium for study', tracking=True)
-    student_division = fields.Selection([('a', 'A'), ('b', 'B'), ('c', 'C')], string="Division", help='Select student Division', tracking=True)
-    student_paid_fees = fields.Integer(string="Paid Fees")  # , compute="_student_fees_calc")
-    student_pending_fees = fields.Integer(string="Pending Fees", compute="_compute_panding_fees")
+    student_medium = fields.Selection(string="Medium", selection=[('gujarati1', 'Gujarati'), ('hindi1', 'Hindi'),
+                                                                  ('english1', 'English')],
+                                      help='Select standard medium for study', tracking=True)
+    student_division = fields.Selection([('A', 'A'), ('B', 'B'), ('C', 'C')], string="Division",
+                                        help='Select student Division', tracking=True)
+    student_paid_fees = fields.Integer(string="Paid Fees", tracking=True)  # , compute="_student_fees_calc")
+    student_pending_fees = fields.Integer(string="Pending Fees", compute="_compute_pending_fees", tracking=True)
 
     sfirst_name = fields.Char(string="First Name", tracking=True)
     smiddle_name = fields.Char(string="Middle Name", tracking=True)
@@ -36,9 +39,13 @@ class StudentManagement(models.Model):
 
     student_address = fields.Char(string="Student Address", tracking=True)
     student_dob = fields.Date(string="Date Of Birth", tracking=True)
-    student_gender = fields.Selection(string="Gender", selection=[('male', 'Male'), ('female', 'Female')], tracking=True)
+    student_gender = fields.Selection(string="Gender", selection=[('male', 'Male'), ('female', 'Female')],
+                                      tracking=True)
     student_age = fields.Integer(string="Age", tracking=True, readonly=True)
-    mother_tung_lang = fields.Selection(string="Mother Tung Language", selection=[('gujarati', 'Gujarati'), ('hindi', 'Hindi'), ('english', 'English')], help='Select student mother tung language', tracking=True)
+    mother_tung_lang = fields.Selection(string="Mother Tung Language",
+                                        selection=[('gujarati', 'Gujarati'), ('hindi', 'Hindi'),
+                                                   ('english', 'English')], help='Select student mother tung language',
+                                        tracking=True)
 
     student_contact_name = fields.Char(string="Parent Name", tracking=True)
     student_contact_no = fields.Integer(string="Contact No.", tracking=True)
@@ -47,12 +54,8 @@ class StudentManagement(models.Model):
     # course_ids = fields.One2many('student.courses', 'student_course_id', string="Student_Courses")
     student_course_id = fields.Many2many('student.courses', string="Student Course")
 
-
-    def email_action_smart_btn(self):
-        print("\n\nemail_action_smart_btn\n")
-
     @api.depends('student_fee', 'student_paid_fees')
-    def _compute_panding_fees(self):
+    def _compute_pending_fees(self):
         """Calculate pending fees only"""
 
         for rec in self:
@@ -161,49 +164,76 @@ class StudentManagement(models.Model):
         for rec in self:
             print("\n\n ---------Rec--", self, "-------\n\n")
             worksheet.write(Row, 0, rec.student_id, sheet_data_style)
+            print("\n\n***********rec.student_id == ", rec.student_id, "---")
             total_student += 1
 
             worksheet.write(Row, 1, str(rec.admission_year), sheet_data_style)
+            print("**********rec.admission_year == ", rec.admission_year, "---")
 
-            worksheet.write(Row, 2, str(rec.sfirst_name), sheet_data_style)
+            worksheet.write(Row, 2, rec.sfirst_name, sheet_data_style)
+            print("**********rec.sfirst_name == ", rec.sfirst_name, "---")
+            print("**********str((rec.sfirst_name == ", str(rec.sfirst_name), "---\n")
 
             worksheet.write(Row, 3, rec.student_class, sheet_data_style)
+            print("**********rec.student_class == ", rec.student_class, "---")
 
             worksheet.write(Row, 4, rec.student_division, sheet_data_style)
+            print("**********rec.student_division == ", rec.student_division, "---")
 
             worksheet.write(Row, 5, str(rec.student_medium), sheet_data_style)
+            print("**********rec.student_medium == ", rec.student_medium, "---")
+            print("**********str((rec.student_medium == ", str(rec.student_medium), "---")
 
             worksheet.write(Row, 6, rec.student_fee, sheet_data_style)
             total_standard_fees += rec.student_fee
+            print("**********rec.student_fee == ", rec.student_fee, "---")
 
             worksheet.write(Row, 7, rec.student_paid_fees, sheet_data_style)
             total_paid_fees += rec.student_paid_fees
+            print("**********rec.student_paid_fees == ", rec.student_paid_fees, "---")
 
             worksheet.write(Row, 8, rec.student_pending_fees, sheet_data_style)
             total_pending_fees += rec.student_pending_fees
             Row += 1
+            print("**********rec.student_pending_fees == ", rec.student_pending_fees, "-END--\n\n\n")
 
         Row += 2
         worksheet.write(Row, 0, "Total: {}".format(total_student), font_style)
         worksheet.write(Row, 6, "Total: {}".format(total_standard_fees), font_style)
         worksheet.write(Row, 7, "Total: {}".format(total_paid_fees), font_style)
         worksheet.write(Row, 8, "Total: {}".format(total_pending_fees), font_style)
+        print("\n\n------****rec.total_student == ", total_student, "-END--")
+        print("------********rec.total_standard_fees == ", total_standard_fees, "-END--")
+        print("------****rec.total_paid_fees == ", total_paid_fees, "-END--")
+        print("------****rec.total_pending_fees == ", total_pending_fees, "-END--\n\n\n")
 
         fp = BytesIO()
+        print("****rec.BytesIO() == ", fp, "-END--")
         workbook.save(fp)
+        print("****rec.workbook == ", workbook, "-END--")
+        print("****rec.workbook == ", workbook.save(fp), "-END--")
         fp.seek(0)
+        print("****fp.seek(0) == ", fp.seek(0), "-END--")
         excel_file = base64.encodebytes(fp.getvalue())
+        print("****excel_file == ", excel_file, "-END--")
         fp.close()
+        print("****fp.close() == ", fp.close(), "-END--")
 
         self.write({'excel_file': excel_file})
+        print("\n****self.write == ", self.write({'excel_file': excel_file}), "-END--")
+        print("****self.write == ", excel_file, "-END--\n\n\n\n")
 
-        url = ('web/content/?model=student.management&download=true&field=excel_file&id=%s&filename=%s' % (self.id, filename))
+        print("\n\n --------- Self ----\n", self, "-----\n\n")
+        print("\n\n --------- Self.id ----\n", self.id, "-----\n\n")
+
+        url = ('web/content/?model=student.management&download=true&field=excel_file&id=%s&filename=%s' % (
+        self.ids, filename))
         print("\n\n --------- url ----\n", url, "-----\n\n")
-        if self.excel_file:
-            return {'type': 'ir.actions.act_url',
-                    'url': url,
-                    'target': 'new'
-                    }
+        # if self.excel_file:
+        return {'type': 'ir.actions.act_url',
+                'url': url,
+                'target': 'new'
+                }
 
 #
 # class StudentCourses(models.Model):
@@ -223,3 +253,10 @@ class StudentManagement(models.Model):
 #     _sql_constraints = [
 #         ('subject_code_unique', 'unique (subject_code)', "Subject code Must Be Unique !")
 #     ]
+
+
+# class StudentWindows(models.Model):
+#     _name = 'student.windows'
+#     _description = 'student_windows'
+#
+#     windows_standard = fields.Integer(string="Standard", required=True)

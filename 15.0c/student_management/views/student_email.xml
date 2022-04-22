@@ -2,11 +2,12 @@
     <data>
         <record id="student_details_email" model="mail.template">
             <field name="name">Student Email</field>
-            <field name="model_id" ref="student_management.student_form_view"/>
-            <!--  <field name="email_from">{{ (object.user_id.email_formatted)}}</field>
-                <field name="email_to">{{ object.partner_id.email}}</field>  -->
+            <field name="model">student.management</field>
+            <!--            <field name="email_from">{{ (object.student_email)}}</field>-->
             <field name="email_from">adarsh.d@icreativetechnolabs.com</field>
-            <field name="email_to">adarsh.d@icreativetechnolabs.com</field>
+            <field name="email_to">{{ object.student_email}}</field>
+            <!--            <field name="email_from">adarsh.d@icreativetechnolabs.com</field>-->
+            <!--            <field name="email_to">{{ object.student_contact_email}}</field>-->
             <field name="subject">Student Details</field>
             <field name="body_html" type="html">
 
@@ -14,58 +15,68 @@
 
                     <p style="margin: 5px; font-size: 13px;">
                         Dear,
-<!--                        <t t-if="object.sfirst_name">-->
-<!--                            <t t-esc="object.sfirst_name"/>-->
-<!--                        </t>-->
+                        <t t-if="object.student_email">
+                            <t t-esc="object.sfirst_name"/>
+                        </t>
                         <br/>
                         <br/>
                         Your details are given bellow..
                         <br/>
                         <br/>
-                        Student
-<!--                        <table class="table table-sm o_main_table">-->
-<!--                            <tr>-->
-<!--                                &lt;!&ndash;  field details  &ndash;&gt;-->
-<!--                                <th name="th_product" class="text-left">Product</th>-->
-<!--                                <th name="th_description" class="text-left">Description</th>-->
-<!--                                <th name="th_unit" class="text-left">Unit</th>-->
-<!--                                <th name="th_price" class="text-left">Price</th>-->
-<!--                            </tr>-->
-<!--                            <t t-foreach="object.order_line" t-as="order_id">-->
-<!--                                <tr>-->
-<!--                                    <td>-->
-<!--                                        <span t-field="order_id.product_id.name"/>-->
-<!--                                    </td>-->
-<!--                                    <td>-->
-<!--                                        <span t-field="order_id.name"/>-->
-<!--                                    </td>-->
-<!--                                    <td>-->
-<!--                                        <span t-field="order_id.product_uom_qty"/>-->
-<!--                                    </td>-->
-<!--                                    <td>-->
-<!--                                        <span t-field="order_id.price_subtotal"/>-->
-<!--                                    </td>-->
-<!--                                </tr>-->
-<!--                            </t>-->
-<!--                        </table>-->
-<!--                        <br/>-->
-<!--                        <br/>-->
-<!--                        Total(Before Tax):-->
-<!--                        <span t-field="object.amount_untaxed"/>-->
-<!--                        <br/>-->
-<!--                        Tax:-->
-<!--                        <span t-field="object.amount_tax"/>-->
-<!--                        <br/>-->
-<!--                        Total Amount to pay:-->
-<!--                        <span t-field="object.amount_total"/>-->
-<!--                        <br/>-->
-<!--                        <br/>-->
-<!--                        <p style="margin: 5px; font-size: 13px; text-align: left;">Thank you for the purchase.</p>-->
+                        <table class="table table-sm o_main_table" border="2">
+                            <tr>
+                                <th name="th_student_id" class="text-left" align="left">Student ID:</th>
+                                <td> <span t-field="object.student_id"/> </td>
+                            </tr>
+                            <tr>
+                                <th name="th_sfirst_name" class="text-left">Student Name:</th>
+                                <td> <span t-field="object.sfirst_name"/> </td>
+                            </tr>
+                            <tr>
+                                <th name="th_student_contact_name" class="text-left">Parent Name</th>
+                                <td> <span t-field="object.student_contact_name"/> </td>
+                            </tr>
+                            <tr>
+                                <th name="th_student_dob" class="text-left">Student DOB:</th>
+                                <td> <span t-field="object.student_dob"/> </td>
+                            </tr>
+                            <tr>
+                                <th name="th_student_gender" class="text-left">Gender</th>
+                                <td> <span t-field="object.student_gender"/> </td>
+                            </tr>
+                            <tr>
+                                <th name="th_admission_year" class="text-left">Admission Year:</th>
+                                <td> <span t-field="object.admission_year"/> </td>
+                            </tr>
+                            <tr>
+                                <th name="th_student_class" class="text-left">Standard:</th>
+                                <td> <span t-field="object.student_class"/> </td>
+                            </tr>
+                            <tr>
+                                <!--   field details   -->
+                                <th name="th_student_fee" class="text-left">Student Fees:</th>
+                                <td>
+                                    <span t-field="object.student_fee"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th name="th_student_paid_fees" class="text-left">Paid Fees:</th>
+                                <td>
+                                    <span t-field="object.student_paid_fees"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th name="th_student_pending_fees" class="text-left">Pending Fees:</th>
+                                <td>
+                                    <span t-field="object.student_pending_fees"/>
+                                </td>
+                            </tr>
+                        </table>
+
                     </p>
                 </div>
 
             </field>
-            <!--  <field name="report_template" ref="base.action_confirm"/>  -->
             <field name="report_name">student_details</field>
 
         </record>

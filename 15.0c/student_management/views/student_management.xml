@@ -5,10 +5,10 @@
             <field name="model">student.management</field>
             <field name="arch" type="xml">
                 <form>
-<!--                    <header>-->
-<!--                        <button name="student_email_send_action" class="oe_highlight"-->
-<!--                                string="E-mail" type="object"/>-->
-<!--                    </header>-->
+                    <!--                    <header>-->
+                    <!--                        <button name="student_email_send_action" class="oe_highlight"-->
+                    <!--                                string="E-mail" type="object"/>-->
+                    <!--                    </header>-->
                     <sheet>
                         <div class="oe_button_box" name="button_box">
                             <button name="%(student_management.wizard_smart_btn_action_wizard)d" type="action"
@@ -19,7 +19,7 @@
                                 </div>
                             </button>
                             <button name="email_action_smart_btn" class="oe_highlight" icon="fa-envelope-o"
-                                string="E-mail" type="object"/>
+                                    string="E-mail" type="object"/>
 
                         </div>
                         <div>
@@ -153,7 +153,10 @@
             <field name="model">student.management</field>
             <field name="arch" type="xml">
                 <tree>
-                    <header><button name="server_action_generate_excel_report" class="oe_highlight" string="Get Excel Report" type="object"/></header>
+                    <header>
+                        <button name="server_action_generate_excel_report" class="oe_highlight"
+                                string="Get Excel Report" type="object"/>
+                    </header>
 
                     <field name="student_id"/>
                     <field name="admission_year"/>
@@ -174,7 +177,10 @@
             <field name="model">student.management</field>
             <field name="arch" type="xml">
                 <search string="Search">
-                    <field name="student_id"/>
+
+                    <field name="sfirst_name"/>
+                    <field name="slast_name"/>
+                    <separator/>
                     <field name="student_medium"/>
                     <filter name="student_class"/>
                     <separator/>
@@ -196,6 +202,7 @@
                 </search>
             </field>
         </record>
+
 
         <record model="ir.actions.act_window" id="student_management_kanban_window">
             <field name="name">Student window</field>

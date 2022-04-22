@@ -57,6 +57,11 @@
             <field name="model">student.fees</field>
             <field name="arch" type="xml">
                 <search string="Search">
+                    <field name="fees_student_id"/>
+                    <field name="fees_student_name"/>
+                    <field name="fees_student_class"/>
+                    <field name="fees_student_division"/>
+                    <filter name="fees_student_medium"/>
                     <separator/>
                     <group expand="0" string="Group By">
                         <filter string="Student ID " name="fees_student_id" context="{'group_by':'fees_student_id'}"/>

@@ -30,7 +30,7 @@
         'views/student_management.xml',
         'views/student_fees.xml',
         'views/student_courses.xml',
-        # 'views/student_email.xml',
+        'views/student_email.xml',
         'report/student_paper_format.xml',
         'report/student_template.xml',
         'report/student_report.xml',
