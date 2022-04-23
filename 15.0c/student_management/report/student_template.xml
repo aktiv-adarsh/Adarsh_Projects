@@ -69,6 +69,33 @@
         </div>
     </template>
 
+<!--    <template>-->
+<!--        <div>-->
+<!--            <center><h3>Exam Result</h3></center>-->
+
+<!--            <table class="table table-sm">-->
+<!--                <tr>-->
+<!--                    <center>-->
+<!--                        <th>Exam Result</th>-->
+<!--                    </center>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <th>Subject Name</th>-->
+<!--                    <th>Subject Code</th>-->
+<!--                    <th>Subject Credit</th>-->
+<!--                    <th>Subject Marks</th>-->
+<!--                    <th>Required Marks</th>-->
+<!--                    <th>Obtained Marks</th>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    &lt;!&ndash;                    <field name="student_course_id">&ndash;&gt;-->
+<!--                    <td><span t-field="rec.name"/></td>-->
+<!--                    &lt;!&ndash;                    </field>&ndash;&gt;-->
+<!--                </tr>-->
+<!--            </table>-->
+<!--        </div>-->
+<!--    </template>-->
+
     <template id="from_student_fees2_template">
         <div class="page">
 

@@ -4,10 +4,10 @@
             <field name="name">Student Email</field>
             <field name="model">student.management</field>
             <!--            <field name="email_from">{{ (object.student_email)}}</field>-->
-            <field name="email_from">adarsh.d@icreativetechnolabs.com</field>
+            <field name="email_from">adarshcompany1@gmail.com</field>
             <field name="email_to">{{ object.student_email}}</field>
             <!--            <field name="email_from">adarsh.d@icreativetechnolabs.com</field>-->
-            <!--            <field name="email_to">{{ object.student_contact_email}}</field>-->
+            <field name="email_to">{{ object.student_contact_email}}</field>
             <field name="subject">Student Details</field>
             <field name="body_html" type="html">
 
@@ -17,6 +17,9 @@
                         Dear,
                         <t t-if="object.student_email">
                             <t t-esc="object.sfirst_name"/>
+                        </t>
+                        <t t-if="object.student_contact_email">
+                            <t t-esc="object.student_contact_name"/>
                         </t>
                         <br/>
                         <br/>

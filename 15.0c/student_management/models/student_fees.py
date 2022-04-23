@@ -24,3 +24,29 @@ class StudentFees(models.Model):
     # fees_student_contact_name = fields.Char(related='fees_student_id.student_contact_name', string="Parent Name")
     # fees_student_contact_no = fields.Char(related='fees_student_id.student_contact_no', string="Contact No.")
     # fees_student_email = fields.Char(related='fees_student_id.student_email', string="Email Address")
+
+    # print("\n\n ----------- BEFORE FUNC -----------\n\n")
+    #
+    # def name_get(self):
+    #     """name_get() will display multiple given fields records on one field"""
+    #     res = []
+    #     print("\n\n ----------- IN FUNC -----------\n\n")
+    #     if self._context.get('fees_student_id'):
+    #         print("\n\n--------fees_student_name -- ", self.fees_student_name)
+    #         for field in self:
+    #
+    #             if field.fees_student_name == False:
+    #                 res.append((field.id, '%s' % (field.fees_student_id)))
+    #                 print("\n\n------IF--RES -- ", res)
+    #
+    #             else:
+    #                 res.append(('%s - %s' % (field.fees_student_id, field.fees_student_name)))
+    #                 print("\n\n------ELSE--RES -- ", res)
+    #
+    #         print("\n\n-----Customer country--------", field.fees_student_id)
+    #         print("-----Customer Name ------------------", field.fees_student_name)
+    #         print("-----Only Field ------------------", field)
+    #     else:
+    #         for field in self:
+    #             res.append((field.id, '%s' % (field.fees_student_name)))
+    #     return res

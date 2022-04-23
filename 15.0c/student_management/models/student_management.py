@@ -29,11 +29,11 @@ class StudentManagement(models.Model):
     student_paid_fees = fields.Integer(string="Paid Fees", tracking=True)  # , compute="_student_fees_calc")
     student_pending_fees = fields.Integer(string="Pending Fees", compute="_compute_pending_fees", tracking=True)
 
-    sfirst_name = fields.Char(string="First Name", tracking=True)
+    sfirst_name = fields.Char(string="First Name", tracking=True, required=True)
     smiddle_name = fields.Char(string="Middle Name", tracking=True)
     slast_name = fields.Char(string="Last Name", tracking=True)
 
-    student_email = fields.Char(string="E-mail", tracking=True)
+    student_email = fields.Char(string="E-mail", tracking=True, required=True)
     student_phone = fields.Char(string="Phone", tracking=True)
     student_mobile = fields.Char(string="Mobile", tracking=True)
 
@@ -47,12 +47,13 @@ class StudentManagement(models.Model):
                                                    ('english', 'English')], help='Select student mother tung language',
                                         tracking=True)
 
-    student_contact_name = fields.Char(string="Parent Name", tracking=True)
+    student_contact_name = fields.Char(string="Parent Name", tracking=True, required=True)
     student_contact_no = fields.Integer(string="Contact No.", tracking=True)
-    student_contact_email = fields.Char(string="E-mail", tracking=True)
+    student_contact_email = fields.Char(string="E-mail", tracking=True, required=True)
 
     # course_ids = fields.One2many('student.courses', 'student_course_id', string="Student_Courses")
     student_course_id = fields.Many2many('student.courses', string="Student Course")
+
 
     @api.depends('student_fee', 'student_paid_fees')
     def _compute_pending_fees(self):

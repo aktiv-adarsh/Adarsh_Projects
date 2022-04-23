@@ -92,9 +92,12 @@
 
                                 <field name="student_course_id">
                                     <tree editable="bottom">
-                                        <field name="name" style="width:40%"/>
-                                        <field name="subject_code"/>
-                                        <field name="subject_code"/>
+                                        <field name="name" style="width:40%" readonly="1"/>
+                                        <field name="subject_code" readonly="1"/>
+                                        <field name="course_credit" readonly="1"/>
+                                        <field name="course_student_mark" readonly="1"/>
+                                        <field name="course_student_required_mark" readonly="1"/>
+                                        <field name="course_student_obtain_mark"/>
                                     </tree>
                                 </field>
 
