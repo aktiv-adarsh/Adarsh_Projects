@@ -21,6 +21,7 @@ class StudentManagement(models.Model):
     # student_class = fields.Char(string="Student Class", tracking=True)
     student_college = fields.Selection([('sal', 'SAL')], default="sal", string="College", help='Select student Department', tracking=True)
     student_class = fields.Selection([('computer', 'Computer Engineering'), ('it', 'IT Engineering'), ('mechanical', 'Mechanical Engineering'), ('civil', 'Civil Engineering'), ('automobile', 'Automobile Engineering')], string="Department", help='Select student Department', tracking=True)
+    student_sem = fields.Selection([('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5'), ('6', '6'), ('7', '7'), ('8', '8')], string="Semester", help='Select student Semester', tracking=True)
     student_fee = fields.Integer(string="College Fees", compute="_compute_fees_calc", tracking=True)
 
     # student_medium = fields.Selection(string="Medium", selection=[('gujarati1', 'Gujarati'), ('hindi1', 'Hindi'), ('english1', 'English')], help='Select standard medium for study', tracking=True)
@@ -76,7 +77,7 @@ class StudentManagement(models.Model):
             if rec.student_fee:
                 rec.student_pending_fees = rec.student_fee - rec.student_paid_fees
             else:
-                rec.student_pending_fees = False
+                rec.student_pending_fees = 0
 
     @api.onchange('student_class')
     def _compute_fees_calc(self):
@@ -87,18 +88,19 @@ class StudentManagement(models.Model):
         for rec in self:
             if rec.student_class:
                 rec.student_fee = student_std_fees[str(rec.student_class)]
+                print("\n\n-----------------IF-----------------\n\n")
             else:
-                print("-----------------???-----------------")
+                print("\n-----------------???-----------------\n")
                 rec.student_fee = False
 
-    @api.onchange('student_class')
-    def student_class_check(self):
-        """Though exceptions when standard > 12"""
-
-        if len(self.student_class) > 13:
-            raise UserError("Please enter class between 1 to 12")
-        else:
-            print("\n\n\n --------- \n\n\n")
+    # @api.onchange('student_class')
+    # def student_class_check(self):
+    #     """Though exceptions when standard > 12"""
+    #
+    #     if len(self.student_class) > 13:
+    #         raise UserError("Please enter class between 1 to 12")
+    #     else:
+    #         print("\n\n\n --------- \n\n\n")
 
     @api.onchange('student_dob')
     def calc_stu_age(self):

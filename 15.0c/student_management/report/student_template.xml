@@ -7,89 +7,133 @@
             </center>
             <br></br>
 
-            <table class="table table-sm"  border="2">
+            <table class="table table-sm" border="3">
+                <!--                <tr>-->
+                <!--                    <th>Student ID</th>-->
+                <!--                    <th>Student Name</th>-->
+                <!--                    <th>Gender</th>-->
+                <!--                    <th>Admission Year</th>-->
+                <!--                    <th>College</th>-->
+                <!--                    <th>Department</th>-->
+                <!--                    <th>Semester</th>-->
+                <!--                    <th>Fees</th>-->
+                <!--                    <th>Paid Fees</th>-->
+                <!--                    <th>Pending Fees</th>-->
+                <!--                    <th>Contact Person</th>-->
+                <!--                    <th>Contact Number</th>-->
+                <!--                    <th>E-mail</th>-->
+                <!--                </tr>-->
+                <tr></tr>
                 <tr>
-                    <th>Student ID</th>
-                    <th>Student Name</th>
-                    <th>Gender</th>
-                    <th>Admission Year</th>
-                    <th>College</th>
-                    <th>Department</th>
-                    <th>Fees</th>
-                    <th>Paid Fees</th>
-                    <th>Pending Fees</th>
-                    <th>Contact Person</th>
-                    <th>Contact Number</th>
-                    <th>E-mail</th>
-                </tr>
-                <tr>
+                    <th align="left">Student ID</th>
                     <td>
                         <span t-field="rec.student_id"/>
                     </td>
+                </tr>
+                <tr>
+                    <th align="left">Student Name</th>
                     <td>
                         <span t-field="rec.sfirst_name"/>
                     </td>
+                </tr>
+                <tr>
+                    <th align="left">Gender</th>
                     <td>
                         <span t-field="rec.student_gender"/>
                     </td>
+                </tr>
+                <tr>
+                    <th align="left">Admission Year</th>
                     <td>
                         <span t-field="rec.admission_year"/>
                     </td>
+                </tr>
+                <tr>
+                    <th align="left">College</th>
                     <td>
                         <span t-field="rec.student_college"/>
                     </td>
+                </tr>
+                <tr>
+                    <th align="left">Department</th>
                     <td>
                         <span t-field="rec.student_class"/>
                     </td>
+                </tr>
+                <tr>
+                    <th align="left">Semester</th>
+                    <td>
+                        <span t-field="rec.student_sem"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th align="left">Fees</th>
                     <td>
                         <span t-field="rec.student_fee"/>
                     </td>
+                </tr>
+                <tr>
+                    <th align="left">Paid Fees</th>
                     <td>
                         <span t-field="rec.student_paid_fees"/>
                     </td>
+                </tr>
+                <tr>
+                    <th align="left">Pending Fees</th>
                     <td>
                         <span t-field="rec.student_pending_fees"/>
                     </td>
+                </tr>
+                <tr>
+                    <th align="left">Contact Person</th>
                     <td>
                         <span t-field="rec.student_contact_name"/>
                     </td>
+                </tr>
+                <tr>
+                    <th align="left">Contact Number</th>
                     <td>
                         <span t-field="rec.student_contact_no"/>
                     </td>
+                </tr>
+                <tr>
+                    <th align="left">E-mail</th>
                     <td>
                         <span t-field="rec.student_email"/>
                     </td>
+                </tr>
+                <tr>
                 </tr>
             </table>
         </div>
     </template>
 
-<!--    <template>-->
-<!--        <div>-->
-<!--            <center><h3>Exam Result</h3></center>-->
+    <!--    <template>-->
+    <!--        <div>-->
+    <!--            <center><h3>Exam Result</h3></center>-->
 
-<!--            <table class="table table-sm">-->
-<!--                <tr>-->
-<!--                    <center>-->
-<!--                        <th>Exam Result</th>-->
-<!--                    </center>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    <th>Subject Name</th>-->
-<!--                    <th>Subject Code</th>-->
-<!--                    <th>Subject Credit</th>-->
-<!--                    <th>Subject Marks</th>-->
-<!--                    <th>Required Marks</th>-->
-<!--                    <th>Obtained Marks</th>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    &lt;!&ndash;                    <field name="student_course_id">&ndash;&gt;-->
-<!--                    <td><span t-field="rec.name"/></td>-->
-<!--                    &lt;!&ndash;                    </field>&ndash;&gt;-->
-<!--                </tr>-->
-<!--            </table>-->
-<!--        </div>-->
-<!--    </template>-->
+    <!--            <table class="table table-sm">-->
+    <!--                <tr>-->
+    <!--                    <center>-->
+    <!--                        <th>Exam Result</th>-->
+    <!--                    </center>-->
+    <!--                </tr>-->
+    <!--                <tr>-->
+    <!--                    <th>Subject Name</th>-->
+    <!--                    <th>Subject Code</th>-->
+    <!--                    <th>Subject Credit</th>-->
+    <!--                    <th>Subject Marks</th>-->
+    <!--                    <th>Required Marks</th>-->
+    <!--                    <th>Obtained Marks</th>-->
+    <!--                </tr>-->
+    <!--                <tr>-->
+    <!--                    &lt;!&ndash;                    <field name="student_course_id">&ndash;&gt;-->
+    <!--                    <td><span t-field="rec.name"/></td>-->
+    <!--                    &lt;!&ndash;                    </field>&ndash;&gt;-->
+    <!--                </tr>-->
+    <!--            </table>-->
+    <!--        </div>-->
+    <!--    </template>-->
 
     <template id="from_student_fees2_template">
         <div class="page">
@@ -99,7 +143,7 @@
             </center>
             <br></br>
 
-            <table class="table table-sm"  border="2">
+            <table class="table table-sm" border="2">
                 <tr>
                     <th>Student ID</th>
                     <th>Student Name</th>
@@ -108,12 +152,14 @@
                     <th>Student College</th>
                     <th>Student Department</th>
                     <th>Division</th>
-<!--                    <th>Medium</th>-->
+                    <th>Semester</th>
+                    <!--                    <th>Medium</th>-->
                     <th>Admission Year</th>
                     <th>Standard Fee</th>
                     <th>Paid Fee</th>
 
                 </tr>
+                <tr></tr>
                 <tr>
                     <td>
                         <span t-field="fees_rec.fees_student_id"/>
@@ -136,9 +182,12 @@
                     <td>
                         <span t-field="fees_rec.fees_student_division"/>
                     </td>
-<!--                    <td>-->
-<!--                        <span t-field="fees_rec.fees_student_medium"/>-->
-<!--                    </td>-->
+                    <td>
+                        <span t-field="fees_rec.fees_student_sem"/>
+                    </td>
+                    <!--                    <td>-->
+                    <!--                        <span t-field="fees_rec.fees_student_medium"/>-->
+                    <!--                    </td>-->
                     <td>
                         <span t-field="fees_rec.fees_admission_year"/>
                     </td>

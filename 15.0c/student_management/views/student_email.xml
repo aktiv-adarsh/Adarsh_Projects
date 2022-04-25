@@ -6,7 +6,6 @@
             <!--            <field name="email_from">{{ (object.student_email)}}</field>-->
             <field name="email_from">adarshcompany1@gmail.com</field>
             <field name="email_to">{{ object.student_email}}</field>
-            <!--            <field name="email_from">adarsh.d@icreativetechnolabs.com</field>-->
             <field name="email_to">{{ object.student_contact_email}}</field>
             <field name="subject">Student Details</field>
             <field name="body_html" type="html">
@@ -58,6 +57,10 @@
                             <tr>
                                 <th name="th_student_class" class="text-left">Department:</th>
                                 <td> <span t-field="object.student_class"/> </td>
+                            </tr>
+                            <tr>
+                                <th name="th_student_sem" class="text-left">Semester:</th>
+                                <td> <span t-field="object.student_sem"/> </td>
                             </tr>
                             <tr>
                                 <!--   field details   -->

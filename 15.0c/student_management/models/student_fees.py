@@ -15,6 +15,7 @@ class StudentFees(models.Model):
     fees_student_class = fields.Selection(related='fees_student_id.student_class', string="Student Department")
     fees_student_division = fields.Selection(related='fees_student_id.student_division', string="Student Division")
     fees_student_college = fields.Selection(related='fees_student_id.student_college', string="Student College")
+    fees_student_sem = fields.Selection(related='fees_student_id.student_sem', string="Student Semester")
     fees_admission_year = fields.Date(related='fees_student_id.admission_year', string="Admission Year")
 
     fees_student_fee = fields.Integer(related='fees_student_id.student_fee', string="Standard Fees")

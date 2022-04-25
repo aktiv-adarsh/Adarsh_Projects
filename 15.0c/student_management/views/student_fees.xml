@@ -23,6 +23,7 @@
                             <group style="width:50%">
                                 <field name="fees_student_college"/>
                                 <field name="fees_student_class"/>
+                                <field name="fees_student_sem"/>
                                 <field name="fees_student_division"/>
 <!--                                <field name="fees_student_medium"/>-->
                                 <field name="fees_admission_year"/>
