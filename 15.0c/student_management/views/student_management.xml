@@ -88,7 +88,7 @@
                                 </group>
                             </page>
 
-                            <page string="Courses Details" name="scourses_details">
+                            <page string="Student Marksheet" name="scourses_details">
 
                                 <field name="student_course_id">
                                     <tree editable="bottom">

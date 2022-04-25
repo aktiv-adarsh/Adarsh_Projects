@@ -18,6 +18,7 @@
                                 <field name="fees_student_dob"/>
                                 <field name="fees_student_gender"/>
                                 <field name="fees_student_fee"/>
+                                <field name="fees_date_today"/>
                             </group>
                             <group style="width:50%">
                                 <field name="fees_student_class"/>

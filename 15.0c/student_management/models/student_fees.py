@@ -1,6 +1,6 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
-from datetime import date
+from datetime import *
 
 
 class StudentFees(models.Model):
@@ -20,6 +20,7 @@ class StudentFees(models.Model):
     fees_student_fee = fields.Integer(related='fees_student_id.student_fee', string="Standard Fees")
     fees_student_paid_fees = fields.Integer(related='fees_student_id.student_paid_fees', string="Paid Fees")
 
+    fees_date_today = fields.Date()
     #
     # fees_student_contact_name = fields.Char(related='fees_student_id.student_contact_name', string="Parent Name")
     # fees_student_contact_no = fields.Char(related='fees_student_id.student_contact_no', string="Contact No.")
