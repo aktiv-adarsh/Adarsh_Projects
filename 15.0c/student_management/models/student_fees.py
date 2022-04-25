@@ -12,9 +12,9 @@ class StudentFees(models.Model):
     fees_student_dob = fields.Date(related='fees_student_id.student_dob', string="Student DOB")
     fees_student_gender = fields.Selection(related='fees_student_id.student_gender', string="Student Gender")
 
-    fees_student_class = fields.Integer(related='fees_student_id.student_class', string="Student Class")
+    fees_student_class = fields.Selection(related='fees_student_id.student_class', string="Student Department")
     fees_student_division = fields.Selection(related='fees_student_id.student_division', string="Student Division")
-    fees_student_medium = fields.Selection(related='fees_student_id.student_medium', string="Student Medium")
+    fees_student_college = fields.Selection(related='fees_student_id.student_college', string="Student College")
     fees_admission_year = fields.Date(related='fees_student_id.admission_year', string="Admission Year")
 
     fees_student_fee = fields.Integer(related='fees_student_id.student_fee', string="Standard Fees")

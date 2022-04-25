@@ -7,19 +7,17 @@
             </center>
             <br></br>
 
-            <table class="table table-sm">
+            <table class="table table-sm"  border="2">
                 <tr>
                     <th>Student ID</th>
                     <th>Student Name</th>
+                    <th>Gender</th>
                     <th>Admission Year</th>
+                    <th>College</th>
+                    <th>Department</th>
                     <th>Fees</th>
                     <th>Paid Fees</th>
                     <th>Pending Fees</th>
-                    <th>Address</th>
-                    <th>Date Of Birth</th>
-                    <th>Gender</th>
-                    <th>Age</th>
-                    <th>Mother Tung Language</th>
                     <th>Contact Person</th>
                     <th>Contact Number</th>
                     <th>E-mail</th>
@@ -32,7 +30,16 @@
                         <span t-field="rec.sfirst_name"/>
                     </td>
                     <td>
+                        <span t-field="rec.student_gender"/>
+                    </td>
+                    <td>
                         <span t-field="rec.admission_year"/>
+                    </td>
+                    <td>
+                        <span t-field="rec.student_college"/>
+                    </td>
+                    <td>
+                        <span t-field="rec.student_class"/>
                     </td>
                     <td>
                         <span t-field="rec.student_fee"/>
@@ -42,18 +49,6 @@
                     </td>
                     <td>
                         <span t-field="rec.student_pending_fees"/>
-                    </td>
-                    <td>
-                        <span t-field="rec.student_address"/>
-                    </td>
-                    <td>
-                        <span t-field="rec.student_dob"/>
-                    </td>
-                    <td>
-                        <span t-field="rec.student_age"/>
-                    </td>
-                    <td>
-                        <span t-field="rec.mother_tung_lang"/>
                     </td>
                     <td>
                         <span t-field="rec.student_contact_name"/>
@@ -104,15 +99,16 @@
             </center>
             <br></br>
 
-            <table class="table table-sm">
+            <table class="table table-sm"  border="2">
                 <tr>
                     <th>Student ID</th>
                     <th>Student Name</th>
                     <th>Date Of Birth</th>
                     <th>Gender</th>
-                    <th>Student Class</th>
+                    <th>Student College</th>
+                    <th>Student Department</th>
                     <th>Division</th>
-                    <th>Medium</th>
+<!--                    <th>Medium</th>-->
                     <th>Admission Year</th>
                     <th>Standard Fee</th>
                     <th>Paid Fee</th>
@@ -132,14 +128,17 @@
                         <span t-field="fees_rec.fees_student_gender"/>
                     </td>
                     <td>
+                        <span t-field="fees_rec.fees_student_college"/>
+                    </td>
+                    <td>
                         <span t-field="fees_rec.fees_student_class"/>
                     </td>
                     <td>
                         <span t-field="fees_rec.fees_student_division"/>
                     </td>
-                    <td>
-                        <span t-field="fees_rec.fees_student_medium"/>
-                    </td>
+<!--                    <td>-->
+<!--                        <span t-field="fees_rec.fees_student_medium"/>-->
+<!--                    </td>-->
                     <td>
                         <span t-field="fees_rec.fees_admission_year"/>
                     </td>

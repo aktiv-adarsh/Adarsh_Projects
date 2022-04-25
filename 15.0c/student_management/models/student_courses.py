@@ -18,12 +18,12 @@ class StudentCourses(models.Model):
     subject_code = fields.Integer(string="Subject Code", required=True, tracking=True)
 
     course_credit = fields.Integer(string="Subject Credit", tracking=True)
-    course_student_mark = fields.Integer(string="Mark", default=100)
-    course_student_required_mark = fields.Integer(string="Required Mark", default=32)
+    course_student_mark = fields.Integer(string="Mark", default=70)
+    course_student_required_mark = fields.Integer(string="Required Mark", default=23)
     course_student_obtain_mark = fields.Integer(string="Obtain Mark")
 
     course_student_mark_sum = fields.Integer(string="Mark Total")
-    course_student_mark_avg = fields.Integer(string="Mark Total")
+    course_student_mark_avg = fields.Integer(string="Total Average")#, compute="calc_student_marks")
     course_student_exam_status = fields.Char(string="Mark Total")
 
     """sql_cons.. will generate unique course id"""
@@ -45,6 +45,9 @@ class StudentCourses(models.Model):
     # @api.onchange('student_mark')
     # def calc_student_marks(self):
     #     print("\n\n--------In Func----\n")
-    #     for rec in self.student_mark:
-    #         rec.student_mark_total += rec
-    #         print("\n\n-----Res--", rec.student_mark_total)
+    #     count = 1
+    #     for rec in self.course_student_mark:
+    #         rec.course_student_mark_sum += rec
+    #         count += 1
+    #         print("\n\n-----Res--", rec.course_student_mark_sum)
+    #     self.course_student_mark_avg = int(self.course_student_obtain_mark) / count

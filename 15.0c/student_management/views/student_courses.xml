@@ -48,7 +48,7 @@
                         <t t-name="kanban-box">
                             <div class="oe_kanban_global_click" style="width: 50mm;">
                                 <div class="o_kanban_image_fill_left d-none d-md-block"
-                                     style="width: 48mm; height: 50mm;">
+                                     style="width: 48mm; height: 60mm;">
                                     <field name="student_img" widget="image"/>
                                 </div>
                                 <div class="oe_kanban_details">

@@ -52,7 +52,11 @@
                                 <td> <span t-field="object.admission_year"/> </td>
                             </tr>
                             <tr>
-                                <th name="th_student_class" class="text-left">Standard:</th>
+                                <th name="th_student_college" class="text-left">College:</th>
+                                <td> <span t-field="object.student_college"/> </td>
+                            </tr>
+                            <tr>
+                                <th name="th_student_class" class="text-left">Department:</th>
                                 <td> <span t-field="object.student_class"/> </td>
                             </tr>
                             <tr>

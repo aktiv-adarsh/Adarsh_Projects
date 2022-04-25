@@ -34,13 +34,14 @@
                             <group style="width:50%" colspan="2">
                                 <field name="student_id" placeholder="Student Name"/>
                                 <field name="admission_year"/>
-                                <field name="student_class" placeholder="Student class from 1 to 10 "/>
-                                <field name="student_fee"/>
+                                <field name="student_college"/>
+                                <field name="student_class"/>
                             </group>
 
                             <group style="width:50%" colspan="2">
-                                <field name="student_medium"/>
+                                <!--                                <field name="student_medium"/>-->
                                 <field name="student_division"/>
+                                <field name="student_fee"/>
                                 <field name="student_paid_fees" readonly="1"/>
                                 <field name="student_pending_fees"/>
                             </group>
@@ -95,11 +96,20 @@
                                         <field name="name" style="width:40%" readonly="1"/>
                                         <field name="subject_code" readonly="1"/>
                                         <field name="course_credit" readonly="1"/>
-                                        <field name="course_student_mark" readonly="1"/>
+                                        <field name="course_student_mark" readonly="1" sum="Total"/>
                                         <field name="course_student_required_mark" readonly="1"/>
-                                        <field name="course_student_obtain_mark"/>
+                                        <field name="course_student_obtain_mark" sum="Total"/>
+
                                     </tree>
                                 </field>
+                                <center>
+                                    <h5>
+                                        <b>Percentage:
+                                            <field name="student_mark_average"/>
+                                            %
+                                        </b>
+                                    </h5>
+                                </center>
 
                             </page>
                         </notebook>
@@ -137,7 +147,10 @@
                                     <div>Name:
                                         <field name="sfirst_name"/>
                                     </div>
-                                    <div>Class:
+                                    <div>College:
+                                        <field name="student_college"/>
+                                    </div>
+                                    <div>Department:
                                         <field name="student_class"/>
                                     </div>
                                     <div>Admission Year
@@ -163,8 +176,9 @@
 
                     <field name="student_id"/>
                     <field name="admission_year"/>
+                    <field name="student_college"/>
                     <field name="student_class"/>
-                    <field name="student_medium" optional="hide"/>
+                    <!--                    <field name="student_medium" optional="hide"/>-->
                     <field name="student_division" optional="hide"/>
                     <field name="student_fee"/>
                     <field name="student_paid_fees" optional="hide"/>
@@ -184,17 +198,20 @@
                     <field name="sfirst_name"/>
                     <field name="slast_name"/>
                     <separator/>
-                    <field name="student_medium"/>
+                    <!--                    <field name="student_medium"/>-->
+                    <field name="student_college"/>
                     <filter name="student_class"/>
                     <separator/>
+                    <filter name="student_college" string="College"/>
                     <filter name="student_class" string="Class"/>
-                    <filter name="student_medium" string="Medium"/>
+                    <!--                    <filter name="student_medium" string="Medium"/>-->
                     <filter name="student_division" string="Division"/>
                     <filter name="student_gender" string="Gender"/>
                     <filter name="mother_tung_lang" string="Mother tung lang"/>
                     <group expand="0" string="Group By">
-                        <filter string="Class " name="student_class" context="{'group_by':'student_class'}"/>
-                        <filter string="Medium" name="student_medium" context="{'group_by':'student_medium'}"/>
+                        <filter string="College " name="student_college" context="{'group_by':'student_college'}"/>
+                        <filter string="Department " name="student_class" context="{'group_by':'student_class'}"/>
+                        <!--                        <filter string="Medium" name="student_medium" context="{'group_by':'student_medium'}"/>-->
                         <filter string="Division" name="student_division"
                                 context="{'group_by':'student_division'}"/>
                         <filter string="Gender" name="student_gender" context="{'group_by':'student_gender'}"/>
@@ -206,12 +223,23 @@
             </field>
         </record>
 
+        <record id="student_management_graph_view" model="ir.ui.view">
+            <field name="name">Student Graph View</field>
+            <field name="model">student.management</field>
+            <field name="arch" type="xml">
+                <graph>
+<!--                    <field name="student_class"/>-->
+                    <field name="student_paid_fees" type="measure"/>
+                    <field name="sfirst_name" type="col"/>
+                </graph>
+            </field>
+        </record>
 
         <record model="ir.actions.act_window" id="student_management_kanban_window">
             <field name="name">Student window</field>
             <field name="res_model">student.management</field>
-            <field name="view_mode">kanban,tree,form</field>
-            <!--            <field name="view_id" ref="rental_management_tree"/>-->
+            <field name="view_mode">kanban,tree,form,graph</field>
+<!--            <field name="view_id" ref="student_management_graph_view"/>-->
         </record>
 
         <record id="student_management_server_action" model="ir.actions.server">

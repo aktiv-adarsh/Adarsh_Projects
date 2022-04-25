@@ -18,14 +18,13 @@ class StudentManagement(models.Model):
 
     student_id = fields.Integer(string="Student ID", tracking=True, required=True)  # , compute="_student_id_generate")
     admission_year = fields.Date(string="Admission Year", tracking=True)
-    student_class = fields.Integer(string="Student Class", tracking=True)
-    student_fee = fields.Integer(string="Fees", compute="_compute_fees_calc", tracking=True)
+    # student_class = fields.Char(string="Student Class", tracking=True)
+    student_college = fields.Selection([('sal', 'SAL')], default="sal", string="College", help='Select student Department', tracking=True)
+    student_class = fields.Selection([('computer', 'Computer Engineering'), ('it', 'IT Engineering'), ('mechanical', 'Mechanical Engineering'), ('civil', 'Civil Engineering'), ('automobile', 'Automobile Engineering')], string="Department", help='Select student Department', tracking=True)
+    student_fee = fields.Integer(string="College Fees", compute="_compute_fees_calc", tracking=True)
 
-    student_medium = fields.Selection(string="Medium", selection=[('gujarati1', 'Gujarati'), ('hindi1', 'Hindi'),
-                                                                  ('english1', 'English')],
-                                      help='Select standard medium for study', tracking=True)
-    student_division = fields.Selection([('A', 'A'), ('B', 'B'), ('C', 'C')], string="Division",
-                                        help='Select student Division', tracking=True)
+    # student_medium = fields.Selection(string="Medium", selection=[('gujarati1', 'Gujarati'), ('hindi1', 'Hindi'), ('english1', 'English')], help='Select standard medium for study', tracking=True)
+    student_division = fields.Selection([('A', 'A'), ('B', 'B'), ('C', 'C')], string="Division", help='Select student Division', tracking=True)
     student_paid_fees = fields.Integer(string="Paid Fees", tracking=True)  # , compute="_student_fees_calc")
     student_pending_fees = fields.Integer(string="Pending Fees", compute="_compute_pending_fees", tracking=True)
 
@@ -53,7 +52,21 @@ class StudentManagement(models.Model):
 
     # course_ids = fields.One2many('student.courses', 'student_course_id', string="Student_Courses")
     student_course_id = fields.Many2many('student.courses', string="Student Course")
+    student_mark_average = fields.Integer(compute="_compute_mark_avg")
 
+    @api.onchange('student_course_id')
+    def _compute_mark_avg(self):
+        count = 0
+        total = 0
+        if self.student_course_id:
+            for rec in self.student_course_id:
+                print("\n\n--student_course_id------", rec.name, "-----\n\n")
+                print("\n\n----course_student_obtain_mark----", rec.course_student_obtain_mark, "-----\n\n")
+                total += rec.course_student_obtain_mark
+                count += 1
+            self.student_mark_average = int(total) / count
+        else:
+            self.student_mark_average = False
 
     @api.depends('student_fee', 'student_paid_fees')
     def _compute_pending_fees(self):
@@ -69,9 +82,8 @@ class StudentManagement(models.Model):
     def _compute_fees_calc(self):
         """Set and calculate only paid fees"""
 
-        student_std_fees = {'1': 1000, '2': 2000, '3': 3500, '4': 4500,
-                            '5': 5500, '6': 6999, '7': 7999, '8': 8999, '9': 9999, '10': 10999, '11': 11999,
-                            '12': 12999}
+        student_std_fees = {'computer': 60000, 'it': 65000, 'mechanical': 50000, 'civil': 56000,
+                            'automobile': 67000}
         for rec in self:
             if rec.student_class:
                 rec.student_fee = student_std_fees[str(rec.student_class)]
@@ -83,8 +95,10 @@ class StudentManagement(models.Model):
     def student_class_check(self):
         """Though exceptions when standard > 12"""
 
-        if int(self.student_class) > 13:
+        if len(self.student_class) > 13:
             raise UserError("Please enter class between 1 to 12")
+        else:
+            print("\n\n\n --------- \n\n\n")
 
     @api.onchange('student_dob')
     def calc_stu_age(self):
@@ -134,14 +148,18 @@ class StudentManagement(models.Model):
         worksheet.write(Row, Col, 'Name', font_style)
 
         Col += 1
-        worksheet.col(3).width = 256 * 10
-        worksheet.write(Row, Col, 'Class', font_style)
+        worksheet.col(3).width = 256 * 12
+        worksheet.write(Row, Col, 'College', font_style)
+
+        Col += 1
+        worksheet.col(4).width = 256 * 20
+        worksheet.write(Row, Col, 'Department', font_style)
 
         Col += 1
         worksheet.write(Row, Col, 'Division', font_style)
-
-        Col += 1
-        worksheet.write(Row, Col, 'Medium', font_style)
+        #
+        # Col += 1
+        # worksheet.write(Row, Col, 'Medium', font_style)
 
         Col += 1
         worksheet.col(6).width = 256 * 15
@@ -175,15 +193,14 @@ class StudentManagement(models.Model):
             print("**********rec.sfirst_name == ", rec.sfirst_name, "---")
             print("**********str((rec.sfirst_name == ", str(rec.sfirst_name), "---\n")
 
-            worksheet.write(Row, 3, rec.student_class, sheet_data_style)
+            worksheet.write(Row, 3, rec.student_college, sheet_data_style)
+            print("**********rec.student_class == ", rec.student_college, "---")
+
+            worksheet.write(Row, 4, rec.student_class, sheet_data_style)
             print("**********rec.student_class == ", rec.student_class, "---")
 
-            worksheet.write(Row, 4, rec.student_division, sheet_data_style)
+            worksheet.write(Row, 5, rec.student_division, sheet_data_style)
             print("**********rec.student_division == ", rec.student_division, "---")
-
-            worksheet.write(Row, 5, str(rec.student_medium), sheet_data_style)
-            print("**********rec.student_medium == ", rec.student_medium, "---")
-            print("**********str((rec.student_medium == ", str(rec.student_medium), "---")
 
             worksheet.write(Row, 6, rec.student_fee, sheet_data_style)
             total_standard_fees += rec.student_fee
@@ -228,7 +245,7 @@ class StudentManagement(models.Model):
         print("\n\n --------- Self.id ----\n", self.id, "-----\n\n")
 
         url = ('web/content/?model=student.management&download=true&field=excel_file&id=%s&filename=%s' % (
-        self.ids, filename))
+        self.id, filename))
         print("\n\n --------- url ----\n", url, "-----\n\n")
         # if self.excel_file:
         return {'type': 'ir.actions.act_url',
