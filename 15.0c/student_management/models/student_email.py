@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # test_demo Database
 from odoo import models, fields, api, _
+from odoo.exceptions import UserError, ValidationError
 
 
 class StudentEmailDetails(models.Model):
@@ -14,3 +15,5 @@ class StudentEmailDetails(models.Model):
         template = self.env['mail.template'].browse(template_id)
         template.send_mail(self.id, force_send=True)
         print("\n------ Func end----------\n")
+        if template:
+            raise UserError(_('Mail send successfully'))

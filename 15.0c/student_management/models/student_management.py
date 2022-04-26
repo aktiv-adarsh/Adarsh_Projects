@@ -19,13 +19,20 @@ class StudentManagement(models.Model):
     student_id = fields.Integer(string="Student ID", tracking=True, required=True)  # , compute="_student_id_generate")
     admission_year = fields.Date(string="Admission Year", tracking=True)
     # student_class = fields.Char(string="Student Class", tracking=True)
-    student_college = fields.Selection([('sal', 'SAL')], default="sal", string="College", help='Select student Department', tracking=True)
-    student_class = fields.Selection([('computer', 'Computer Engineering'), ('it', 'IT Engineering'), ('mechanical', 'Mechanical Engineering'), ('civil', 'Civil Engineering'), ('automobile', 'Automobile Engineering')], string="Department", help='Select student Department', tracking=True)
-    student_sem = fields.Selection([('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5'), ('6', '6'), ('7', '7'), ('8', '8')], string="Semester", help='Select student Semester', tracking=True)
+    student_college = fields.Selection([('sal', 'SAL')], default="sal", string="College",
+                                       help='Select student Department', tracking=True)
+    student_class = fields.Selection(
+        [('computer', 'Computer Engineering'), ('it', 'IT Engineering'), ('mechanical', 'Mechanical Engineering'),
+         ('civil', 'Civil Engineering'), ('automobile', 'Automobile Engineering')], string="Department",
+        help='Select student Department', tracking=True)
+    student_sem = fields.Selection(
+        [('1', 1), ('2', 2), ('3', 3), ('4', 4), ('5', 5), ('6', 6), ('7', 7), ('8', 8)],
+        string="Semester", help='Select student Semester', tracking=True)
     student_fee = fields.Integer(string="College Fees", compute="_compute_fees_calc", tracking=True)
 
     # student_medium = fields.Selection(string="Medium", selection=[('gujarati1', 'Gujarati'), ('hindi1', 'Hindi'), ('english1', 'English')], help='Select standard medium for study', tracking=True)
-    student_division = fields.Selection([('A', 'A'), ('B', 'B'), ('C', 'C')], string="Division", help='Select student Division', tracking=True)
+    student_division = fields.Selection([('a', 'A'), ('b', 'B'), ('c', 'C')], string="Division",
+                                        help='Select student Division', tracking=True)
     student_paid_fees = fields.Integer(string="Paid Fees", tracking=True)  # , compute="_student_fees_calc")
     student_pending_fees = fields.Integer(string="Pending Fees", compute="_compute_pending_fees", tracking=True)
 
@@ -50,14 +57,19 @@ class StudentManagement(models.Model):
     student_contact_name = fields.Char(string="Parent Name", tracking=True, required=True)
     student_contact_no = fields.Integer(string="Contact No.", tracking=True)
     student_contact_email = fields.Char(string="E-mail", tracking=True, required=True)
+    student_parent_gender = fields.Selection(string="Gender", selection=[('male', 'Male'), ('female', 'Female')], tracking=True)
 
     # course_ids = fields.One2many('student.courses', 'student_course_id', string="Student_Courses")
     student_course_id = fields.Many2many('student.courses', string="Student Course")
     student_mark_average = fields.Integer(compute="_compute_mark_avg")
+    course_student_exam_status = fields.Char(string="Exam Status", compute="compute_student_result_status")
+
 
     @api.onchange('student_course_id')
     def _compute_mark_avg(self):
+        """It will compute student percentage"""
         count = 0
+        percentage = 0
         total = 0
         if self.student_course_id:
             for rec in self.student_course_id:
@@ -65,9 +77,28 @@ class StudentManagement(models.Model):
                 print("\n\n----course_student_obtain_mark----", rec.course_student_obtain_mark, "-----\n\n")
                 total += rec.course_student_obtain_mark
                 count += 1
-            self.student_mark_average = int(total) / count
+            # self.student_mark_average = int(total) / count
+            percentage = int(total) / count
+            print("\n\n--==** -- percentage------", percentage, "-----\n\n")
+            self.student_mark_average = (percentage * 100) / 70
+            print("\n\n--==** -- student_mark_average------", self.student_mark_average, "-----\n\n")
         else:
-            self.student_mark_average = False
+            self.student_mark_average = 0
+
+    @api.onchange('student_course_id')
+    def compute_student_result_status(self):
+        """Display Pass/Fail msg or Though exceptions when standard > 70"""
+        # if self.student_course_id:
+        for rec in self.student_course_id:
+            if int(rec.course_student_obtain_mark) < 23:
+                self.course_student_exam_status = "Sorry! You have not cleared this exam"
+                print("\n\n", self.course_student_exam_status)
+                break
+            elif int(rec.course_student_obtain_mark) > 70:
+                raise UserError(_('The Mark must be < 70.'))
+            else:
+                self.course_student_exam_status = "Congratulations..You have successfully Pass the exam"
+                print("\n\n", self.course_student_exam_status)
 
     @api.depends('student_fee', 'student_paid_fees')
     def _compute_pending_fees(self):
@@ -91,7 +122,7 @@ class StudentManagement(models.Model):
                 print("\n\n-----------------IF-----------------\n\n")
             else:
                 print("\n-----------------???-----------------\n")
-                rec.student_fee = False
+                rec.student_fee = 0
 
     # @api.onchange('student_class')
     # def student_class_check(self):
@@ -247,36 +278,10 @@ class StudentManagement(models.Model):
         print("\n\n --------- Self.id ----\n", self.id, "-----\n\n")
 
         url = ('web/content/?model=student.management&download=true&field=excel_file&id=%s&filename=%s' % (
-        self.id, filename))
+            self.id, filename))
         print("\n\n --------- url ----\n", url, "-----\n\n")
         # if self.excel_file:
         return {'type': 'ir.actions.act_url',
                 'url': url,
                 'target': 'new'
                 }
-
-#
-# class StudentCourses(models.Model):
-#     """Created New model 'student.course' to use relations on student.man"""
-#
-#     _name = 'student.courses'
-#     _description = 'student_courses'
-#
-#     # student_course_id = fields.Many2one('student.management', string="Student Course")
-#
-#     # course_ids = fields.Many2one('student.management', 'student_course_id', string="Student_Courses")
-#     name = fields.Char(string="Course Name", required=True)
-#     # subject = fields.Selection([('maths', 'Maths'), ('sci', 'Science')])
-#     subject_code = fields.Integer(string="Subject Code", required=True)
-#
-#     """sql_cons.. will generate unique course id"""
-#     _sql_constraints = [
-#         ('subject_code_unique', 'unique (subject_code)', "Subject code Must Be Unique !")
-#     ]
-
-
-# class StudentWindows(models.Model):
-#     _name = 'student.windows'
-#     _description = 'student_windows'
-#
-#     windows_standard = fields.Integer(string="Standard", required=True)

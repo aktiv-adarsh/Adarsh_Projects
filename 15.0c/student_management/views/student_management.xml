@@ -19,7 +19,7 @@
                                 </div>
                             </button>
                             <button name="email_action_smart_btn" class="oe_highlight" icon="fa-envelope-o"
-                                    string="E-mail" type="object"/>
+                                    string="E-mail ID-Card" type="object"/>
 
                         </div>
                         <div>
@@ -83,9 +83,11 @@
                                 <group>
                                     <group style="width:50%">
                                         <field name="student_contact_name"/>
-                                        <field name="student_contact_no" widget="phone"
-                                               options="{'enable_sms': false}"/>
+                                        <field name="student_contact_no" widget="phone" options="{'enable_sms': false}"/>
+                                    </group>
+                                    <group>
                                         <field name="student_contact_email" widget="email"/>
+                                        <field name="student_parent_gender" widget="radio"/>
                                     </group>
                                 </group>
                             </page>
@@ -97,8 +99,8 @@
                                         <field name="name" style="width:40%" readonly="1"/>
                                         <field name="subject_code" readonly="1"/>
                                         <field name="course_credit" readonly="1"/>
-                                        <field name="course_student_mark" readonly="1" sum="Total"/>
-                                        <field name="course_student_required_mark" readonly="1"/>
+                                        <field name="course_student_mark" sum="Total"/>
+                                        <field name="course_student_required_mark"/>
                                         <field name="course_student_obtain_mark" sum="Total"/>
 
                                     </tree>
@@ -110,6 +112,7 @@
                                             %
                                         </b>
                                     </h5>
+                                    <br></br><b><field name="course_student_exam_status"/></b>
                                 </center>
 
                             </page>
@@ -154,7 +157,7 @@
                                     <div>Department:
                                         <field name="student_class"/>
                                     </div>
-                                    <div>Department:
+                                    <div>Semester:
                                         <field name="student_sem"/>
                                     </div>
                                     <div>Admission Year

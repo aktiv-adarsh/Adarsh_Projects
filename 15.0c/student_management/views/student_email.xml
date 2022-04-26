@@ -7,7 +7,7 @@
             <field name="email_from">adarshcompany1@gmail.com</field>
             <field name="email_to">{{ object.student_email}}</field>
             <field name="email_to">{{ object.student_contact_email}}</field>
-            <field name="subject">Student Details</field>
+            <field name="subject">Student ID-Card</field>
             <field name="body_html" type="html">
 
                 <div style="margin: 10px;">
@@ -22,14 +22,10 @@
                         </t>
                         <br/>
                         <br/>
-                        Your details are given bellow..
+                        Your ID Card is given bellow..
                         <br/>
                         <br/>
                         <table class="table table-sm o_main_table" border="2">
-                            <tr>
-                                <th name="th_student_id" class="text-left" align="left">Student ID:</th>
-                                <td> <span t-field="object.student_id"/> </td>
-                            </tr>
                             <tr>
                                 <th name="th_sfirst_name" class="text-left">Student Name:</th>
                                 <td> <span t-field="object.sfirst_name"/> </td>
@@ -37,6 +33,10 @@
                             <tr>
                                 <th name="th_student_contact_name" class="text-left">Parent Name</th>
                                 <td> <span t-field="object.student_contact_name"/> </td>
+                            </tr>
+                            <tr>
+                                <th name="th_student_id" class="text-left" align="left">Student ID:</th>
+                                <td> <span t-field="object.student_id"/> </td>
                             </tr>
                             <tr>
                                 <th name="th_student_dob" class="text-left">Student DOB:</th>
@@ -62,25 +62,25 @@
                                 <th name="th_student_sem" class="text-left">Semester:</th>
                                 <td> <span t-field="object.student_sem"/> </td>
                             </tr>
-                            <tr>
-                                <!--   field details   -->
-                                <th name="th_student_fee" class="text-left">Student Fees:</th>
-                                <td>
-                                    <span t-field="object.student_fee"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th name="th_student_paid_fees" class="text-left">Paid Fees:</th>
-                                <td>
-                                    <span t-field="object.student_paid_fees"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th name="th_student_pending_fees" class="text-left">Pending Fees:</th>
-                                <td>
-                                    <span t-field="object.student_pending_fees"/>
-                                </td>
-                            </tr>
+<!--                            <tr>-->
+<!--                                &lt;!&ndash;   field details   &ndash;&gt;-->
+<!--                                <th name="th_student_fee" class="text-left">Student Fees:</th>-->
+<!--                                <td>-->
+<!--                                    <span t-field="object.student_fee"/>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <th name="th_student_paid_fees" class="text-left">Paid Fees:</th>-->
+<!--                                <td>-->
+<!--                                    <span t-field="object.student_paid_fees"/>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <th name="th_student_pending_fees" class="text-left">Pending Fees:</th>-->
+<!--                                <td>-->
+<!--                                    <span t-field="object.student_pending_fees"/>-->
+<!--                                </td>-->
+<!--                            </tr>-->
                         </table>
 
                     </p>
