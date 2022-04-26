@@ -26,6 +26,16 @@
                         <br/>
                         <br/>
                         <table class="table table-sm o_main_table" border="2">
+                            <tr style="text-align: center;">
+                                <td colspan="2">
+                                    <strong>Sal College</strong><br></br>
+                                    <strong>Address: Sal college, opp. Science City, Sola,<br></br> Ahmedabad, Gujarat 380060</strong><br></br>
+                                            <strong>Phone: 079 6712 9000</strong>
+                                </td>
+                            </tr><tr></tr><tr><br></br></tr>
+                            <tr>
+                                <p> <img src="/jpg;base64,${object.student_img.logo}" style="width: 150px;height: 80px;" /> </p>
+                            </tr>
                             <tr>
                                 <th name="th_sfirst_name" class="text-left">Student Name:</th>
                                 <td> <span t-field="object.sfirst_name"/> </td>

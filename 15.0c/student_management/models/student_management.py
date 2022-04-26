@@ -94,8 +94,8 @@ class StudentManagement(models.Model):
                 self.course_student_exam_status = "Sorry! You have not cleared this exam"
                 print("\n\n", self.course_student_exam_status)
                 break
-            elif int(rec.course_student_obtain_mark) > 70:
-                raise UserError(_('The Mark must be < 70.'))
+            # elif int(rec.course_student_obtain_mark) > 70:
+            #     raise UserError(_('The Mark must be < 70.'))
             else:
                 self.course_student_exam_status = "Congratulations..You have successfully Pass the exam"
                 print("\n\n", self.course_student_exam_status)
