@@ -28,11 +28,11 @@ class StudentManagement(models.Model):
     student_sem = fields.Selection(
         [('1', 1), ('2', 2), ('3', 3), ('4', 4), ('5', 5), ('6', 6), ('7', 7), ('8', 8)],
         string="Semester", help='Select student Semester', tracking=True)
-    student_fee = fields.Integer(string="College Fees", compute="_compute_fees_calc", tracking=True)
 
     # student_medium = fields.Selection(string="Medium", selection=[('gujarati1', 'Gujarati'), ('hindi1', 'Hindi'), ('english1', 'English')], help='Select standard medium for study', tracking=True)
     student_division = fields.Selection([('a', 'A'), ('b', 'B'), ('c', 'C')], string="Division",
                                         help='Select student Division', tracking=True)
+    student_fee = fields.Integer(string="College Fees", compute="_compute_fees_calc", tracking=True)
     student_paid_fees = fields.Integer(string="Paid Fees", tracking=True)  # , compute="_student_fees_calc")
     student_pending_fees = fields.Integer(string="Pending Fees", compute="_compute_pending_fees", tracking=True)
 
@@ -196,9 +196,10 @@ class StudentManagement(models.Model):
 
         Col += 1
         worksheet.col(6).width = 256 * 15
-        worksheet.write(Row, Col, 'Standard Fees', font_style)
+        worksheet.write(Row, Col, 'College Fees', font_style)
 
         Col += 1
+        worksheet.col(6).width = 256 * 15
         worksheet.write(Row, Col, 'Paid Fees', font_style)
 
         Col += 1
@@ -275,10 +276,10 @@ class StudentManagement(models.Model):
         print("****self.write == ", excel_file, "-END--\n\n\n\n")
 
         print("\n\n --------- Self ----\n", self, "-----\n\n")
-        print("\n\n --------- Self.id ----\n", self.id, "-----\n\n")
+        print("\n\n --------- Self.id ----\n", self.ids, "-----\n\n")
 
-        url = ('web/content/?model=student.management&download=true&field=excel_file&id=%s&filename=%s' % (
-            self.id, filename))
+        url = ('web/content?model=student.management&download=true&field=excel_file&id=%s&filename=%s' % (
+            self.ids[1], filename))
         print("\n\n --------- url ----\n", url, "-----\n\n")
         # if self.excel_file:
         return {'type': 'ir.actions.act_url',
