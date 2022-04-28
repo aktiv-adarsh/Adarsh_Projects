@@ -30,12 +30,3 @@ class StudentCourses(models.Model):
         ('subject_code_unique', 'unique (subject_code)', "Subject code Must Be Unique !")
     ]
 
-    # @api.onchange('student_mark')
-    # def calc_student_marks(self):
-    #     print("\n\n--------In Func----\n")
-    #     count = 1
-    #     for rec in self.course_student_mark:
-    #         rec.course_student_mark_sum += rec
-    #         count += 1
-    #         print("\n\n-----Res--", rec.course_student_mark_sum)
-    #     self.course_student_mark_avg = int(self.course_student_obtain_mark) / count

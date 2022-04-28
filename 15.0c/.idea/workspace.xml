@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e3b8396-44bd-42e7-9037-50a327e96803" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
@@ -150,7 +149,6 @@
       <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/models/account_move_line_add_field.py" beforeDir="false" afterPath="$PROJECT_DIR$/pioneer_subscription/models/account_move_line_add_field.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
@@ -214,7 +212,6 @@
       <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/.idea/student_management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/.idea/student_management.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
@@ -236,12 +233,7 @@
       <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/models/student_fees.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/models/student_fees.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student_management/models/student_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/models/student_management.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/views/student_fees.xml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/views/student_fees.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/views/student_management.xml" beforeDir="false" afterPath="$PROJECT_DIR$/student_management/views/student_management.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,11 +252,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;/home/odoo/workspace/Projects/15.0c/student_management&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "/home/odoo/workspace/Projects/15.0c"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/student_management/views" />

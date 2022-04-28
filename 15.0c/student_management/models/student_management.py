@@ -129,6 +129,7 @@ class StudentManagement(models.Model):
 
     # @api.onchange('student_class')
     # def student_class_check(self):
+    #   """This fun was written for student class. At a time helpless."""
     #     """Though exceptions when standard > 12"""
     #
     #     if len(self.student_class) > 13:
