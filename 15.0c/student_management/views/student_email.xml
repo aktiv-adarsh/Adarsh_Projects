@@ -16,9 +16,10 @@
                         Dear,
                         <t t-if="object.student_email">
                             <t t-esc="object.sfirst_name"/>
-                        </t>
-                        <t t-if="object.student_contact_email">
-                            <t t-esc="object.student_contact_name"/>
+                            <t t-if="object.student_contact_email">
+                                <t t-esc="object.student_contact_name"/>
+                            </t>
+
                         </t>
                         <br/>
                         <br/>
@@ -28,69 +29,98 @@
                         <table class="table table-sm o_main_table" border="2">
                             <tr style="text-align: center;">
                                 <td colspan="2">
-                                    <strong>Sal College</strong><br></br>
-                                    <strong>Address: Sal college, opp. Science City, Sola,<br></br> Ahmedabad, Gujarat 380060</strong><br></br>
-                                            <strong>Phone: 079 6712 9000</strong>
+                                    <strong>Sal College</strong>
+                                    <br></br>
+                                    <strong>Address: Sal college, opp. Science City, Sola,<br></br> Ahmedabad, Gujarat
+                                        380060
+                                    </strong>
+                                    <br></br>
+                                    <strong>Phone: 079 6712 9000</strong>
                                 </td>
-                            </tr><tr></tr><tr><br></br></tr>
+                            </tr>
+                            <tr></tr>
                             <tr>
-                                <p> <img src="/jpg;base64,${object.student_img.logo}" style="width: 150px;height: 80px;" /> </p>
+                                <br></br>
+                            </tr>
+                            <tr>
+                                <p>
+                                    <img src="/jpg;base64,${object.student_img.logo}"
+                                         style="width: 150px;height: 80px;"/>
+                                </p>
                             </tr>
                             <tr>
                                 <th name="th_sfirst_name" class="text-left">Student Name:</th>
-                                <td> <span t-field="object.sfirst_name"/> </td>
+                                <td>
+                                    <span t-field="object.sfirst_name"/>
+                                </td>
                             </tr>
                             <tr>
                                 <th name="th_student_contact_name" class="text-left">Parent Name</th>
-                                <td> <span t-field="object.student_contact_name"/> </td>
+                                <td>
+                                    <span t-field="object.student_contact_name"/>
+                                </td>
                             </tr>
                             <tr>
                                 <th name="th_student_id" class="text-left" align="left">Student ID:</th>
-                                <td> <span t-field="object.student_id"/> </td>
+                                <td>
+                                    <span t-field="object.student_id"/>
+                                </td>
                             </tr>
                             <tr>
                                 <th name="th_student_dob" class="text-left">Student DOB:</th>
-                                <td> <span t-field="object.student_dob"/> </td>
+                                <td>
+                                    <span t-field="object.student_dob"/>
+                                </td>
                             </tr>
                             <tr>
                                 <th name="th_student_gender" class="text-left">Gender</th>
-                                <td> <span t-field="object.student_gender"/> </td>
+                                <td>
+                                    <span t-field="object.student_gender"/>
+                                </td>
                             </tr>
                             <tr>
                                 <th name="th_admission_year" class="text-left">Admission Year:</th>
-                                <td> <span t-field="object.admission_year"/> </td>
+                                <td>
+                                    <span t-field="object.admission_year"/>
+                                </td>
                             </tr>
                             <tr>
                                 <th name="th_student_college" class="text-left">College:</th>
-                                <td> <span t-field="object.student_college"/> </td>
+                                <td>
+                                    <span t-field="object.student_college"/>
+                                </td>
                             </tr>
                             <tr>
                                 <th name="th_student_class" class="text-left">Department:</th>
-                                <td> <span t-field="object.student_class"/> </td>
+                                <td>
+                                    <span t-field="object.student_class"/>
+                                </td>
                             </tr>
                             <tr>
                                 <th name="th_student_sem" class="text-left">Semester:</th>
-                                <td> <span t-field="object.student_sem"/> </td>
+                                <td>
+                                    <span t-field="object.student_sem"/>
+                                </td>
                             </tr>
-<!--                            <tr>-->
-<!--                                &lt;!&ndash;   field details   &ndash;&gt;-->
-<!--                                <th name="th_student_fee" class="text-left">Student Fees:</th>-->
-<!--                                <td>-->
-<!--                                    <span t-field="object.student_fee"/>-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <th name="th_student_paid_fees" class="text-left">Paid Fees:</th>-->
-<!--                                <td>-->
-<!--                                    <span t-field="object.student_paid_fees"/>-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <th name="th_student_pending_fees" class="text-left">Pending Fees:</th>-->
-<!--                                <td>-->
-<!--                                    <span t-field="object.student_pending_fees"/>-->
-<!--                                </td>-->
-<!--                            </tr>-->
+                            <!--                            <tr>-->
+                            <!--                                &lt;!&ndash;   field details   &ndash;&gt;-->
+                            <!--                                <th name="th_student_fee" class="text-left">Student Fees:</th>-->
+                            <!--                                <td>-->
+                            <!--                                    <span t-field="object.student_fee"/>-->
+                            <!--                                </td>-->
+                            <!--                            </tr>-->
+                            <!--                            <tr>-->
+                            <!--                                <th name="th_student_paid_fees" class="text-left">Paid Fees:</th>-->
+                            <!--                                <td>-->
+                            <!--                                    <span t-field="object.student_paid_fees"/>-->
+                            <!--                                </td>-->
+                            <!--                            </tr>-->
+                            <!--                            <tr>-->
+                            <!--                                <th name="th_student_pending_fees" class="text-left">Pending Fees:</th>-->
+                            <!--                                <td>-->
+                            <!--                                    <span t-field="object.student_pending_fees"/>-->
+                            <!--                                </td>-->
+                            <!--                            </tr>-->
                         </table>
 
                     </p>

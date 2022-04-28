@@ -64,6 +64,9 @@ class StudentManagement(models.Model):
     student_mark_average = fields.Integer(compute="_compute_mark_avg")
     course_student_exam_status = fields.Char(string="Exam Status", compute="compute_student_result_status")
 
+    _sql_constraints = [
+        ('student_id_unique', 'unique (student_id)', "This id ID already exist! ")
+    ]
 
     @api.onchange('student_course_id')
     def _compute_mark_avg(self):
@@ -94,8 +97,8 @@ class StudentManagement(models.Model):
                 self.course_student_exam_status = "Sorry! You have not cleared this exam"
                 print("\n\n", self.course_student_exam_status)
                 break
-            # elif int(rec.course_student_obtain_mark) > 70:
-            #     raise UserError(_('The Mark must be < 70.'))
+            elif int(rec.course_student_obtain_mark) > 70:
+                raise UserError(_('The Mark must be < 70.'))
             else:
                 self.course_student_exam_status = "Congratulations..You have successfully Pass the exam"
                 print("\n\n", self.course_student_exam_status)
