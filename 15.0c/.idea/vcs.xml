@@ -13,5 +13,6 @@
     <mapping directory="$PROJECT_DIR$/sale_order_email/15.0c" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/special_operator/15.0c" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/student_management/15.0c" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/student_management/Link to 15.0c" vcs="Git" />
   </component>
 </project>
