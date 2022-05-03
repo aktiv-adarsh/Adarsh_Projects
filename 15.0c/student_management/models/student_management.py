@@ -57,7 +57,8 @@ class StudentManagement(models.Model):
     student_contact_name = fields.Char(string="Parent Name", tracking=True, required=True)
     student_contact_no = fields.Integer(string="Contact No.", tracking=True)
     student_contact_email = fields.Char(string="E-mail", tracking=True, required=True)
-    student_parent_gender = fields.Selection(string="Gender", selection=[('male', 'Male'), ('female', 'Female')], tracking=True)
+    student_parent_gender = fields.Selection(string="Gender", selection=[('male', 'Male'), ('female', 'Female')],
+                                             tracking=True)
 
     # course_ids = fields.One2many('student.courses', 'student_course_id', string="Student_Courses")
     student_course_id = fields.Many2many('student.courses', string="Student Course")
@@ -290,3 +291,11 @@ class StudentManagement(models.Model):
                 'url': url,
                 'target': 'new'
                 }
+
+
+class StudentEvents(models.Model):
+    _name = 'student.events'
+    _description = 'student_events'
+
+    event_name = fields.Char(string="Festival Name", required=True)
+    event_date = fields.Date(string="Festival Date")

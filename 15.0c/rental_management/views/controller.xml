@@ -1,6 +1,6 @@
 <odoo>
     <data>
-        <template id="controller_file_data" name="Contacts Records">
+        <template id="controllers_file_data" name="Contacts Records">
             <t t-call="website.layout">
                 <div class="oe_structure">
                     <div class="container">
@@ -26,7 +26,7 @@
 <!--                                    <tr><td><span t-field="rec.image_1920" widget="image" class="oe_avatar"/></td></tr>-->
                                     <tr>
                                         <td>
-                                            <a t-attf-href="/contact_controller/{{ slug(rec)}}">
+                                            <a t-attf-href="/contacts_controller/{{ slug(rec)}}">
                                                 <span t-field="rec.name"/>
                                             </a>
                                         </td>

@@ -1,6 +1,6 @@
 <odoo>
     <data>
-        <template id="controller_file_data_link" name="Contacts Records Link">
+        <template id="controllers_file_data_link" name="Contacts Records Link">
             <t t-call="website.layout">
                 <div class="oe_structure">
                 <div class="container">

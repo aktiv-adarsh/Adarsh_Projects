@@ -1,5 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_student_management,student.management,model_student_management,base.group_user,1,1,1,1
+access_student_events,student.events,model_student_events,base.group_user,1,1,1,1
 access_student_fees,student.fees,model_student_fees,base.group_user,1,1,1,1
 access_student_courses,student.courses,model_student_courses,base.group_user,1,1,1,1
 access_wizard_feebtn,wizard.feebtn,model_wizard_feebtn,base.group_user,1,1,1,1

@@ -29,6 +29,8 @@
         'views/prod_template.xml',
         'views/ren_mang.xml',
         'views/rental_type.xml',
+        'views/controller.xml',
+        'views/controller_2link.xml',
         'report/rental_paper_format.xml',
         'report/rental_template.xml',
         'report/rental_report.xml',

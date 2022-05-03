@@ -12,7 +12,12 @@
                     <td colspan="10">
                         <strong>Student Details</strong>
                     </td>
-                </tr><tr><th><td></td></th></tr>
+                </tr>
+                <tr>
+                    <th>
+                        <td></td>
+                    </th>
+                </tr>
                 <tr>
                     <th>Name</th>
                     <th>DOB</th>
@@ -61,13 +66,21 @@
                     </td>
                 </tr>
             </table>
-            <br><br></br></br><br></br>
+            <br>
+                <br></br>
+            </br>
+            <br></br>
             <table class="table table-sm" border="3">
                 <tr style="text-align: center;">
                     <td colspan="8">
                         <strong>Student Educational Details</strong>
                     </td>
-                </tr><tr><th><td></td></th></tr>
+                </tr>
+                <tr>
+                    <th>
+                        <td></td>
+                    </th>
+                </tr>
                 <tr>
                     <th>Student ID</th>
                     <th>College</th>
@@ -208,12 +221,130 @@
         </div>
     </template>
 
+    <template id="from_student_marksheet2_template">
+        <div class="page">
+            <table class="table table-sm" border="3">
+                <tr style="text-align: center;">
+                    <td colspan="8">
+                        <strong>Student Mark-sheet</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <td></td>
+                    </th>
+                </tr>
+
+                <tr></tr>
+                <tr>
+                    <th>Student ID</th>
+                    <td>
+                        <span t-field="rec.student_id"/>
+                    </td>
+                    <th>Student Name</th>
+                    <td>
+                        <span t-field="rec.sfirst_name"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Student College</th>
+                    <td>
+                        <span t-field="rec.student_college"/>
+                    </td>
+                    <th>Student Department</th>
+                    <td>
+                        <span t-field="rec.student_class"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Division</th>
+                    <td>
+                        <span t-field="rec.student_division"/>
+                    </td>
+                    <th>Semester</th>
+                    <td>
+                        <span t-field="rec.student_sem"/>
+                    </td>
+
+                </tr>
+                <tr>
+                    <th>
+                        <td></td>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <td></td>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th>Subject Code</th>
+                    <th>Subject Name</th>
+                    <th>Subject Credit</th>
+                    <th>Total Marks</th>
+                    <th>Required Marks</th>
+                    <th>Obtain Marks</th>
+                </tr>
+                <t t-foreach="rec.student_course_id" t-as="line">
+                    <tr>
+                        <td>
+                            <span t-field="line.subject_code"/>
+                        </td>
+                        <td>
+                            <span t-field="line.name"/>
+                        </td>
+                        <td>
+                            <span t-field="line.course_credit"/>
+                        </td>
+                        <td>
+                            <span t-field="line.course_student_mark"/>
+                        </td>
+                        <td>
+                            <span t-field="line.course_student_required_mark"/>
+                        </td>
+                        <td>
+                            <span t-field="line.course_student_obtain_mark"/>
+                        </td>
+
+                    </tr>
+                </t>
+                <tr style="text-align: center;">
+                    <td colspan="6">
+                        <strong>Percentage: <span t-field="rec.student_mark_average"/>%</strong>
+                    </td>
+                </tr>
+
+                <tr style="text-align: center;">
+                    <td colspan="6">
+                        <strong><span t-field="rec.course_student_exam_status"/></strong>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+    </template>
+
+
     <template id="student_report2_template">
         <t t-foreach="docs" t-as="rec">
             <t t-call="web.html_container">
                 <t t-call="web.external_layout">
 
                     <t t-call="student_management.from_student_report2_template"/>
+
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="student_marksheet2_template">
+        <t t-foreach="docs" t-as="rec">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+
+                    <t t-call="student_management.from_student_marksheet2_template"/>
 
                 </t>
             </t>

@@ -23,7 +23,7 @@ class StudentCourses(models.Model):
     course_student_obtain_mark = fields.Integer(string="Obtain Mark")
 
     course_student_mark_sum = fields.Integer(string="Mark Total")
-    course_student_mark_avg = fields.Integer(string="Total Average")#, compute="calc_student_marks")
+    course_student_mark_sum = fields.Integer(string="Total Average")#, compute="calc_student_marks")
 
     """sql_cons.. will generate unique course id"""
     _sql_constraints = [

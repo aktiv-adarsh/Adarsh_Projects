@@ -15,5 +15,5 @@ class StudentEmailDetails(models.Model):
         template = self.env['mail.template'].browse(template_id)
         template.send_mail(self.id, force_send=True)
         print("\n------ Func end----------\n")
-        if template:
-            raise UserError(_('Mail send successfully'))
+        # if template:
+        #     raise UserError(_('Mail send successfully'))

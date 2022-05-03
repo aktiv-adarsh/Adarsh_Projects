@@ -90,11 +90,10 @@
         </record>
 
 
-        <menuitem name="Student Fees" id="student_fees_menu_1"
-                  parent="student_management.student_management_menu_root"/>
-
-        <menuitem name="Student List" id="student_fees_submenu_3" parent="student_fees_menu_1"
+        <menuitem name="Fees Receipt" id="student_fees_menu_1"
+                  parent="student_management.student_management_menu_root"
                   action="student_fees_tree_window"/>
+
 
     </data>
 </odoo>

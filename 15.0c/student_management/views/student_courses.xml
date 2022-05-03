@@ -102,14 +102,14 @@
         </record>
 
         <record model="ir.actions.act_window" id="student_courses_tree_window">
-            <field name="name">Courses</field>
+            <field name="name">Subjects</field>
             <field name="res_model">student.courses</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
             <!--            <field name="view_id" ref="student_list_form"/>-->
         </record>
 
 
-        <menuitem name="Courses" id="student_courses_menu_1"
+        <menuitem name="Subjects" id="student_courses_menu_1"
                   parent="student_management.student_management_menu_root"
                   action="student_courses_tree_window"/>
 

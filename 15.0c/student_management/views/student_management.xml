@@ -19,7 +19,8 @@
                                 </div>
                             </button>
                             <button name="email_action_smart_btn" class="oe_highlight" icon="fa-envelope-o"
-                                    string="E-mail ID-Card" type="object"/>
+                                    string="E-mail ID-Card" type="object"
+                                    confirm="Are you sure you want to send E-mail?"/>
 
                         </div>
                         <div>
@@ -83,7 +84,8 @@
                                 <group>
                                     <group style="width:50%">
                                         <field name="student_contact_name"/>
-                                        <field name="student_contact_no" widget="phone" options="{'enable_sms': false}"/>
+                                        <field name="student_contact_no" widget="phone"
+                                               options="{'enable_sms': false}"/>
                                     </group>
                                     <group>
                                         <field name="student_contact_email" widget="email"/>
@@ -112,7 +114,13 @@
                                             %
                                         </b>
                                     </h5>
-                                    <br></br><b><field name="course_student_exam_status"/></b>
+                                    <br></br>
+                                    <b>
+                                        <field name="course_student_exam_status"/>
+                                    </b>
+                                    <br></br>
+                                    <button name="%(student_management.student_management_marksheet_print_report)d" type="action"
+                                    class="oe_highlight" string="Print"/>
                                 </center>
 
                             </page>
@@ -145,6 +153,7 @@
                                     <field name="student_img" widget="image"/>
                                 </div>
                                 <div class="oe_kanban_details">
+                                    <span class="fa fa-star fa-spin"></span>
                                     <div>ID:
                                         <field name="student_id"/>
                                     </div>
@@ -239,18 +248,66 @@
             <field name="model">student.management</field>
             <field name="arch" type="xml">
                 <graph>
-<!--                    <field name="student_class"/>-->
+                    <!--                    <field name="student_class"/>-->
                     <field name="student_paid_fees" type="measure"/>
                     <field name="sfirst_name" type="col"/>
                 </graph>
             </field>
         </record>
 
+        <record model="ir.ui.view" id="student_event_form_view">
+            <field name="name">Student events</field>
+            <field name="model">student.events</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group style="width:50%">
+                            <field name="event_name"/>
+                            <field name="event_date"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="student_event_tree_view">
+            <field name="name">Student events</field>
+            <field name="model">student.events</field>
+            <field name="arch" type="xml">
+                <tree>
+
+                    <field name="event_name"/>
+                    <field name="event_date"/>
+
+                </tree>
+            </field>
+        </record>
+
+         <record model="ir.ui.view" id="student_event_calendar_view">
+            <field name="name">Student events</field>
+            <field name="model">student.events</field>
+            <field name="arch" type="xml">
+                <calendar color="event_name" date_start="event_date" string="Events" mode="month">
+
+                    <field name="event_name"/>
+                    <field name="event_date"/>
+                </calendar>
+            </field>
+        </record>
+
+
         <record model="ir.actions.act_window" id="student_management_kanban_window">
             <field name="name">Student window</field>
             <field name="res_model">student.management</field>
-            <field name="view_mode">kanban,tree,form,graph</field>
-<!--            <field name="view_id" ref="student_management_graph_view"/>-->
+            <field name="view_mode">tree,kanban,form,graph</field>
+            <!--            <field name="view_id" ref="student_management_graph_view"/>-->
+        </record>
+
+        <record model="ir.actions.act_window" id="student_management_form_window">
+            <field name="name">Events window</field>
+            <field name="res_model">student.events</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="view_id" ref="student_event_calendar_view"/>
         </record>
 
         <record id="student_management_server_action" model="ir.actions.server">
@@ -270,6 +327,8 @@
         <!-- menu categories -->
 
         <menuitem name="Student Management" id="student_management_menu_1" parent="student_management_menu_root"/>
+        <menuitem name="Festivals" id="student_management_menu_2" parent="student_management_menu_root"
+                  action="student_management_form_window"/>
 
         <menuitem name="Students Profile" id="student_management_submenu_2" parent="student_management_menu_1"
                   action="student_management_kanban_window"/>
