@@ -62,6 +62,7 @@ class StudentManagement(models.Model):
 
     # course_ids = fields.One2many('student.courses', 'student_course_id', string="Student_Courses")
     student_course_id = fields.Many2many('student.courses', string="Student Course")
+    student_holidays = fields.Many2one('student.events', string="Student Course")
     student_mark_average = fields.Integer(compute="_compute_mark_avg")
     course_student_exam_status = fields.Char(string="Exam Status", compute="compute_student_result_status")
 

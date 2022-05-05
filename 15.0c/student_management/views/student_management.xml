@@ -119,8 +119,9 @@
                                         <field name="course_student_exam_status"/>
                                     </b>
                                     <br></br>
-                                    <button name="%(student_management.student_management_marksheet_print_report)d" type="action"
-                                    class="oe_highlight" string="Print"/>
+                                    <button name="%(student_management.student_management_marksheet_print_report)d"
+                                            type="action"
+                                            class="oe_highlight" string="Print"/>
                                 </center>
 
                             </page>
@@ -255,6 +256,21 @@
             </field>
         </record>
 
+<!--        <record id="student_management_calendar_view" model="ir.ui.view">-->
+<!--            <field name="name">College Holidays</field>-->
+<!--            <field name="model">student.management</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <calendar color="event_name" date_start="event_date" string="Events" mode="month">-->
+<!--                    <field name="student_holidays">-->
+<!--                        <tree editable="bottom">-->
+<!--                            <field name="event_name" style="width:40%"/>-->
+<!--                            <field name="event_date"/>-->
+<!--                        </tree>-->
+<!--                    </field>-->
+<!--                </calendar>-->
+<!--            </field>-->
+<!--        </record>-->
+
         <record model="ir.ui.view" id="student_event_form_view">
             <field name="name">Student events</field>
             <field name="model">student.events</field>
@@ -283,7 +299,7 @@
             </field>
         </record>
 
-         <record model="ir.ui.view" id="student_event_calendar_view">
+        <record model="ir.ui.view" id="student_event_calendar_view">
             <field name="name">Student events</field>
             <field name="model">student.events</field>
             <field name="arch" type="xml">
