@@ -307,7 +307,7 @@
             <field name="name">Events window</field>
             <field name="res_model">student.events</field>
             <field name="view_mode">tree,form,calendar</field>
-            <field name="view_id" ref="student_event_calendar_view"/>
+            <field name="view_id" ref="student_event_tree_view"/>
         </record>
 
         <record id="student_management_server_action" model="ir.actions.server">

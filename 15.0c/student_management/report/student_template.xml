@@ -230,54 +230,46 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>
-                        <td></td>
+                    <th colspan="6">
+                        <br></br>
                     </th>
                 </tr>
-
-                <tr></tr>
                 <tr>
-                    <th>Student ID</th>
+                    <th colspan="2">Student ID</th>
                     <td>
                         <span t-field="rec.student_id"/>
                     </td>
-                    <th>Student Name</th>
+                    <th colspan="2">Student Name</th>
                     <td>
                         <span t-field="rec.sfirst_name"/>
                     </td>
                 </tr>
                 <tr>
-                    <th>Student College</th>
+                    <th colspan="2">Student College</th>
                     <td>
                         <span t-field="rec.student_college"/>
                     </td>
-                    <th>Student Department</th>
+                    <th colspan="2">Student Department</th>
                     <td>
                         <span t-field="rec.student_class"/>
                     </td>
                 </tr>
                 <tr>
-                    <th>Division</th>
+                    <th colspan="2">Division</th>
                     <td>
                         <span t-field="rec.student_division"/>
                     </td>
-                    <th>Semester</th>
+                    <th colspan="2">Semester</th>
                     <td>
                         <span t-field="rec.student_sem"/>
                     </td>
 
                 </tr>
                 <tr>
-                    <th>
-                        <td></td>
+                    <th colspan="6">
+                        <br></br>
                     </th>
                 </tr>
-                <tr>
-                    <th>
-                        <td></td>
-                    </th>
-                </tr>
-
                 <tr>
                     <th>Subject Code</th>
                     <th>Subject Name</th>
@@ -309,18 +301,16 @@
 
                     </tr>
                 </t>
+                <tr>
+                    <th colspan="6">
+                        <br></br>
+                    </th>
+                </tr>
                 <tr style="text-align: center;">
                     <td colspan="6">
                         <strong>Percentage: <span t-field="rec.student_mark_average"/>%</strong>
                     </td>
                 </tr>
-
-                <tr style="text-align: center;">
-                    <td colspan="6">
-                        <strong><span t-field="rec.course_student_exam_status"/></strong>
-                    </td>
-                </tr>
-
             </table>
 
         </div>

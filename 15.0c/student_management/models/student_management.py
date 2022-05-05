@@ -24,7 +24,7 @@ class StudentManagement(models.Model):
     student_class = fields.Selection(
         [('computer', 'Computer Engineering'), ('it', 'IT Engineering'), ('mechanical', 'Mechanical Engineering'),
          ('civil', 'Civil Engineering'), ('automobile', 'Automobile Engineering')], string="Department",
-        help='Select student Department', tracking=True)
+        help='Select student Department', tracking=True, required=True)
     student_sem = fields.Selection(
         [('1', 1), ('2', 2), ('3', 3), ('4', 4), ('5', 5), ('6', 6), ('7', 7), ('8', 8)],
         string="Semester", help='Select student Semester', tracking=True)
@@ -204,7 +204,7 @@ class StudentManagement(models.Model):
         worksheet.write(Row, Col, 'College Fees', font_style)
 
         Col += 1
-        worksheet.col(6).width = 256 * 15
+        worksheet.col(7).width = 256 * 15
         worksheet.write(Row, Col, 'Paid Fees', font_style)
 
         Col += 1
