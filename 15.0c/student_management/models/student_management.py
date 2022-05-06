@@ -45,10 +45,12 @@ class StudentManagement(models.Model):
     student_mobile = fields.Char(string="Mobile", tracking=True)
 
     student_address = fields.Char(string="Student Address", tracking=True)
+    student_state = fields.Many2one('res.country.state', string="State", tracking=True)
+    student_country = fields.Many2one('res.country', string="Country", tracking=True, readonly=True)
     student_dob = fields.Date(string="Date Of Birth", tracking=True)
     student_gender = fields.Selection(string="Gender", selection=[('male', 'Male'), ('female', 'Female')],
                                       tracking=True)
-    student_age = fields.Integer(string="Age", tracking=True, readonly=True)
+    student_age = fields.Integer(string="Age", tracking=True, readonly=True, compute="calc_stu_age")
     mother_tung_lang = fields.Selection(string="Mother Tung Language",
                                         selection=[('gujarati', 'Gujarati'), ('hindi', 'Hindi'),
                                                    ('english', 'English')], help='Select student mother tung language',
@@ -64,11 +66,17 @@ class StudentManagement(models.Model):
     student_course_id = fields.Many2many('student.courses', string="Student Course")
     student_holidays = fields.Many2one('student.events', string="Student Course")
     student_mark_average = fields.Integer(compute="_compute_mark_avg")
-    course_student_exam_status = fields.Char(string="Exam Status", compute="compute_student_result_status")
+    course_student_exam_status = fields.Char(string="Exam Status")#, compute="compute_student_result_status")
 
     _sql_constraints = [
         ('student_id_unique', 'unique (student_id)', "This id ID already exist! ")
     ]
+
+    @api.onchange("student_state")
+    def check_country(self):
+        if self.student_state:
+            for rec in self:
+                rec.student_country = rec.student_state.country_id
 
     @api.onchange('student_course_id')
     def _compute_mark_avg(self):
@@ -285,7 +293,7 @@ class StudentManagement(models.Model):
         print("\n\n --------- Self.id ----\n", self.ids, "-----\n\n")
 
         url = ('web/content?model=student.management&download=true&field=excel_file&id=%s&filename=%s' % (
-            self.ids[1], filename))
+            self.ids[0], filename))
         print("\n\n --------- url ----\n", url, "-----\n\n")
         # if self.excel_file:
         return {'type': 'ir.actions.act_url',

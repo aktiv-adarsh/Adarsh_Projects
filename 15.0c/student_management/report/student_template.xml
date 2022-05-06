@@ -152,6 +152,13 @@
     <!--    </template>-->
 
     <template id="from_student_fees2_template">
+        <t t-call="web.html_container">
+        <t t-call="web.internal_layout">
+        <div class="header">
+            <div class="row"/><br></br><center><b><h1> SAL College</h1></b></center><br></br><br></br>
+        </div>
+
+
         <div class="page">
 
             <center>
@@ -219,6 +226,8 @@
                 </tr>
             </table>
         </div>
+        </t>
+        </t>
     </template>
 
     <template id="from_student_marksheet2_template">
@@ -308,7 +317,8 @@
                 </tr>
                 <tr style="text-align: center;">
                     <td colspan="6">
-                        <strong>Percentage: <span t-field="rec.student_mark_average"/>%</strong>
+                        <strong>Percentage:<span t-field="rec.student_mark_average"/>%
+                        </strong>
                     </td>
                 </tr>
             </table>
@@ -343,13 +353,11 @@
 
     <template id="student_fees2_template">
         <t t-foreach="docs" t-as="fees_rec">
-            <t t-call="web.html_container">
-                <t t-call="web.external_layout">
 
-                    <t t-call="student_management.from_student_fees2_template"/>
+            <t t-call="student_management.from_student_fees2_template"/>
 
-                </t>
-            </t>
+            <!--                </t>-->
+            <!--            </t>-->
         </t>
     </template>
 

@@ -7,6 +7,7 @@ class StudentFees(models.Model):
     _name = 'student.fees'
     _description = 'student_fees'
 
+    student_img = fields.Binary()
     fees_student_id = fields.Many2one('student.management', string="Student ID", required=True)
     fees_student_name = fields.Char(related='fees_student_id.sfirst_name', string="Student Name")
     fees_student_dob = fields.Date(related='fees_student_id.student_dob', string="Student DOB")

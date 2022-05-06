@@ -55,12 +55,14 @@
                                         <field name="sfirst_name" placeholder="Student First Name"/>
                                         <field name="smiddle_name" placeholder="Student Middle Name"/>
                                         <field name="slast_name" placeholder="Student Last Name"/>
+                                        <field name="student_dob"/>
                                     </group>
                                     <group>
                                         <field name="student_email" placeholder="Student E-mail Id" widget="email"/>
                                         <field name="student_phone" placeholder="Student Phone No." widget="phone"
                                                options="{'enable_sms': false}"/>
                                         <field name="student_mobile" placeholder="Student Mobile No." widget="phone"/>
+                                        <field name="student_gender" widget="radio"/>
                                     </group>
                                 </group>
                             </page>
@@ -69,10 +71,9 @@
                                 <group>
                                     <group style="width:50%">
                                         <field name="student_address" placeholder="Student HomeTown Address"/>
-                                        <field name="student_dob"/>
-                                        <field name="student_gender" widget="radio"/>
+                                        <field name="student_state" options="{'no_open': True}"/> <!--Create, create and edit + doesn't show external link-->
+                                        <field name="student_country"/>
                                     </group>
-
                                     <group style="width:50%">
                                         <field name="student_age"/>
                                         <field name="mother_tung_lang"/>
@@ -110,7 +111,7 @@
                                 <center>
                                     <h5>
                                         <b>Percentage:
-                                            <field name="student_mark_average"/>
+                                            <field name="student_mark_average" attrs="{'invisible': [('course_student_exam_status', 'like', 'Sorry! You have not cleared this exam')]}"/>
                                             %
                                         </b>
                                     </h5>

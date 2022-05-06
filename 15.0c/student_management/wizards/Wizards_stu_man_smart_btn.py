@@ -25,10 +25,13 @@ class WizardsStudentFee(models.TransientModel):
         for rec in self:
             # if int(rec.wizards_student_paid_fees) <= int(self.student_fee / 2):
             if rec.wizards_student_paid_fees <= rec.student_pending_fees:
+                # if rec.wizards_student_paid_fees:
+                #     if rec.student_pending_fees == 0 or int(rec.student_fee)/2:
+
                 print("\n-------------In For loop--------", self.student_pending_fees)
                 record.student_paid_fees += rec.wizards_student_paid_fees
             else:
-                raise ValidationError("You should not pay more then panding fees..!")
+                raise ValidationError("You should not pay more then pending fees..!")
             # record.create({'student_pending_fees': rec.student_pending_fees})
 
         print("-------------", record.student_pending_fees, "---------------", record, "\n\n")
