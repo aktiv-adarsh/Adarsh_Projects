@@ -27,15 +27,14 @@
     'data': [
         'security/ir.model.access.csv',
         'wizards/Wizards_stu_man_smart_btn.xml',
-        'views/student_management.xml',
-        'views/student_fees.xml',
-        'views/student_courses.xml',
-        'views/student_email.xml',
         'report/student_paper_format.xml',
         'report/student_template.xml',
         'report/student_report.xml',
-        # 'xml_report/student_server_action.xml',
         'views/controller.xml',
         'views/controller_2link.xml',
+        'views/student_email.xml',
+        'views/student_management.xml',
+        'views/student_fees.xml',
+        'views/student_courses.xml',
     ]
 }

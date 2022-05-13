@@ -16,8 +16,11 @@
                         Dear,
                         <t t-if="object.student_email">
                             <t t-esc="object.sfirst_name"/>
-                            <t t-if="object.student_contact_email">
-                                <t t-esc="object.student_contact_name"/>
+                            <t t-if="object.smiddle_name">
+                                <t t-esc="object.smiddle_name"/>
+                            </t>
+                            <t t-if="object.slast_name">
+                                <t t-esc="object.slast_name"/>
                             </t>
 
                         </t>
@@ -26,7 +29,7 @@
                         Your ID Card is given bellow..
                         <br/>
                         <br/>
-                        <table class="table table-sm o_main_table" border="2" style="background-color: Lightblue">
+                        <table class="table table-sm o_main_table" border="2" style="background-color:Lightblue">
                             <tr style="text-align: center;">
                                 <td colspan="2">
                                     <strong>Sal College</strong>
@@ -56,16 +59,18 @@
                                 <th name="th_sfirst_name" class="text-left">Student Name:</th>
                                 <td>
                                     <span t-field="object.sfirst_name"/>
+                                    <span t-field="object.slast_name"/>
                                 </td>
                             </tr>
                             <tr>
-                                <th name="th_student_contact_name" class="text-left">Parent Name</th>
+                                <th name="th_smiddle_name" class="text-left">Parent Name</th>
                                 <td>
-                                    <span t-field="object.student_contact_name"/>
+                                    <span t-field="object.smiddle_name"/>
+                                    <span t-field="object.slast_name"/>
                                 </td>
                             </tr>
                             <tr>
-                                <th name="th_student_id" class="text-left" align="left">Student ID:</th>
+                                <th name="th_student_id" class="text-left">Student ID:</th>
                                 <td>
                                     <span t-field="object.student_id"/>
                                 </td>

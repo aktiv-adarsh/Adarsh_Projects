@@ -7,9 +7,10 @@
                 <form>
                     <sheet>
                         <group>
-                            <field name="wizards_student_fee"/>
-                            <field name="wizards_student_paid_fees"/>
-                            <field name="student_pending_fees"/>
+                            <field name="currency_id" attrs="{'invisible':1}"/>
+                            <field name="wizards_student_fee" widget="monetary"/>
+                            <field name="wizards_student_paid_fees" widget="monetary"/>
+                            <field name="student_pending_fees" widget="monetary"/>
 
                         </group>
                         <footer>
@@ -24,7 +25,7 @@
         <!-- actions opening views on models -->
 
         <record model="ir.actions.act_window" id="wizard_smart_btn_action_wizard">
-            <field name="name">Student Fee Payment Windows</field>
+            <field name="name">Student offline Fee Payment</field>
             <field name="res_model">wizard.feebtn</field>
             <field name="view_mode">form</field>
             <field name="view_id" ref="wizards_smart_button_form"/>

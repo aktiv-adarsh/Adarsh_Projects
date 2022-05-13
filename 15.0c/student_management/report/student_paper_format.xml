@@ -16,7 +16,7 @@
     </record>
 
     <record id="call_student_fee_paper_format" model="report.paperformat">
-        <field name="name">Student fee page format</field>
+        <field name="name">Student page format</field>
         <field name="default" eval="True"/>
         <field name="format">custom</field>
         <field name="page_height">297</field>

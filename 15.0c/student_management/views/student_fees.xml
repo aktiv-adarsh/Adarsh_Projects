@@ -17,17 +17,19 @@
                                 <field name="fees_student_name"/>
                                 <field name="fees_student_dob"/>
                                 <field name="fees_student_gender"/>
-                                <field name="fees_student_fee"/>
-                                <field name="fees_date_today"/>
+                                <field name="fees_admission_year"/>
+                                <field name="currency_id" attrs="{'invisible':1}"/>
+                                <field name="fees_student_fee" widget="monetary"/>
                             </group>
                             <group style="width:50%">
+                                <field name="fees_date_today" readonly="1"/>
                                 <field name="fees_student_college"/>
                                 <field name="fees_student_class"/>
                                 <field name="fees_student_sem"/>
                                 <field name="fees_student_division"/>
 <!--                                <field name="fees_student_medium"/>-->
-                                <field name="fees_admission_year"/>
-                                <field name="fees_student_paid_fees"/>
+
+                                <field name="fees_student_paid_fees" widget="monetary"/>
                             </group>
                         </group>
                     </sheet>

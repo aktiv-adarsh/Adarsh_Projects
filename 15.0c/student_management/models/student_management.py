@@ -15,23 +15,17 @@ class StudentManagement(models.Model):
 
     student_img = fields.Binary()
     excel_file = fields.Binary(string="Excel File")
+    currency_id = fields.Many2one('res.currency', default=20, readonly=True)
 
     student_id = fields.Integer(string="Student ID", tracking=True, required=True)  # , compute="_student_id_generate")
     admission_year = fields.Date(string="Admission Year", tracking=True)
     # student_class = fields.Char(string="Student Class", tracking=True)
-    student_college = fields.Selection([('sal', 'SAL')], default="sal", string="College",
-                                       help='Select student Department', tracking=True)
-    student_class = fields.Selection(
-        [('computer', 'Computer Engineering'), ('it', 'IT Engineering'), ('mechanical', 'Mechanical Engineering'),
-         ('civil', 'Civil Engineering'), ('automobile', 'Automobile Engineering')], string="Department",
-        help='Select student Department', tracking=True, required=True)
-    student_sem = fields.Selection(
-        [('1', 1), ('2', 2), ('3', 3), ('4', 4), ('5', 5), ('6', 6), ('7', 7), ('8', 8)],
-        string="Semester", help='Select student Semester', tracking=True)
+    student_college = fields.Selection([('sal', 'SAL')], default="sal", string="College", help='Select student Department', tracking=True)
+    student_class = fields.Selection([('computer', 'Computer Engineering'), ('it', 'IT Engineering'), ('mechanical', 'Mechanical Engineering'), ('civil', 'Civil Engineering'), ('automobile', 'Automobile Engineering')], string="Department", help='Select student Department', tracking=True, required=True)
+    student_sem = fields.Selection([('1', 1), ('2', 2), ('3', 3), ('4', 4), ('5', 5), ('6', 6), ('7', 7), ('8', 8)], string="Semester", help='Select student Semester', tracking=True)
 
     # student_medium = fields.Selection(string="Medium", selection=[('gujarati1', 'Gujarati'), ('hindi1', 'Hindi'), ('english1', 'English')], help='Select standard medium for study', tracking=True)
-    student_division = fields.Selection([('a', 'A'), ('b', 'B'), ('c', 'C')], string="Division",
-                                        help='Select student Division', tracking=True)
+    student_division = fields.Selection([('a', 'A'), ('b', 'B'), ('c', 'C')], string="Division", help='Select student Division', tracking=True)
     student_fee = fields.Integer(string="College Fees", compute="_compute_fees_calc", tracking=True)
     student_paid_fees = fields.Integer(string="Paid Fees", tracking=True)  # , compute="_student_fees_calc")
     student_pending_fees = fields.Integer(string="Pending Fees", compute="_compute_pending_fees", tracking=True)
@@ -39,22 +33,19 @@ class StudentManagement(models.Model):
     sfirst_name = fields.Char(string="First Name", tracking=True, required=True)
     smiddle_name = fields.Char(string="Middle Name", tracking=True)
     slast_name = fields.Char(string="Last Name", tracking=True)
+    student_dob = fields.Date(string="Date Of Birth", tracking=True)
 
     student_email = fields.Char(string="E-mail", tracking=True, required=True)
     student_phone = fields.Char(string="Phone", tracking=True)
     student_mobile = fields.Char(string="Mobile", tracking=True)
+    student_gender = fields.Selection(string="Gender", selection=[('male', 'Male'), ('female', 'Female')], tracking=True)
 
     student_address = fields.Char(string="Student Address", tracking=True)
-    student_state = fields.Many2one('res.country.state', string="State", tracking=True)
-    student_country = fields.Many2one('res.country', string="Country", tracking=True, readonly=True)
-    student_dob = fields.Date(string="Date Of Birth", tracking=True)
-    student_gender = fields.Selection(string="Gender", selection=[('male', 'Male'), ('female', 'Female')],
-                                      tracking=True)
-    student_age = fields.Integer(string="Age", tracking=True, readonly=True, compute="calc_stu_age")
-    mother_tung_lang = fields.Selection(string="Mother Tung Language",
-                                        selection=[('gujarati', 'Gujarati'), ('hindi', 'Hindi'),
-                                                   ('english', 'English')], help='Select student mother tung language',
-                                        tracking=True)
+    zip = fields.Char(string="ZIP Code", tracking=True)
+    student_state_id = fields.Many2one('res.country.state', tracking=True)
+    student_country_id = fields.Many2one('res.country', tracking=True, readonly=True)
+    student_age = fields.Integer(string="Age", tracking=True, readonly=True)
+    mother_tung_lang = fields.Selection(string="Mother Tung Language", selection=[('gujarati', 'Gujarati'), ('hindi', 'Hindi'), ('english', 'English')], help='Select student mother tung language', tracking=True)
 
     student_contact_name = fields.Char(string="Parent Name", tracking=True, required=True)
     student_contact_no = fields.Integer(string="Contact No.", tracking=True)
@@ -64,19 +55,19 @@ class StudentManagement(models.Model):
 
     # course_ids = fields.One2many('student.courses', 'student_course_id', string="Student_Courses")
     student_course_id = fields.Many2many('student.courses', string="Student Course")
-    student_holidays = fields.Many2one('student.events', string="Student Course")
     student_mark_average = fields.Integer(compute="_compute_mark_avg")
-    course_student_exam_status = fields.Char(string="Exam Status")#, compute="compute_student_result_status")
+    course_student_exam_status = fields.Char(string="Exam Status", compute="compute_student_result_status")
 
     _sql_constraints = [
         ('student_id_unique', 'unique (student_id)', "This id ID already exist! ")
     ]
 
-    @api.onchange("student_state")
+    @api.onchange("student_state_id")
     def check_country(self):
-        if self.student_state:
+        """To auto fill country base on state"""
+        if self.student_state_id:
             for rec in self:
-                rec.student_country = rec.student_state.country_id
+                rec.student_country_id = rec.student_state_id.country_id
 
     @api.onchange('student_course_id')
     def _compute_mark_avg(self):
@@ -147,8 +138,8 @@ class StudentManagement(models.Model):
     #     else:
     #         print("\n\n\n --------- \n\n\n")
 
-    @api.onchange('student_dob')
-    def calc_stu_age(self):
+    @api.onchange('student_dob', student_age)
+    def compute_calc_stu_age(self):
         """Calculate student age by DOB"""
 
         if self.student_dob:
@@ -265,9 +256,9 @@ class StudentManagement(models.Model):
 
         Row += 2
         worksheet.write(Row, 0, "Total: {}".format(total_student), font_style)
-        worksheet.write(Row, 6, "Total: {}".format(total_standard_fees), font_style)
-        worksheet.write(Row, 7, "Total: {}".format(total_paid_fees), font_style)
-        worksheet.write(Row, 8, "Total: {}".format(total_pending_fees), font_style)
+        worksheet.write(Row, 6, "Total: ₹{}".format(total_standard_fees), font_style)
+        worksheet.write(Row, 7, "Total: ₹{}".format(total_paid_fees), font_style)
+        worksheet.write(Row, 8, "Total: ₹{}".format(total_pending_fees), font_style)
         print("\n\n------****rec.total_student == ", total_student, "-END--")
         print("------********rec.total_standard_fees == ", total_standard_fees, "-END--")
         print("------****rec.total_paid_fees == ", total_paid_fees, "-END--")
