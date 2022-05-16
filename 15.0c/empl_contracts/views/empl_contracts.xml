@@ -1,0 +1,68 @@
+<odoo>
+    <data>
+<!--        <record id="portal_contracts_menu" model="website.menu">-->
+<!--            <field name="name">Contract</field>-->
+<!--            <field name="url">/emp_contracts</field>-->
+<!--            <field name="parent_id" ref="website.main_menu"/>-->
+<!--            <field name="sequence" type="int">50</field>-->
+<!--        </record>-->
+
+        <template id="emp_contracts_list_view" name="Employee Contracts">
+            <t t-call="portal.portal_layout">
+                <div class="oe_structure">
+                    <div class="container">
+
+                        <center>
+                            <h3>Employees Details</h3>
+                        </center>
+                        <br></br>
+
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>E-mail</th>
+                                    <th>Contact No.</th>
+                                    <th>Department</th>
+                                </tr>
+                            </thead>
+                            <body>
+                                <t t-foreach="contract" t-as="rec">
+                                    <tr>
+                                        <td>
+                                            <a t-attf-href="/emp_contracts/{{ slug(rec)}}">
+                                                <span t-field="rec.name"/>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <span t-field="rec.work_email"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="rec.work_phone"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="rec.department_id"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </body>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="portal_contracts_count" inherit_id="portal.portal_my_home">
+            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+                <t t-call="portal.portal_docs_entry">
+
+                    <t t-set="title">Contracts</t>
+                    <t t-set="url" t-value="'/emp_contracts'"/>
+                    <t t-set="placeholder_count" t-value="'contracts_count'"/>
+
+                </t>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

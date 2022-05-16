@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "rental_management",
+    'name': "empl_contracts",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -21,22 +21,12 @@
     'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale_management', 'mail'],
+    'depends': ['base', 'mail', 'hr'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/prod_template.xml',
-        'views/ren_mang.xml',
-        'views/rental_type.xml',
-        'views/controller.xml',
-        'views/controller_2link.xml',
-        'views/registration_form.xml',
-        'report/rental_paper_format.xml',
-        'report/rental_template.xml',
-        'report/rental_report.xml',
+        'views/empl_contracts.xml',
+        'views/empl_link_2details.xml',
     ],
-    'assets': {'web.assets_frontend': [
-        '/rental_management/static/src/css/style.css',
-    ]},
 }

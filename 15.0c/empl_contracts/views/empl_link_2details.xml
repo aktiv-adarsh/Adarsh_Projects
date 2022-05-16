@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <template id="emp_contracts_link_to_details" name="Contract Records">
+            <t t-call="website.layout">
+                <div class="oe_structure">
+                    <div class="container">
+
+                        <center>
+                            <h3>Contract Details</h3>
+                        </center>
+                        <br></br>
+
+<!--                        <table class="table table-sm">-->
+<!--                            <body>-->
+<!--                                <tr>-->
+<!--                                    <td>Name:-->
+<!--                                        <span t-field="link_record.employee_id"/>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+                                <!--
+                                <tr>
+                                    <td>Start Date:
+                                        <span t-field="link_record.date_start"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>End Date:
+                                        <span t-field="link_record.date_end"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Working Schedule:
+                                        <span t-field="link_record.resource_calendar_id"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Monthly Wage
+                                        <span t-field="link_record.wage"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Status
+                                        <span t-field="link_record.state"/>
+                                    </td>
+                                </tr>
+                                -->
+<!--                            </body>-->
+<!--                        </table>-->
+                    </div>
+                </div>
+
+            </t>
+        </template>
+    </data>
+</odoo>
