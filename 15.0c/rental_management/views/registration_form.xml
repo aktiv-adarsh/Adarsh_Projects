@@ -1,0 +1,71 @@
+<odoo>
+    <data>
+
+        <record id="website_menu_registration" model="website.menu">
+            <field name="name">Registration Form</field>
+            <field name="url">/registration</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">50</field>
+        </record>
+
+        <template id="controllers_new_user_registration" name="User Registration form">
+            <t t-call="website.layout">
+                <div class="oe_structure">
+                    <div class="container">
+
+                        <form role="form" action="/registration" method="post">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <!--                            <div class="form-group">-->
+                            <!--                                <label class="col-form-label hdd4" for="name">Name</label>-->
+                            <!--                                <input type="text" name="name" class="form-control contact_name"/>-->
+                            <!--                            </div>-->
+                            <div class="form-group">
+                                <label class="col-form-label hdd4" for="name">Name</label>
+                                <select class="form-control col-8" name="name">
+                                    <t t-foreach="res_partner" t-as="rec">
+                                        <option t-esc="rec.name" t-att-value="rec.name"/>
+                                    </t>
+                                </select>
+                                <label class="col-form-label hdd4" for="email">E-mail</label>
+                                <input type="email" name="email" class="form-control contact_name"/>
+                            </div>
+                            <!--                            <div class="form-group">-->
+                            <!--                                <label class="col-form-label hdd4" for="password">Password</label>-->
+                            <!--                                <input type="password" name="user_password" class="form-control contact_name"/>-->
+                            <!--                            </div>-->
+                            <footer class="modal-footer">
+                                <button type="button" class="btn" data-dismiss="modal" aria-label="Cancel">Cancel
+                                </button>
+                                <input type="submit" value="Submit" class="btn btn-primary"/>
+                            </footer>
+                        </form>
+
+                    </div>
+                </div>
+
+            </t>
+        </template>
+
+
+        <template id="controllers_website_views" name="User Registration form">
+            <t t-call="website.layout">
+                <div class="oe_structure">
+                    <div class="container">
+                        Hello Adarsh !!
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="portal_contacts_data" inherit_id="portal.portal_my_home">
+            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="title">Contacts</t>
+                    <t t-set="url" t-value="'/contacts_controller'"/>
+                    <t t-set="placeholder_count" t-value="'customer_count'"/>
+                </t>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

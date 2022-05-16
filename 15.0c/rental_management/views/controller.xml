@@ -1,5 +1,12 @@
 <odoo>
     <data>
+        <record id="website_contacts_menu" model="website.menu">
+            <field name="name">Contacts</field>
+            <field name="url">/contacts_controller</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">50</field>
+        </record>
+
         <template id="controllers_file_data" name="Contacts Records">
             <t t-call="website.layout">
                 <div class="oe_structure">
@@ -16,7 +23,7 @@
                             <thead>
                                 <tr>
                                     <th>Customer Name</th>
-                                    <th>Customer Contact</th>
+                                    <th>Contact</th>
                                     <th>Phone</th>
                                     <th>Email</th>
                                 </tr>

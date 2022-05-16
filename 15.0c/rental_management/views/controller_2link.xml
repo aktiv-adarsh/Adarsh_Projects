@@ -13,22 +13,22 @@
                     <table class="table table-sm">
                         <body>
                             <tr>
-                                <td>
+                                <td>Name:
                                     <span t-field="link_record.name"/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td>Record Type:
                                     <span t-field="link_record.type"/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td>Phone no.
                                     <span t-field="link_record.phone"/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td>E-mail:
                                     <span t-field="link_record.email"/>
                                 </td>
                             </tr>
