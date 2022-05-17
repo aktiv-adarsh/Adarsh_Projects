@@ -1,6 +1,6 @@
 <odoo>
     <data>
-        <template id="emp_contracts_link_to_details" name="Contract Records">
+        <template id="contracts_link_to_details" name="Contract_Records">
             <t t-call="website.layout">
                 <div class="oe_structure">
                     <div class="container">
@@ -10,42 +10,49 @@
                         </center>
                         <br></br>
 
-<!--                        <table class="table table-sm">-->
-<!--                            <body>-->
-<!--                                <tr>-->
-<!--                                    <td>Name:-->
-<!--                                        <span t-field="link_record.employee_id"/>-->
-<!--                                    </td>-->
-<!--                                </tr>-->
-                                <!--
+                        <table class="table table-sm">
+                            <thead>
                                 <tr>
-                                    <td>Start Date:
-                                        <span t-field="link_record.date_start"/>
-                                    </td>
+                                    <th>Name</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Working Schedule</th>
+                                    <th>Monthly Wage</th>
+                                    <th>Status</th>
                                 </tr>
-                                <tr>
-                                    <td>End Date:
-                                        <span t-field="link_record.date_end"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Working Schedule:
-                                        <span t-field="link_record.resource_calendar_id"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Monthly Wage
-                                        <span t-field="link_record.wage"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Status
-                                        <span t-field="link_record.state"/>
-                                    </td>
-                                </tr>
-                                -->
-<!--                            </body>-->
-<!--                        </table>-->
+
+                            </thead>
+                            <body>
+
+                                <t t-foreach="records" t-as="link_record">
+                                    <tr>
+                                        <td>
+                                            <span t-field="link_record.name"/>
+<!--                                            <t t-esc="link_record.employee_id.name"/>-->
+                                        </td>
+                                        <td>
+                                            <span t-field="link_record.date_start"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="link_record.date_end"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="link_record.resource_calendar_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="link_record.wage"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="link_record.state"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </body>
+                        </table>
+                        <form action="/">
+                            <button type="button" name="C">Choose file</button>
+                            <input type="submit"/>
+                        </form>
                     </div>
                 </div>
 
