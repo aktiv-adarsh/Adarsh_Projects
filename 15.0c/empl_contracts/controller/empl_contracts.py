@@ -1,6 +1,9 @@
 from odoo import http
 from odoo.http import request
 from odoo.addons.portal.controllers import portal
+import base64
+from odoo import http
+from odoo.http import request
 
 
 class EmplContracts(http.Controller):
@@ -19,6 +22,31 @@ class EmplContracts(http.Controller):
     def link_to_contract_details(self, record):
         # print("\n\n\n\n Function Executed \n\n\n")
         return request.render("empl_contracts.contracts_link_to_details", {'records': record})
+
+    @http.route('/project/uploaded', type='http', auth="public", website=True)
+    def contract_details_attachment_button(self, **post):
+
+        for rec in post:
+            print("\n----------------SELF--------------", rec)
+        print("----------------**POST--------------", post)
+        Attachments = request.env['ir.attachment']
+        print("------------------------------", Attachments)
+        name = post.get('attachment').filename
+        print("---===============NAME===============", name)
+        file = post.get('attachment')
+        print("---===============FILE================", file)
+        project_id = post.get('project_id')
+        print("---===============PROJECT_ID==========", project_id)
+        attachment_id = Attachments.create({
+            'name': name,
+            'res_name': name,
+            'type': 'binary',
+            'res_model': 'hr.contract',
+            'res_id': project_id,
+            'datas': base64.b64encode(file.read()),
+
+        })
+        print("---===============ATTACHMENT_ID=======", attachment_id, "\n\n\n\n")
 
 
 class ContractsCounts(portal.CustomerPortal):

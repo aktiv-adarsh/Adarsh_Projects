@@ -28,7 +28,6 @@
                                     <tr>
                                         <td>
                                             <span t-field="link_record.name"/>
-<!--                                            <t t-esc="link_record.employee_id.name"/>-->
                                         </td>
                                         <td>
                                             <span t-field="link_record.date_start"/>
@@ -49,10 +48,27 @@
                                 </t>
                             </body>
                         </table>
-                        <form action="/">
-                            <button type="button" name="C">Choose file</button>
-                            <input type="submit"/>
+                        <t t-foreach="records" t-as="rec">
+                        <form method="post"
+                              class="s_website_form form-horizontal container-fluid mt32" enctype="multipart/form-data"
+                              id="file_upload_form" action="/project/uploaded">
+                            <div t-attf-class="form-group">
+                                <div class="col-md-7 col-sm-8">
+
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <input type="hidden" name="project_id" t-att-value="rec.id"/>
+                                    <input type="file" name="attachment" class="file" multiple="true"
+                                           data-show-upload="true" data-show-caption="true" lass="file"
+                                           data-show-preview="true" id="project.id"/>
+                                    <button type="submit" name="Upload" style="margin-top:20px;"
+                                            class="fa fa-upload">
+                                        Upload
+                                    </button>
+
+                                </div>
+                            </div>
                         </form>
+                        </t>
                     </div>
                 </div>
 
