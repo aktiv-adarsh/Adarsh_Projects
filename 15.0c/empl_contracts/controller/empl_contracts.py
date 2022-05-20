@@ -25,9 +25,7 @@ class EmplContracts(http.Controller):
 
     @http.route('/project/uploaded', type='http', auth="public", website=True)
     def contract_details_attachment_button(self, **post):
-
-        for rec in post:
-            print("\n----------------SELF--------------", rec)
+        # new_task = request.env['ir.attachment']
         print("----------------**POST--------------", post)
         Attachments = request.env['ir.attachment']
         print("------------------------------", Attachments)
@@ -37,16 +35,36 @@ class EmplContracts(http.Controller):
         print("---===============FILE================", file)
         project_id = post.get('project_id')
         print("---===============PROJECT_ID==========", project_id)
-        attachment_id = Attachments.create({
-            'name': name,
-            'res_name': name,
-            'type': 'binary',
-            'res_model': 'hr.contract',
-            'res_id': project_id,
-            'datas': base64.b64encode(file.read()),
 
-        })
-        print("---===============ATTACHMENT_ID=======", attachment_id, "\n\n\n\n")
+        attached_files = request.httprequest.files.getlist('attachment')
+        for attachment in attached_files:
+            request.env['ir.attachment'].sudo().create({
+                'name': attachment.filename,
+                'res_model': 'hr.contract',
+                'res_id': project_id,
+                'type': 'binary',
+                'datas': base64.b64encode(attachment.read()),
+            })
+
+    # print("----------------**POST--------------", post)
+    # Attachments = request.env['ir.attachment']
+    # print("------------------------------", Attachments)
+    # name = post.get('attachment').filename
+    # print("---===============NAME===============", name)
+    # file = post.get('attachment')
+    # print("---===============FILE================", file)
+    # project_id = post.get('project_id')
+    # print("---===============PROJECT_ID==========", project_id)
+    # attachment_id = Attachments.create({
+    #     'name': name,
+    #     'res_name': name,
+    #     'type': 'binary',
+    #     'res_model': 'hr.contract',
+    #     'res_id': project_id,
+    #     'datas': base64.b64encode(file.read()),
+    #
+    # })
+    # print("---===============ATTACHMENT_ID=======", attachment_id, "\n\n\n\n")
 
 
 class ContractsCounts(portal.CustomerPortal):
