@@ -1,0 +1,32 @@
+<odoo xmlns:default_email="http://www.w3.org/2001/XMLSchema">
+    <data>
+
+        <record model="ir.ui.view" id="sale_product_product_form">
+            <field name="name">Product_Product</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_policy']" position="after">
+                    <field name="qty_on_order"/>
+                </xpath>
+
+<!--                <xpath expr="//field[@name='order_line'] / tree" position="inside">-->
+<!--                    <field name="max_qty_allowed"/>-->
+<!--                </xpath>-->
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="practice_sale_order_line_form">
+            <field name="name">Sale_Order_line_Product</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='order_line']/tree" position="inside">
+                    <field name="max_qty_allowed"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
