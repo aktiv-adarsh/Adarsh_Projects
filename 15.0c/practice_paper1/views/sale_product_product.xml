@@ -25,6 +25,7 @@
                 <xpath expr="//field[@name='order_line']/tree" position="inside">
                     <field name="max_qty_allowed"/>
                 </xpath>
+
             </field>
         </record>
 
