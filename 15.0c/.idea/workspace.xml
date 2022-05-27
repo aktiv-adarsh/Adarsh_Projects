@@ -171,6 +171,7 @@
       <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pioneer_subscription/models/account_move_line_add_field.py" beforeDir="false" afterPath="$PROJECT_DIR$/pioneer_subscription/models/account_move_line_add_field.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
@@ -193,7 +194,6 @@
       <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/practice_paper1/models/sale_product_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/practice_paper1/models/sale_product_product.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/views/sale_product_product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/practice_paper1/views/sale_product_product.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
@@ -215,9 +215,6 @@
       <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/controller/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/controller/controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/static/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/static/src/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/views/registration_form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rental_management/views/registration_form.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />

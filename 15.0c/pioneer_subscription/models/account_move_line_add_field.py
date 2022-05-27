@@ -4,6 +4,7 @@ from odoo import models, fields, api
 
 
 class PioneerAccountMove(models.Model):
+
     _inherit = 'account.move.line'
 
     delivery_address_id = fields.Many2one('res.partner', string="Delivery Address",
