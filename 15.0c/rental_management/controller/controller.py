@@ -24,7 +24,7 @@ class ContactsControllers(http.Controller):
             return request.render('rental_management.controllers_new_user_registration', {'res_partner': result})
         else:
             result = request.env['res.partner'].sudo().search([])
-            print("\n\n******* Else registration \n")
+            print("\n\n******* Else registration *******\n")
             return request.render('rental_management.controllers_new_user_registration', {'res_partner': result})
 
     @http.route('/controller/website', type='http', auth='public', website=True)

@@ -10,11 +10,16 @@ class PracticePaper(models.Model):
 
     @api.onchange('qty_on_order')
     def assign_vals_on_line(self):
+        # rec = super(PracticePaper, self).assign_vals_on_line()
         print("\n\n\nIn the func\n\n\n")
         record = self.env['sale.order.line']  # .browse(self.env.context['max_qty_allowed.id'])
-        print("\n\n --------record = ", record, "\n\n")
-        record.max_qty_allowed = [(6, 0, self.qty_on_order)]
-        print("--------max_qty_allowed = ", record.max_qty_allowed, "\n\n\n")
+        if self.qty_on_order:
+            print("\n\n --------record = ", record, "\n\n")
+            var = record.write({'order_line': [(6, 0, {'record.max_qty_allowed': self.qty_on_order})]})
+            print("--------max_qty_allowed = ", record.max_qty_allowed, "\n\n\n")
+            print("--------VAR = ", var, "\n\n")
+        else:
+            print("\n\n\n ----- ERROR -----\n\n\n")
 
 
 class PracticeSaleOrderLine(models.Model):
