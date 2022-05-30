@@ -8,14 +8,14 @@
         </record>
 
         <template id="controllers_file_data" name="Contacts Records">
-            <t t-call="website.layout">
+            <t t-call="portal.portal_layout">
                 <div class="oe_structure">
                     <div class="container">
                         <!--                        <p>Before Page</p>-->
                         <!--                        <div class="page">-->
                         <!--                            <p>In Page</p>-->
                         <center>
-                            <h3>Contacts Details</h3>
+                            <h3>Contacts Records</h3>
                         </center>
                         <br></br>
 
@@ -30,7 +30,7 @@
                             </thead>
                             <body>
                                 <t t-foreach="contact" t-as="rec">
-<!--                                    <tr><td><span t-field="rec.image_1920" widget="image" class="oe_avatar"/></td></tr>-->
+                                    <!--                                    <tr><td><span t-field="rec.image_1920" widget="image" class="oe_avatar"/></td></tr>-->
                                     <tr>
                                         <td>
                                             <a t-attf-href="/contacts_controller/{{ slug(rec)}}">
@@ -56,5 +56,16 @@
 
             </t>
         </template>
+
+        <template id="portal_all_contacts_count" inherit_id="portal.portal_my_home">
+            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="title">Contacts</t>
+                    <t t-set="url" t-value="'/contacts_controller'"/>
+                    <t t-set="placeholder_count" t-value="'contact_count'"/>
+                </t>
+            </xpath>
+        </template>
+
     </data>
 </odoo>

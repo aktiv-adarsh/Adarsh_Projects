@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "contacts_details_edit",
+    'name': "Exam Paper2",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -26,7 +26,8 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/sale_product_product.xml',
+        'views/res_config_sale.xml',
+        'views/promotional_discount.xml',
 
     ],
 }

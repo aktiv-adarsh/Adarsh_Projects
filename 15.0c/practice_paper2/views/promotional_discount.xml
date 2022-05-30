@@ -1,0 +1,64 @@
+<odoo xmlns:default_email="http://www.w3.org/2001/XMLSchema">
+    <data>
+        <!--     explicit list view definition-->
+        <!--    Form view  -->
+        <record model="ir.ui.view" id="promotional_discount_form">
+            <field name="name">promotional_discount</field>
+            <field name="model">promotional.discount</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+
+                        <group style="width:45%">
+                            <field name="discount_type"/>
+                            <field name="name"/>
+                            <field name="discount"/>
+                        </group>
+                        <group style="width:45%">
+                            <field name="minimum_order_amount"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--    Tree view-->
+        <record model="ir.ui.view" id="promotional_discount_tree">
+            <field name="name">promotional_discount</field>
+            <field name="model">promotional.discount</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="discount_type"/>
+                    <field name="name"/>
+                    <field name="discount"/>
+                    <field name="minimum_order_amount"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="promotional_discount_form_window">
+            <field name="name">Form window</field>
+            <field name="res_model">promotional.discount</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="promotional_discount_form"/>
+        </record>
+
+
+        <!-- Top menu item -->
+        <menuitem name="Promotional Discount" id="promotional_discount_menu_root"/>
+
+        <!-- menu categories -->
+
+        <menuitem name="Promotional Discount" id="promotional_discount_menu_1" parent="promotional_discount_menu_root"/>
+
+        <menuitem name="Promotional" id="promotional_discount_submenu_1" parent="promotional_discount_menu_1"
+                    action="promotional_discount_form_window"/>
+    </data>
+</odoo>

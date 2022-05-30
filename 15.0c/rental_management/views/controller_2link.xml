@@ -1,40 +1,45 @@
 <odoo>
     <data>
         <template id="controllers_file_data_link" name="Contacts Records Link">
-            <t t-call="website.layout">
+            <t t-call="portal.portal_layout">
                 <div class="oe_structure">
-                <div class="container">
+                    <div class="container">
 
-                    <center>
-                        <h3>Contacts Details</h3>
-                    </center>
-                    <br></br>
+                        <center>
+                            <h3>Contacts Details</h3>
+                        </center>
+                        <br></br>
 
-                    <table class="table table-sm">
-                        <body>
-                            <tr>
-                                <td>Name:
-                                    <span t-field="link_record.name"/>
+                        <table class="table table-sm">
+                            <body>
+                                <tr>
+                                    <td><b>Name:</b>
+                                        <span t-field="link_record.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Record Type:</b>
+                                        <span t-field="link_record.type"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Phone no.</b>
+                                        <span t-field="link_record.phone"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>E-mail:</b>
+                                        <span t-field="link_record.email"/>
+                                    </td>
+                                </tr>
+                                <td>
+                                    <a t-attf-href="/contacts_controller/link_record/{{ slug(link_record)}}">
+                                        <input type="submit" value="Edit" class="btn btn-primary"/>
+                                    </a>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td>Record Type:
-                                    <span t-field="link_record.type"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Phone no.
-                                    <span t-field="link_record.phone"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>E-mail:
-                                    <span t-field="link_record.email"/>
-                                </td>
-                            </tr>
-                        </body>
-                    </table>
-                </div>
+                            </body>
+                        </table>
+                    </div>
                 </div>
 
             </t>

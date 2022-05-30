@@ -31,6 +31,7 @@
         'views/rental_type.xml',
         'views/controller.xml',
         'views/controller_2link.xml',
+        'views/controller_record_2edit.xml',
         'views/registration_form.xml',
         'report/rental_paper_format.xml',
         'report/rental_template.xml',

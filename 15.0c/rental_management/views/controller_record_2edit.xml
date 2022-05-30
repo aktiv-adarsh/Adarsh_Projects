@@ -1,0 +1,68 @@
+<odoo>
+    <data>
+        <template id="controllers_record_to_edit" name="Contacts Record">
+            <t t-call="portal.portal_layout">
+                <div class="oe_structure">
+                    <div class="container">
+
+                        <form role="form" action="/replace_record" method="post">
+                            <center>
+                                <h3>Edit Contact Details</h3>
+                            </center>
+                            <br></br>
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                            <table class="table table-sm">
+                                <body>
+                                    <tr>
+                                        <th>
+                                            <label class="col-form-label hdd4" for="name">Name</label>
+                                        </th>
+                                        <td>
+                                            <input type="text" name="name" t-att-value="link_record.name"
+                                                   class="form-control"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="col-form-label hdd4" for="type">Record Type:</label>
+                                        </th>
+                                        <td>
+                                            <input type="text" name="type" t-att-value="link_record.type"
+                                                   class="form-control"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="col-form-label hdd4" for="phone">Phone no.</label>
+                                        </th>
+                                        <td>
+                                            <input type="text" name="phone" t-att-value="link_record.phone"
+                                                   class="form-control"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="col-form-label hdd4" for="email">E-mail:</label>
+                                        </th>
+                                        <td>
+                                            <input type="text" name="email" t-att-value="link_record.email"
+                                                   class="form-control"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="submit" value="Submit" class="btn btn-primary"/>
+                                        </td>
+                                    </tr>
+
+                                </body>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+
+            </t>
+        </template>
+    </data>
+</odoo>

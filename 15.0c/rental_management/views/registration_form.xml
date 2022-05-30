@@ -23,13 +23,13 @@
                             <!--                            </div>-->
                             <div class="form-group">
                                 <label class="col-form-label hdd4" for="name">Name</label>
-                                <select class="form-control col-8" name="name">
+                                <select class="form-control col-8" name="name" style="width:65%">
                                     <t t-foreach="res_partner" t-as="rec">
                                         <option t-esc="rec.name" t-att-value="rec.name"/>
                                     </t>
                                 </select>
                                 <label class="col-form-label hdd4" for="email">E-mail</label>
-                                <input type="email" name="email" class="form-control contact_name"/>
+                                <input type="email" name="email" class="form-control contact_name" style="width:65%"/>
                             </div>
                             <!--                            <div class="form-group">-->
                             <!--                                <label class="col-form-label hdd4" for="password">Password</label>-->
@@ -59,15 +59,15 @@
             </t>
         </template>
 
-        <template id="portal_contacts_data" inherit_id="portal.portal_my_home">
-            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
-                <t t-call="portal.portal_docs_entry">
-                    <t t-set="title">Contacts</t>
-                    <t t-set="url" t-value="'/contacts_controller'"/>
-                    <t t-set="placeholder_count" t-value="'customer_count'"/>
-                </t>
-            </xpath>
-        </template>
+<!--        <template id="portal_contacts_data" inherit_id="portal.portal_my_home">-->
+<!--            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">-->
+<!--                <t t-call="portal.portal_docs_entry">-->
+<!--                    <t t-set="title">Registration Contacts</t>-->
+<!--                    <t t-set="url" t-value="'/contacts_controller'"/>-->
+<!--                    <t t-set="placeholder_count" t-value="'contact_count'"/>-->
+<!--                </t>-->
+<!--            </xpath>-->
+<!--        </template>-->
 
     </data>
 </odoo>

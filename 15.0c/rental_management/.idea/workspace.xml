@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc2701d1-b73e-40f3-8e4a-6e0c6e5f951b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr_contracts/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
@@ -24,6 +26,13 @@
       <change beforePath="$PROJECT_DIR$/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/controller.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/controller.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/controller_2link.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/controller_2link.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/registration_form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/registration_form.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student_management/Link to 15.0c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student_management/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../student_management/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student_management/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../student_management/__manifest__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +55,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/odoo/workspace/Projects/15.0c/hr_contract"
+    "last_opened_file_path": "/home/odoo/workspace/Projects/15.0c/rental_management/views"
   }
 }]]></component>
   <component name="RecentsManager">
