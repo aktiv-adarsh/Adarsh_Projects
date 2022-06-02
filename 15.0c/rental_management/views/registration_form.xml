@@ -15,22 +15,31 @@
 
                         <form role="form" action="/registration" method="post">
 
-                            <center><h2>Registration Form</h2></center>
+                            <center>
+                                <h2>Registration Form</h2>
+                            </center>
                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                            <!--                            <div class="form-group">-->
-                            <!--                                <label class="col-form-label hdd4" for="name">Name</label>-->
-                            <!--                                <input type="text" name="name" class="form-control contact_name"/>-->
-                            <!--                            </div>-->
                             <div class="form-group">
                                 <label class="col-form-label hdd4" for="name">Name</label>
-                                <select class="form-control col-8" name="name" style="width:65%">
-                                    <t t-foreach="res_partner" t-as="rec">
-                                        <option t-esc="rec.name" t-att-value="rec.name"/>
-                                    </t>
-                                </select>
+                                <input type="text" name="name" class="form-control contact_name" style="width:65%"/>
                                 <label class="col-form-label hdd4" for="email">E-mail</label>
                                 <input type="email" name="email" class="form-control contact_name" style="width:65%"/>
+
+                                <label class="col-form-label hdd4" for="phone">Phone No</label>
+                                <input type="text" name="phone" class="form-control contact_name" style="width:65%"/>
+                                <label class="col-form-label hdd4" for="image_1920">Image</label>
+                                <field type="binary" name="image_1920"  widget="image" class="oe_avatar" style="width:65%"/>
                             </div>
+<!--                            <div class="form-group">-->
+<!--                                <label class="col-form-label hdd4" for="name">Name</label>-->
+<!--                                <select class="form-control col-8" name="name" style="width:65%">-->
+<!--                                    <t t-foreach="res_partner" t-as="rec">-->
+<!--                                        <option t-esc="rec.name" t-att-value="rec.name"/>-->
+<!--                                    </t>-->
+<!--                                </select>-->
+<!--                                <label class="col-form-label hdd4" for="email">E-mail</label>-->
+<!--                                <input type="email" name="email" class="form-control contact_name" style="width:65%"/>-->
+<!--                            </div>-->
                             <!--                            <div class="form-group">-->
                             <!--                                <label class="col-form-label hdd4" for="password">Password</label>-->
                             <!--                                <input type="password" name="user_password" class="form-control contact_name"/>-->
@@ -59,15 +68,15 @@
             </t>
         </template>
 
-<!--        <template id="portal_contacts_data" inherit_id="portal.portal_my_home">-->
-<!--            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">-->
-<!--                <t t-call="portal.portal_docs_entry">-->
-<!--                    <t t-set="title">Registration Contacts</t>-->
-<!--                    <t t-set="url" t-value="'/contacts_controller'"/>-->
-<!--                    <t t-set="placeholder_count" t-value="'contact_count'"/>-->
-<!--                </t>-->
-<!--            </xpath>-->
-<!--        </template>-->
+        <!--        <template id="portal_contacts_data" inherit_id="portal.portal_my_home">-->
+        <!--            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">-->
+        <!--                <t t-call="portal.portal_docs_entry">-->
+        <!--                    <t t-set="title">Registration Contacts</t>-->
+        <!--                    <t t-set="url" t-value="'/contacts_controller'"/>-->
+        <!--                    <t t-set="placeholder_count" t-value="'contact_count'"/>-->
+        <!--                </t>-->
+        <!--            </xpath>-->
+        <!--        </template>-->
 
     </data>
 </odoo>

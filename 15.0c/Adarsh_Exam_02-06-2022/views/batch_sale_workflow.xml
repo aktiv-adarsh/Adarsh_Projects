@@ -1,0 +1,76 @@
+<odoo xmlns:default_email="http://www.w3.org/2001/XMLSchema">
+    <data>
+
+        <!--    Form view  -->
+        <record model="ir.ui.view" id="batch_sale_workflow_form">
+            <field name="name">batch_sale_workflow</field>
+            <field name="model">batch_sale.workflow</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar" options="{'clickable':1}"/>
+                    </header>
+                    <group style="width:50%">
+                        <field name="name"/>
+                        <field name="responsible"/>
+                        <field name="operation_type"/>
+                    </group>
+                    <group style="width:50%">
+                        <field name="customer"/>
+                        <field name="sale_order"/>
+                        <field name="operation_date"/>
+                    </group>
+                    <div class="oe_chatter"><!-- User can't use chatter class in Tree and kanban view-->
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+
+                </form>
+            </field>
+        </record>
+
+        <!--    Tree view-->
+        <record model="ir.ui.view" id="batch_sale_workflow_tree">
+            <field name="name">batch_sale_workflow</field>
+            <field name="model">batch_sale.workflow</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="responsible"/>
+                    <field name="operation_type"/>
+                    <field name="customer"/>
+                    <field name="sale_order"/>
+                    <field name="operation_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="batch_sale_workflow_form_window">
+            <field name="name">Form window</field>
+            <field name="res_model">batch_sale.workflow</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="batch_sale_workflow_form"/>
+        </record>
+
+        <record model="ir.actions.act_window" id="batch_sale_workflow_tree_window">
+            <field name="name">List window</field>
+            <field name="res_model">batch_sale.workflow</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="batch_sale_workflow_tree"/>
+        </record>
+
+
+        <!-- Top menu item -->
+        <menuitem name="Batch Sale Workflow" id="batch_sale_workflow_menu_root"/>
+
+        <!-- menu categories -->
+
+        <menuitem name="Batch Sale Workflow" id="batch_sale_workflow_menu_1" parent="batch_sale_workflow_menu_root"/>
+
+        <menuitem name="Rental" id="batch_sale_workflow_submenu_1" parent="batch_sale_workflow_menu_1"
+                  action="batch_sale_workflow_form_window"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="button_on_sale_order_header">
+            <field name="name">Sale order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//button[@name='action_confirm']" position="after">
+
+                    <button class="btn-primary" string="Apply Promotional Discount"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

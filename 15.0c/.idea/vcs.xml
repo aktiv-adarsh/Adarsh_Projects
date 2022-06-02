@@ -11,6 +11,7 @@
     <mapping directory="$PROJECT_DIR$/orm_methods/15.0c" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/pioneer_subscription/15.0c" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/practice_paper1/15.0c" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/practice_paper2/15.0c" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/rental_management/15.0c" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/sale_order_email/15.0c" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/special_operator/15.0c" vcs="Git" />

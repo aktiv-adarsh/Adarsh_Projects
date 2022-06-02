@@ -20,7 +20,8 @@ class ContactsControllers(http.Controller):
         print("\n\n\n----------------record--------[", record.name, "]----\n\n\n")
         return request.render('rental_management.controllers_file_data_link', {'link_record': record})
 
-    @http.route(['/contacts_controller/link_record/<model("res.partner"):record>/'], type='http', auth='user', website=True)
+    @http.route(['/contacts_controller/link_record/<model("res.partner"):record>/'], type='http', auth='user',
+                website=True)
     def contact_data_to_edit(self, record):
         """Display Edit view of above clicked contact."""
         print("\n\n\n----------------record--------[", record.name, "]----\n\n\n")
@@ -37,11 +38,43 @@ class ContactsControllers(http.Controller):
     #         # result = request.env['res.partner'].sudo().search([])
     #         print("\n\n******* Else 'replace_records_data' Func called *******\n")
     #         # return request.render('rental_management.controllers_record_to_edit', {'link_record': result})
+    # def create_contacts(self, **kw):
+    #
+    #      if kw.get('contact_id'):
+    #          data = request.env['res.partner'].sudo().search([('id', '=', kw.get('contact_id'))])
+    #          data.write({
+    #              'name': kw.get('name'),
+    #              'phone': kw.get('phone'),
+    #              'email': kw.get('email'),
+    #          })
+    #          return request.redirect('/contacts_details')
+    #      else:
+    #          request.env['res.partner'].sudo().create(kw)
+    #          return request.render(
+    #              'controller_task.contacts_create_successfully', {}
+    #          )
 
     #
     #
     #
     #
+
+    # @http.route('/registration', type='http', auth='public', website=True)
+    # def contacts_data(self, **kw):
+    #     """it will create new contact record"""
+    #     if kw.get('contact_id'):
+    #         data = request.env['res.partner'].sudo().search([('id', '=', kw.get('contact_id'))])
+    #         print("\n\n ************* Before Write ******>>> ", data, "\n")
+    #         data.write({
+    #             'name': kw.get('name'),
+    #             'phone': kw.get('phone'),
+    #             'email': kw.get('email'),
+    #         })
+    #         print("\n\n ************* After Write ******>>> ", data, "\n")
+    #     else:
+    #         result = request.env['res.partner'].sudo().create(kw)
+    #         print("\n\n Result \n")
+    #         return request.render('rental_management.controllers_new_user_registration', {'res_partner': result})
 
     @http.route('/registration', type='http', auth='public', website=True)
     def contacts_data(self, **kw):
@@ -55,6 +88,7 @@ class ContactsControllers(http.Controller):
             print("\n\n******* Else registration *******\n")
             return request.render('rental_management.controllers_new_user_registration', {'res_partner': result})
 
+    #
     @http.route('/controller/website', type='http', auth='public', website=True)
     def controller_website(self, **kw):
         """TEST func:- Call on registration"""

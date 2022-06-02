@@ -1,0 +1,13 @@
+form{
+    border: 5px solid green;
+    background-color: skyblue;
+}
+h1{
+    color: white;
+}
+submit:hover {
+  background-color: black;
+}
+button{
+    border: 5px solid green;
+}

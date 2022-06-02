@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="sale_order_view_form">
+      <field name="name">sale.order.form</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//button[@name='action_cancel']" position="after">
+          <button name="discount_search" type="object" string="Apply Promotional Discount" class="btn-primary"
+                  attrs="{'invisible':[('discount_boolean','=',False)]}"/>
+          <field name="discount_boolean" attrs="{'invisible':['|',('discount_boolean','=',True),('discount_boolean','=',False)]}"/>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>

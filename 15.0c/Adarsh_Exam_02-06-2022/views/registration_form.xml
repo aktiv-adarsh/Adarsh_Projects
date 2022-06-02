@@ -1,0 +1,69 @@
+<odoo>
+    <data>
+
+        <record id="portal_main_menu_registration" model="website.menu">
+            <field name="name">Contacts Creation</field>
+            <field name="url">/registration</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">50</field>
+        </record>
+
+        <template id="portal_contacts_counts" inherit_id="portal.portal_my_home">
+            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+                <t t-call="portal.portal_docs_entry">
+
+                    <t t-set="title">Contacts</t>
+                    <t t-set="url" t-value="'/contacts_controller'"/>
+                    <t t-set="placeholder_count" t-value="'contact_count'"/>
+
+                </t>
+            </xpath>
+        </template>
+
+
+        <template id="contacts_new_user_registration" name="User Registration form">
+            <t t-call="website.layout">
+                <div class="oe_structure">
+                    <div class="container">
+
+                        <form role="form" action="/registration" method="post">
+
+                            <center>
+                                <h2>Registration Form</h2>
+                            </center>
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="form-group">
+
+                                <label class="col-form-label hdd4" for="name">Name</label>
+                                <input type="text" name="name" class="form-control contact_name" style="width:65%"/>
+                                <label class="col-form-label hdd4" for="email">E-mail</label>
+                                <input type="email" name="email" class="form-control contact_name" style="width:65%"/>
+
+                                <label class="col-form-label hdd4" for="phone">Phone No</label>
+                                <input type="text" name="phone" class="form-control contact_name" style="width:65%"/>
+                                <label class="col-form-label hdd4" for="image_1920">Image</label>
+
+                                <!--                                <input type="file" name="image" data-show-upload="true" data-show-caption="true"-->
+                                <!--                                       data-show-preview="true" accept="image/*"/>-->
+
+                            </div>
+                            <footer class="modal-footer">
+                                <button type="button" class="btn-primary" data-dismiss="modal" aria-label="Cancel"> Cancel </button>
+                                <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+                            </footer>
+                        </form>
+
+                        <form t-attf-action="/registration" method="post" role="form" nctype="multipart/form-data">
+                            <span class="btn btn-primary btn-file mt16">
+                                Upload picture
+                                <input type="file" name="picture"/>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+
+            </t>
+        </template>
+
+    </data>
+</odoo>

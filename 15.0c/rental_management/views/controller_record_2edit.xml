@@ -5,7 +5,7 @@
                 <div class="oe_structure">
                     <div class="container">
 
-                        <form role="form" action="/replace_record" method="post">
+                        <form role="form" action="/registration" method="post">
                             <center>
                                 <h3>Edit Contact Details</h3>
                             </center>
@@ -52,6 +52,7 @@
                                     </tr>
                                     <tr>
                                         <td>
+
                                             <input type="submit" value="Submit" class="btn btn-primary"/>
                                         </td>
                                     </tr>
