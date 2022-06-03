@@ -2,6 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/adarsh/15.0c" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/advance_actions/15.0c" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/college/15.0c" vcs="Git" />

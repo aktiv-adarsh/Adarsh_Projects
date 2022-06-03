@@ -21,20 +21,43 @@ class BatchSaleWorkflow(models.Model):
     status = fields.Selection([('draft', 'Draft'), ('done', 'Done'),
                                ('cancel', 'Cancel)')], string='State', default="draft", tracking=True)
 
-    sale_order_ids = fields.Many2many('sale.order', tracking=True, string="Sale Order")#, domain=([('responsible_id', 'like', 'user_id')]))
+    sale_order_ids = fields.Many2many('sale.order', tracking=True, string="Sale Order") #('user_id', 'like', 'responsible_id'),
     operation_date = fields.Date(string="Operation date", tracking=True)
-
 
     def action_draft(self):
         """On click of 'Set to Draft' button change
         the current state to 'Draft' state of statusbar"""
         self.status = 'draft'
 
-    def action_done(self):
+    @api.onchange('')
+
+    @api.model
+    def action_done(self, view_id=None, view_type=False, toolbar=False, submenu=False):
         """On click of 'Proceed Operation' button change
         the current state to 'Done' state of statusbar"""
+        print("\n\n ******* In Func *********\n\n")
         self.status = 'done'
         # self.operation_type = "confirm"
+
+        print("\n\n******** Before context ************\n\n\n")
+        context = self._context
+        print("\n\n ********* Context call ***********\n\n\n")
+        res = super(BatchSaleWorkflow, self).action_done(view_id=view_id, view_type=view_type, toolbar=toolbar,
+                                                         submenu=submenu)
+
+        print("\n\n ******* Before IF *********\n\n")
+        if context.get('turn_view_readonly'):  # Check for context value
+            doc = etree.XML(res['arch'])
+            print("\n\n ******* After IF *********\n\n")
+            if view_type == 'form':  # Applies only for form view
+                print("\n\n ******* Before INNER IF *********\n\n")
+                for node in doc.xpath("//field"):  # All the view fields to readonly
+                    # node.get('readonly', '1')
+                    print("\n\n *****IN LOOP****** \n\n")
+                    node.set('modifiers', simplejson.dumps({"readonly": True}))
+
+                res['arch'] = etree.tostring(doc)
+        return res
 
     def action_cancel(self):
         """On click of 'Cancel' button change the

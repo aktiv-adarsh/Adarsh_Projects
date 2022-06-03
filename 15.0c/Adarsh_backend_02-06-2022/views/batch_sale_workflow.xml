@@ -9,18 +9,18 @@
                 <form>
                     <header>
                         <field name="status" widget="statusbar" options="{'clickable':1}"/>
-                        <button string='Proceed Operation' name="action_done" type="object" class="btn-primary" data-hotkey="p"/>
+                        <button string='Proceed Operation' name="action_done" type="object" class="btn-primary" data-hotkey="p" />
                         <button string='Cancel' name="action_cancel" type="object" class="btn-primary"
                                 data-hotkey="c" attrs="{'readonly':[('sale_order_ids', '=', True)]}"/>
                         <button string='Set to Draft' name="action_draft" type="object" class="btn-primary" data-hotkey="s"/>
 
                     </header>
-                    <group style="width:50%">
+                    <group style="width:70%">
                         <field name="name"/>
                         <field name="responsible_id"/>
                         <field name="operation_type"/>
                     </group>
-                    <group style="width:50%">
+                    <group style="width:70%">
                         <field name="customer_id"/>
                         <field name="sale_order_ids"/>
                         <field name="operation_date"/>
