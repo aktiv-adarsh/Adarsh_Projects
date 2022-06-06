@@ -16,14 +16,14 @@
 
                     </header>
                     <group style="width:70%">
-                        <field name="name"/>
-                        <field name="responsible_id"/>
-                        <field name="operation_type"/>
+                        <field name="name" attrs="{'readonly': [('status','in',('done', 'cancel'))]}"/>
+                        <field name="responsible_id" attrs="{'readonly': [('status','in',('done', 'cancel'))]}"/>
+                        <field name="operation_type" attrs="{'readonly': [('status','in',('done', 'cancel'))]}"/>
                     </group>
                     <group style="width:70%">
-                        <field name="customer_id"/>
-                        <field name="sale_order_ids"/>
-                        <field name="operation_date"/>
+                        <field name="customer_id" attrs="{'readonly': [('status','in',('done', 'cancel'))], 'invisible':[('operation_type', '!=', 'merge')]}"/>
+                        <field name="sale_order_ids" attrs="{'readonly': [('status','in',('done', 'cancel'))]}"/>
+                        <field name="operation_date" attrs="{'readonly': [('status','in',('done', 'cancel'))]}"/>
                     </group>
                     <div class="oe_chatter"><!-- User can't use chatter class in Tree and kanban view-->
                         <field name="message_follower_ids"/>
