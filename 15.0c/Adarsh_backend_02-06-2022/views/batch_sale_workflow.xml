@@ -16,7 +16,7 @@
 
                     </header>
                     <group style="width:70%">
-                        <field name="name" attrs="{'readonly': [('status','in',('done', 'cancel'))]}"/>
+                        <field name="sequence"/>
                         <field name="responsible_id" attrs="{'readonly': [('status','in',('done', 'cancel'))]}"/>
                         <field name="operation_type" attrs="{'readonly': [('status','in',('done', 'cancel'))]}"/>
                     </group>
@@ -35,13 +35,23 @@
             </field>
         </record>
 
+        <record id="sequence_order_view" model="ir.sequence">
+            <field name="name">name</field>
+            <field name="code">count_sequence</field>
+            <field name="active">True</field>
+            <field name="prefix">BS/</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
         <!--    Tree view-->
         <record model="ir.ui.view" id="batch_sale_workflow_tree">
             <field name="name">batch_sale_workflow</field>
             <field name="model">batch_sale.workflow</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="name"/>
+                    <field name="sequence"/>
                     <field name="responsible_id"/>
                     <field name="operation_type"/>
                     <field name="customer_id"/>
