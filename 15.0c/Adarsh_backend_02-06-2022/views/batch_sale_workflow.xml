@@ -8,8 +8,8 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <field name="status" widget="statusbar" options="{'clickable':1}"/>
-                        <button string='Proceed Operation' name="action_done" type="object" class="btn-primary" data-hotkey="p" />
+                        <field name="status" widget="statusbar" options="{'clickable':0}"/>
+                        <button string='Proceed Operation' id="button_draft" status="draft,cancel" name="action_done" type="object" class="btn-primary" data-hotkey="p"/>
                         <button string='Cancel' name="action_cancel" type="object" class="btn-primary"
                                 data-hotkey="c" attrs="{'readonly':[('sale_order_ids', '=', True)]}"/>
                         <button string='Set to Draft' name="action_draft" type="object" class="btn-primary" data-hotkey="s"/>

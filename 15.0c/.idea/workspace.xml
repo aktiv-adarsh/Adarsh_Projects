@@ -24,6 +24,8 @@
       <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/controller/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/controller/controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/views/registration_form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/views/registration_form.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />

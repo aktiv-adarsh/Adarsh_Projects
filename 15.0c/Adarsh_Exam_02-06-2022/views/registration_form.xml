@@ -26,7 +26,7 @@
                 <div class="oe_structure">
                     <div class="container">
 
-                        <form role="form" action="/registration" method="post">
+                        <form role="form" t-attf-action="/registration" method="post" enctype="multipart/form-data">
 
                             <center>
                                 <h2>Registration Form</h2>
@@ -43,8 +43,8 @@
                                 <input type="text" name="phone" class="form-control contact_name" style="width:65%"/>
                                 <label class="col-form-label hdd4" for="image_1920">Image</label>
 
-                                <!--                                <input type="file" name="image" data-show-upload="true" data-show-caption="true"-->
-                                <!--                                       data-show-preview="true" accept="image/*"/>-->
+                                <input type="file" name="image_1920" data-show-upload="true" data-show-caption="true"
+                                       data-show-preview="true" accept="image/*"/>
 
                             </div>
                             <footer class="modal-footer">
@@ -53,12 +53,12 @@
                             </footer>
                         </form>
 
-                        <form t-attf-action="/registration" method="post" role="form" nctype="multipart/form-data">
-                            <span class="btn btn-primary btn-file mt16">
-                                Upload picture
-                                <input type="file" name="picture"/>
-                            </span>
-                        </form>
+<!--                        <form t-attf-action="/registration" method="post" role="form" nctype="multipart/form-data">-->
+<!--                            <span class="btn btn-primary btn-file mt16">-->
+<!--                                Upload picture-->
+<!--                                <input type="file" name="picture"/>-->
+<!--                            </span>-->
+<!--                        </form>-->
                     </div>
                 </div>
 
