@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-
+import json
 from odoo import models, fields, api
-
-
 # from odoo.osv import expression
 
 
@@ -25,49 +23,38 @@ class BatchSaleWorkflow(models.Model):
     status = fields.Selection([('draft', 'Draft'), ('done', 'Done'),
                                ('cancel', 'Cancel)')], string='State', default="draft",
                               tracking=True)
-    state = fields.Selection([('draft', 'Draft'), ('done', 'Done'),
-                               ('cancel', 'Cancel)')], string='State', default="draft",
-                              tracking=True)
 
     sale_order_ids = fields.Many2many('sale.order', tracking=True, string="Sale Order")
     operation_date = fields.Date(string="Operation date", required=True, tracking=True)
+
+    responsible_id_domain = fields.Char(compute="_compute_responsible_id_domain", readonly=True, store=False)
 
     def action_draft(self):
         """On click of 'Set to Draft' button change
         the current state to 'Draft' state of statusbar"""
         self.status = 'draft'
 
-    @api.onchange('responsible_id')
-    def change_user_id(self):
-        """Display only those sales order whose sales
-        person is selected above on responsible_id field"""
+    @api.depends('responsible_id')
+    def _compute_responsible_id_domain(self):
+        for rec in self:
+            rec.responsible_id_domain = json.dumps([('user_id', '=', rec.responsible_id.id)])
+            if rec.operation_type == 'confirm':
+                print("\n\n\n ****** Compute Operation type confirm *********\n\n\n")
+                rec.responsible_id_domain = json.dumps([('user_id', '=', rec.responsible_id.id),
+                                                                ('state', 'in', ['draft', 'sent'])])
 
-        return {'domain': {'sale_order_ids': [('user_id', '=', self.responsible_id.id)]}}
+            elif rec.operation_type == 'cancel':
+                print("\n\n\n ****** OnChange Operation type Cancel *********\n\n\n")
+                rec.responsible_id_domain = json.dumps([('user_id', '=', rec.responsible_id.id),
+                                                        ('state', 'in', ['draft', 'sent', 'sale'])])
 
-    @api.onchange('operation_type', 'customer_id')
-    def action_confirm(self):
-        """At the selection of different state function call"""
+            elif rec.operation_type == 'merge':
+                print("\n\n\n ****** OnChange Operation type Merge *********\n\n\n")
+                rec.responsible_id_domain = json.dumps([('user_id', '=', rec.responsible_id.id),
+                                                        ('state', 'in', ['draft', 'sent']), ('partner_id', '=', rec.customer_id.id)])
 
-        if self.operation_type == 'confirm':
-            print("\n\n\n ****** OnChange Operation type confirm *********\n\n\n")
-            return {'domain': {
-                'sale_order_ids': [('user_id', '=', self.responsible_id.id),
-                                   ('state', 'in', ['draft', 'sent'])]}}
-
-        elif self.operation_type == 'cancel':
-            print("\n\n\n ****** OnChange Operation type Cancel *********\n\n\n")
-            return {'domain': {
-                'sale_order_ids': [('user_id', '=', self.responsible_id.id),
-                                   ('state', 'in', ['draft', 'sent', 'sale'])]}}
-
-        elif self.operation_type == 'merge':
-            print("\n\n\n ****** OnChange Operation type Merge *********\n\n\n")
-            return {'domain': {
-                'sale_order_ids': [('user_id', '=', self.responsible_id.id),
-                                   ('partner_id', '=', self.customer_id.id),
-                                   ('state', 'in', ['draft', 'sent'])]}}
-        else:
-            print("\n\n ****** ERROR in 'action_confirm' Function *** \n\n\n")
+            else:
+                print("\n\n ****** ERROR in '_compute_responsible_id_domain' Function *** \n\n\n")
 
     def action_done(self):
         """On click of 'Proceed Operation' button,
@@ -132,3 +119,54 @@ class BatchSaleWorkflow(models.Model):
             vals['sequence'] = self.env['ir.sequence'].next_by_code('count_sequence') or 'New'
         res = super(BatchSaleWorkflow, self).create(vals)
         return res
+
+
+
+
+    # @api.onchange('responsible_id')
+    # def change_user_id(self):
+    #     """Display only those sales order whose sales
+    #     person is selected above on responsible_id field"""
+    #
+    #     return {'domain': {'sale_order_ids': [('user_id', '=', self.responsible_id.id)]}}
+
+    # @api.onchange('operation_type', 'customer_id')
+    # def operation_type_domain(self):
+    #     """At the selection of different state function call"""
+    #     for rec in self:
+    #         if self.operation_type == 'confirm':
+    #             print("\n\n\n ****** OnChange Operation type confirm *********\n\n\n")
+    #             return {'domain': {
+    #                 'sale_order_ids': [('user_id', '=', rec.responsible_id.id),
+    #                                    ('state', 'in', ['draft', 'sent'])]}}
+    #
+    #         elif self.operation_type == 'cancel':
+    #             print("\n\n\n ****** OnChange Operation type Cancel *********\n\n\n")
+    #             return {'domain': {
+    #                 'sale_order_ids': [('user_id', '=', self.responsible_id.id),
+    #                                    ('state', 'in', ['draft', 'sent', 'sale'])]}}
+    #
+    #         elif self.operation_type == 'merge':
+    #             print("\n\n\n ****** OnChange Operation type Merge *********\n\n\n")
+    #             return {'domain': {
+    #                 'sale_order_ids': [('user_id', '=', self.responsible_id.id),
+    #                                    ('partner_id', '=', self.customer_id.id),
+    #                                    ('state', 'in', ['draft', 'sent'])]}}
+    #         else:
+    #             print("\n\n ****** ERROR in 'action_confirm' Function *** \n\n\n")
+#     ok ok
+#  ok       ok
+# ok          ok
+# ok          ok
+# ok          ok
+#  ok        ok
+#   ok      ok
+#      ok ok
+#
+# ok       ok
+# ok    ok
+# ok ok
+# ok
+# ok ok
+# ok    ok
+# ok       ok

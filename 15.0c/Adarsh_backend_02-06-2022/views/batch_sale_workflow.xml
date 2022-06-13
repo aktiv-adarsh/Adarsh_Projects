@@ -9,20 +9,21 @@
                 <form>
                     <header>
                         <field name="status" widget="statusbar" options="{'clickable':0}"/>
-                        <button string='Proceed Operation' id="button_draft" status="draft,cancel" name="action_done" type="object" class="btn-primary" data-hotkey="p"/>
+                        <button string='Proceed Operation' status="draft,cancel" name="action_done" type="object" class="btn-primary" data-hotkey="p" attrs="{'invisible': [('status', 'in', ('cancel','done'))]}"/>
                         <button string='Cancel' name="action_cancel" type="object" class="btn-primary"
-                                data-hotkey="c" attrs="{'readonly':[('sale_order_ids', '=', True)]}"/>
-                        <button string='Set to Draft' name="action_draft" type="object" class="btn-primary" data-hotkey="s"/>
+                                data-hotkey="c" attrs="{'readonly':[('sale_order_ids', '=', True)], 'invisible': [('status', 'in', ('cancel'))]}"/>
+                        <button string='Set to Draft' name="action_draft" type="object" class="btn-primary" data-hotkey="s" attrs="{'invisible': [('status', 'in', ('draft'))]}"/>
 
                     </header>
                     <group style="width:70%">
                         <field name="sequence"/>
+                        <field name="responsible_id_domain" invisible="1"/>
                         <field name="responsible_id" attrs="{'readonly': [('status','in',('done', 'cancel'))]}"/>
                         <field name="operation_type" attrs="{'readonly': [('status','in',('done', 'cancel'))]}"/>
                     </group>
                     <group style="width:70%">
                         <field name="customer_id" attrs="{'readonly': [('status','in',('done', 'cancel'))], 'invisible':[('operation_type', '!=', 'merge')]}"/>
-                        <field name="sale_order_ids" attrs="{'readonly': [('status','in',('done', 'cancel'))]}"/>
+                        <field name="sale_order_ids" domain="responsible_id_domain" attrs="{'readonly': [('status','in',('done', 'cancel'))]}"/>
                         <field name="operation_date" attrs="{'readonly': [('status','in',('done', 'cancel'))]}"/>
                     </group>
                     <div class="oe_chatter"><!-- User can't use chatter class in Tree and kanban view-->
