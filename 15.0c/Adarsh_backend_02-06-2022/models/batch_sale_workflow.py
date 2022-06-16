@@ -82,24 +82,33 @@ class BatchSaleWorkflow(models.Model):
             elif self.operation_type == 'merge':
                 print("\n\n\n ****** Action type Merge *********\n\n\n")
                 print("\n\n ********** 1 BTN Clicked, get rec id * ", get_rec_id, "\n\n\n")
-                print("\n\n ********** 1 BTN Clicked, TASK * ", task, "\n\n\n")
+                print(" ********** 1 BTN Clicked, TASK * ", task, "\n\n\n")
                 print("\n ----------- SO * ", self.sale_order_ids)
-                print("\n ----------- SO.ids * ", self.sale_order_ids.ids, "\n\n\n")
+                print(" ----------- SO.ids * ", self.sale_order_ids.read([]), "\n\n\n")
+                # print(" ----------- SO.ids * ", self.sale_order_ids.ids, "\n\n\n")
 
+                # custom_copy = self.sale_order_ids.copy()
+                # print("\n\n\n ******** SELF -> ", self)
+                # print("\n ******** custom_copy -> ", custom_copy)
                 for rec in self.sale_order_ids:
-                    print("\n\n\n ******** REC *", rec)
+                    print("\n\n\n ******** Create REC *", rec)
                     record = task.create({
                         'partner_id': self.customer_id.id,
                         'date_order': self.operation_date,
                     })
 
-                    print("\n ******** Record *", record)
-                    print("\n ******** ALL SO_Line *", rec.order_line)
-                    print("\n ******** ALL SO_Line *", rec.order_line.ids)
-                    for os_line in rec.order_line:
-                        print("\n **** ----> SO_Line -> ", os_line)
-                        # record.create({'order_line': os_line})
-                        record.create({'order_line': [(0, 0, os_line)]})
+                    print("\n -------- Record -> ", record)
+                    print("\n -------- Read Record -> ", record.read([]))
+                    print("\n -------- ALL SO_Line -> ", rec.order_line)
+                    print("\n -------- ALL SO_Line.ids -> ", rec.order_line.ids)
+                    for so_line in rec.order_line.ids:
+                        print("\n **** ----> For so_line -> ", so_line)
+                        self.ensure_one()
+                        so = so_line.copy()
+                        print("\n **** ----> Data Copied -> ")
+                        record.write({'order_line': so})
+                        print("\n **** ----> After Write -> ")
+                        # record.write({'order_line': [(0, 0, so_line)]})
                     rec.action_cancel()
             else:
                 print("\n\n\n ****** ERROR at Merge state ***** \n\n\n")
