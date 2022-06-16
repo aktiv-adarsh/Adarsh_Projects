@@ -24,6 +24,7 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'wizards/wizard_batch_sale.xml',
         'views/batch_sale_workflow.xml',
     ],
 }

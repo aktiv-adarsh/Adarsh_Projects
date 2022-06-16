@@ -3,343 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="5e3b8396-44bd-42e7-9037-50a327e96803" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/adarsh/models/customer_dob.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/adarsh/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/adarsh/models/sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/adarsh/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/adarsh/views/customer_dob.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/adarsh/views/sale.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/adarsh/views/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/adarsh/wizard/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/adarsh/wizard/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/adarsh/wizard/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/college/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/college/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/college/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/college/models/college.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/college/models/department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_Exam_02-06-2022/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/adarsh/models/customer_dob.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/adarsh/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/adarsh/models/sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/adarsh/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/adarsh/views/customer_dob.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/adarsh/views/sale.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/adarsh/views/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/adarsh/wizard/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/adarsh/wizard/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/adarsh/wizard/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/college/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/college/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/college/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/college/models/college.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/college/models/department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/models/batch_sale_workflow.py" beforeDir="false" afterPath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/models/batch_sale_workflow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/adarsh/models/customer_dob.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/adarsh/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/adarsh/models/sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/adarsh/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/adarsh/views/customer_dob.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/adarsh/views/sale.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/adarsh/views/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/adarsh/wizard/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/adarsh/wizard/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/adarsh/wizard/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/college/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/college/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/college/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/college/models/college.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/college/models/department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adarsh/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/adarsh/models/customer_dob.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/adarsh/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/adarsh/models/sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/adarsh/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/adarsh/views/customer_dob.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/adarsh/views/sale.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/adarsh/views/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/adarsh/wizard/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/adarsh/wizard/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/adarsh/wizard/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/college/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/college/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/college/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/college/models/college.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/college/models/department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_actions/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/adarsh/models/customer_dob.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/adarsh/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/adarsh/models/sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/adarsh/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/adarsh/views/customer_dob.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/adarsh/views/sale.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/adarsh/views/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/adarsh/wizard/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/adarsh/wizard/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/adarsh/wizard/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/college/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/college/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/college/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/college/models/college.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/college/models/department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/college/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/adarsh/models/customer_dob.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/adarsh/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/adarsh/models/sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/adarsh/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/adarsh/views/customer_dob.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/adarsh/views/sale.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/adarsh/views/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/adarsh/wizard/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/adarsh/wizard/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/adarsh/wizard/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/college/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/college/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/college/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/college/models/college.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/college/models/department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/empl_contracts/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/adarsh/models/customer_dob.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/adarsh/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/adarsh/models/sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/adarsh/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/adarsh/views/customer_dob.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/adarsh/views/sale.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/adarsh/views/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/adarsh/wizard/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/adarsh/wizard/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/adarsh/wizard/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/college/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/college/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/college/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/college/models/college.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/college/models/department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/adarsh/models/customer_dob.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/adarsh/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/adarsh/models/sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/adarsh/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/adarsh/views/customer_dob.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/adarsh/views/sale.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/adarsh/views/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/adarsh/wizard/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/adarsh/wizard/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/adarsh/wizard/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/college/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/college/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/college/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/college/models/college.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/college/models/department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_excel_report/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/adarsh/models/customer_dob.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/adarsh/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/adarsh/models/sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/adarsh/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/adarsh/views/customer_dob.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/adarsh/views/sale.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/adarsh/views/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/adarsh/wizard/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/adarsh/wizard/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/adarsh/wizard/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/college/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/college/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/college/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/college/models/college.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/college/models/department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm_methods/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/adarsh/models/customer_dob.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/adarsh/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/adarsh/models/sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/adarsh/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/adarsh/views/customer_dob.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/adarsh/views/sale.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/adarsh/views/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/adarsh/wizard/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/adarsh/wizard/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/adarsh/wizard/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/college/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/college/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/college/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/college/models/college.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/college/models/department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pioneer_subscription/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/adarsh/models/customer_dob.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/adarsh/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/adarsh/models/sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/adarsh/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/adarsh/views/customer_dob.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/adarsh/views/sale.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/adarsh/views/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/adarsh/wizard/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/adarsh/wizard/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/adarsh/wizard/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/college/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/college/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/college/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/college/models/college.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/college/models/department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper1/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/adarsh/models/customer_dob.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/adarsh/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/adarsh/models/sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/adarsh/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/adarsh/views/customer_dob.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/adarsh/views/sale.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/adarsh/views/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/adarsh/wizard/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/adarsh/wizard/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/adarsh/wizard/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/college/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/college/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/college/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/college/models/college.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/college/models/department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_paper2/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/models/customer_dob.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/models/sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/views/customer_dob.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/views/sale.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/views/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/wizard/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/wizard/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/adarsh/wizard/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/college/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/college/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/college/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/college/models/college.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/college/models/department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental_management/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/adarsh/models/customer_dob.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/adarsh/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/adarsh/models/sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/adarsh/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/adarsh/views/customer_dob.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/adarsh/views/sale.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/adarsh/views/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/adarsh/wizard/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/adarsh/wizard/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/adarsh/wizard/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/college/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/college/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/college/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/college/models/college.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/college/models/department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale_order_email/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/adarsh/models/customer_dob.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/adarsh/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/adarsh/models/sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/adarsh/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/adarsh/views/customer_dob.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/adarsh/views/sale.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/adarsh/views/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/adarsh/wizard/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/adarsh/wizard/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/adarsh/wizard/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/college/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/college/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/college/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/college/models/college.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/college/models/department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special_operator/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/adarsh/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/adarsh/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/adarsh/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/adarsh/models/customer_dob.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/adarsh/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/adarsh/models/sale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/adarsh/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/adarsh/views/customer_dob.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/adarsh/views/sale.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/adarsh/views/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/adarsh/wizard/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/adarsh/wizard/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/adarsh/wizard/views.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/__manifest__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/models/college.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/models/department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/views/college_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_management/15.0c/custom_addons/college/views/department.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/Web Domain Field_15_0_220320_120100/web_domain_field/README.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/Web Domain Field_15_0_220320_120100/web_domain_field/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/Web Domain Field_15_0_220320_120100/web_domain_field/__manifest__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/Web Domain Field_15_0_220320_120100/web_domain_field/readme/CONTRIBUTORS.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/Web Domain Field_15_0_220320_120100/web_domain_field/readme/DESCRIPTION.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/Web Domain Field_15_0_220320_120100/web_domain_field/readme/USAGE.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/Web Domain Field_15_0_220320_120100/web_domain_field/static/description/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/Web Domain Field_15_0_220320_120100/web_domain_field/static/description/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/security/ir.model.access.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/views/batch_sale_workflow.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adarsh_backend_02-06-2022/views/batch_sale_workflow.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -352,20 +27,23 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="26EM9Pl8VBxadidFkTQlrLDIc83" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/odoo/workspace/Projects/15.0c/rental_management&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/odoo/workspace/Projects/15.0c/rental_management",
+    "settings.editor.selected.configurable": "preferences.general"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/student_management/views" />

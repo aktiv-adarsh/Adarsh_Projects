@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="wizards_batch_sale_form">
+            <field name="name">wizard_batch_sale_from</field>
+            <field name="model">wizard.batch_sale</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="o2m_so_line_id">
+                        <tree editable="bottom">
+                            <field name="customer"/>
+                            <field name="sol_product"/>
+                            <field name="sol_description"/>
+                            <field name="sol_quantity"/>
+                        </tree>
+                    </field>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="wizard_batch_sale_action_window">
+            <field name="name">Batch Wizards</field>
+            <field name="res_model">wizard.batch_sale</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

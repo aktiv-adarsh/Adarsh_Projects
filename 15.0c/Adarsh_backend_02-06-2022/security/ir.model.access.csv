@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_batch_sale_workflow,batch_sale.workflow,model_batch_sale_workflow,base.group_user,1,1,1,1
+access_wizard_batch_sale,wizard.batch_sale,model_wizard_batch_sale,base.group_user,1,1,1,1
+access_wizard_batch_sale2,wizard.batch_sale2,model_wizard_batch_sale2,base.group_user,1,1,1,1

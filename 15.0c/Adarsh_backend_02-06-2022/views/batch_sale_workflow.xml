@@ -9,10 +9,11 @@
                 <form>
                     <header>
                         <field name="status" widget="statusbar" options="{'clickable':0}"/>
-                        <button string='Proceed Operation' status="draft,cancel" name="action_done" type="object" class="btn-primary" data-hotkey="p" attrs="{'invisible': [('status', 'in', ('cancel','done'))]}"/>
-                        <button string='Cancel' name="action_cancel" type="object" class="btn-primary"
+<!--                        <button string='Proceed Operation' status="draft,cancel" name="action_done" type="object" class="btn-primary" data-hotkey="p" attrs="{'invisible': [('status', 'in', ('cancel','done'))]}"/>-->
+                        <button name="%(Adarsh_backend_02-06-2022.wizard_batch_sale_action_window)d" type="action" string='Proceed Operation' class="btn-primary" data-hotkey="p" attrs="{'invisible': [('status', 'in', ('cancel','done'))]}"/>
+                        <button name="action_cancel" type="object" string='Cancel' class="btn-primary"
                                 data-hotkey="c" attrs="{'readonly':[('sale_order_ids', '=', True)], 'invisible': [('status', 'in', ('cancel'))]}"/>
-                        <button string='Set to Draft' name="action_draft" type="object" class="btn-primary" data-hotkey="s" attrs="{'invisible': [('status', 'in', ('draft'))]}"/>
+                        <button name="action_draft" type="object" string='Set to Draft' class="btn-primary" data-hotkey="s" attrs="{'invisible': [('status', 'in', ('draft'))]}"/>
 
                     </header>
                     <group style="width:70%">
