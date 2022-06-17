@@ -9,14 +9,14 @@ class WizardBatchSale(models.TransientModel):
     o2m_so_line_id = fields.One2many('wizard.batch_sale2', 'wizard_id', string="Product One2Many", required=True)
 
     @api.model
-    def default_get(self):
+    def default_get(self, o2m_so_line_id):
         """The default_get() will return the customized give data"""
         # current_id = self.env.context.get('active_model')
-        res = super(WizardBatchSale, self).default_get()
+        res = super(WizardBatchSale, self).default_get(o2m_so_line_id)
         print("\n\n\n ...........Default get RES -> ", res)
         active_id = self.env['batch_sale.workflow'].browse(self.env.context.get('active_id'))
         print("\n...........Rec active ID -> ", active_id)
-        print("\nself.sale_order_ids -> ", active_id.sale_order_ids)
+        print("\n self.sale_order_ids -> ", active_id.sale_order_ids)
         print("self.sale_order_ids -> ", active_id.sale_order_ids.ids)
 
         for data in active_id.sale_order_ids:
@@ -42,14 +42,14 @@ class WizardBatchSale2(models.TransientModel):
     sol_quantity = fields.Char(string="Quantity")
 
     # @api.model
-    # def default_get(self):
+    # def default_get(self, wizard_id):
     #     """The default_get() will return the customized give data"""
     #     # current_id = self.env.context.get('active_model')
-    #     res = super(WizardBatchSale2, self).default_get()
+    #     res = super(WizardBatchSale2, self).default_get(wizard_id)
     #     print("\n\n\n ...........Default get RES -> ", res)
     #     active_id = self.env['batch_sale.workflow'].browse(self.env.context.get('active_id'))
     #     print("\n...........Rec active ID -> ", active_id)
-    #     print("\nself.sale_order_ids -> ", active_id.sale_order_ids)
+    #     print("\n self.sale_order_ids -> ", active_id.sale_order_ids)
     #     print("self.sale_order_ids -> ", active_id.sale_order_ids.ids)
     #
     #     for data in active_id.sale_order_ids:
