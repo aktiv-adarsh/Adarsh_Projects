@@ -7,10 +7,11 @@
                 <form>
                     <field name="o2m_so_line_id">
                         <tree editable="bottom">
-                            <field name="customer"/>
-                            <field name="sol_product"/>
-                            <field name="sol_description"/>
+<!--                            <field name="customer"/>-->
+                            <field name="sol_product" readonly="1"/>
+                            <field name="sol_description" readonly="1"/>
                             <field name="sol_quantity"/>
+                            <field name="sol_price_unit"/>
                         </tree>
                     </field>
                 </form>
