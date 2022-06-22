@@ -13,47 +13,45 @@ class WizardBatchSale(models.TransientModel):
         """The default_get() will return the customized give data"""
         # current_id = self.env.context.get('active_model')
 
-
         print("\n\n\n ...........Default get RES -> ")
         active_id = self.env['batch_sale.workflow'].browse(self.env.context.get('active_id'))
         print("\n...........Rec active ID -> ", active_id)
         print("\n self.sale_order_ids -> ", active_id.sale_order_ids)
         print("self.sale_order_ids -> ", active_id.sale_order_ids.ids, "\n")
         print("self.Product_id -> ", active_id.sale_order_ids.order_line, "\n")
-        products = active_id.sale_order_ids.order_line
+        products = active_id.sale_order_ids.order_line.product_id
         print("self.Product_id.order line -> ", products, "\n")
-        # print("\nself.o2m_so_line_id.read -> ", self.o2m_so_line_id.customer, "\n")
-        # result = {}
-        # wizards2 = self.env['wizard.batch_sale']
-        # for data in products:
-        #     print("\n\n------- Data -> ", data)
-        #     res.update({
-        #         'o2m_so_line_id': [(0, 0, {
-        #             'sol_product': data.default_code,
-        #             'sol_description': data.name,
-        #             'sol_price_unit': data.lst_price,
-        #         })]})
-        #     result.update(res)
-        #     print("\n   ** END ** ", res, "\n\n")
-        #     print("\n   ** END ** ", result, "\n\n")
+        # print("\n self.o2m_so_line_id.read -> ", self.o2m_so_line_id.customer, "\n")
+
         # print("\n   ** END ** ", result, "\n\n")
         # print("\n   ** END ** ", result, "\n\n")
         res = super(WizardBatchSale, self).default_get(o2m_so_line_id)
         order_list = []
         for data in products:
             print("\n\n------- Data -> ", data)
+
             order_list.append((0, 0, {
                     'sol_product': data.id,
                     'sol_description': data.name,
-                    'sol_price_unit': data.price_unit,
-                    'sol_quantity': data.product_uom_qty
+                    'sol_price_unit': data.lst_price,
+                    # 'sol_price_unit': data.price_unit,
+                    # 'sol_quantity': data.product_uom_qty
                 }))
 
         res.update({
             'o2m_so_line_id': order_list,
         })
-
         return res
+
+    # @api.onchange('o2m_so_line_id')
+    # def wizards_price(self):
+    #     active_id = self.env['batch_sale.workflow'].browse(self.env.context.get('active_id'))
+    #     products = active_id.sale_order_ids.order_line
+    #     print("\n\n On Change total_price ")
+    #     # res = super(WizardBatchSale, self).wizards_price()
+    #     total_price = products.sol_price_unit
+    #     total_price *= products.product_uom_qty
+    #     print("\n\n On Change total_price ", total_price, "\n\n")
 
 
 class WizardBatchSale2(models.TransientModel):

@@ -57,8 +57,8 @@ class BatchSaleWorkflow(models.Model):
                 print("\n\n ****** ERROR in '_compute_responsible_id_domain' Function *** \n\n\n")
 
     def action_done(self):
-        """On click of 'Proceed Operation' button,
-        change the current state to 'Done' state"""
+        """change the current state, date_order, according to condition
+        call built-in methods"""
         self.status = 'done'
         self.sale_order_ids.date_order = self.operation_date
 
